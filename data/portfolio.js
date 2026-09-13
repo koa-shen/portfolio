@@ -24,14 +24,14 @@ const PORTFOLIO = {
     tagline:
       "I design, simulate, and machine motion systems — from 20-DOF X-ray beamline stages at SLAC to cycloidal-drive robot arms on my bench at home.",
     location: "San Francisco Bay Area / Santa Barbara, CA",
-    email: "FILLER: your.email@ucsb.edu",
-    phone: "FILLER: (415) 555-0123  — optional, resume only",
-    linkedin: "FILLER: https://linkedin.com/in/koa-shen",
+    email: "koashensf@gmail.com",
+    phone: "(415) 810-8344",
+    linkedin: "https://linkedin.com/in/koa-shen/",
     github: "https://github.com/koa-shen",
     // Drop the exported PDF at this path (see assets/README note)
     resumePdf: "assets/Koa_Shen_Resume.pdf",
     // Hero portrait or a hero render of your best project
-    heroImage: "FILLER: assets/images/hero.jpg",
+    heroImage: "assets/images/hero.jpg",
   },
 
   /* ===================== HERO STAT STRIP ===================== */
@@ -389,7 +389,7 @@ const PORTFOLIO = {
   /* ===================== JOB TARGET (site-invisible, for tailoring) ===================== */
   target: {
     roles: ["Robotics Intern", "Controls Intern", "Mechanical Design Intern (Robotics)"],
-    term: "FILLER: Confirm the term you're applying for — Summer 2027?",
+    term: "Summer 2027",
     companies: ["Waymo", "Zoox", "Tesla Autonomy", "Intuitive Surgical"],
     priorities: ["Established company", "High compensation", "Bay Area (commutable from SF)"],
   },
