@@ -1,0 +1,25 @@
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+
+# Large working files — keep CAD source out of the web repo
+*.SLDPRT
+*.SLDASM
+*.step
+*.stp
+*.stl
+*.3mf
+*.f3d
+*.par
+*.asm
+*.mcam
+
+# Video working files (host on YouTube/Vimeo and embed instead)
+*.mov
+*.mp4.orig

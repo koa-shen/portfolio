@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koa Shen — Mechanical Engineering Portfolio</title>
+<meta name="description" content="Koa Shen — Mechanical Engineering B.S. at UC Santa Barbara. Robotics, motion systems, and design for manufacturing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html">KS<span class="dot">.</span></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn--sm" href="resume.html">Resume</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <p class="eyebrow" data-field="meta.focus"></p>
+        <h1 class="hero__name" data-field="meta.name"></h1>
+        <p class="hero__role" data-field="meta.role"></p>
+        <p class="hero__tagline" data-field="meta.tagline"></p>
+        <div class="hero__cta">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn btn--ghost" href="resume.html">Resume</a>
+        </div>
+        <ul class="hero__links" id="heroLinks"></ul>
+      </div>
+      <div class="hero__media" id="heroMedia"></div>
+    </div>
+    <div class="wrap hero__stats" id="heroStats"></div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__num">01</span>About</h2>
+      <div class="about" id="about-body"></div>
+      <div class="edu" id="education"></div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section section--alt">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__num">02</span>Selected Projects</h2>
+      <p class="section__lede">Each project has a full write-up: problem, constraints, analysis, manufacturing, and results.</p>
+      <div class="projects" id="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" class="section">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__num">03</span>Experience</h2>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section section--alt">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__num">04</span>Skills</h2>
+      <div class="skills" id="skills-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section">
+    <div class="wrap contact">
+      <h2 class="section__title"><span class="section__num">05</span>Get in touch</h2>
+      <p class="contact__lede">Open to Robotics and Controls internships in the Bay Area.</p>
+      <div class="contact__links" id="contactLinks"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span>© <span id="year"></span> Koa Shen</span>
+    <span class="footer__built">Built from scratch — HTML, CSS, JS</span>
+  </div>
+</footer>
+
+<script src="data/portfolio.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
