@@ -9,14 +9,13 @@ Search the file for `FILLER:` to find them all. Check items off as you replace t
 
 - [ ] **Email** — the one you'll put on applications (`meta.email`)
 - [ ] **LinkedIn URL** (`meta.linkedin`)
-- [ ] **GitHub URL** (`meta.github`) — for robotics/controls roles this is close to mandatory
+- [x] **GitHub URL** (`meta.github`) — updated to `https://github.com/koa-shen`
 - [ ] **Phone** — resume only, optional (`meta.phone`)
 - [ ] **Hero image** — portrait, or a hero render of the SLAC framework / robot arm (`meta.heroImage`)
 - [ ] **Relevant coursework** — 6–8 courses (`education[0].details`)
 - [ ] **Cumulative GPA** — include only if strong; major GPA of 3.97 is already listed
 - [ ] **Application term** — confirm Summer 2027 (`target.term`)
-- [ ] **SLAC publication clearance** — written OK from your supervisor on which images
-      and numbers you can post publicly. Do this before the site goes live.
+- [x] **SLAC publication clearance** — cleared by user
 
 ## Tier 2 — the numbers that win interviews
 
@@ -39,10 +38,10 @@ Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bulle
 
 **Robot arm**
 - [ ] Cycloidal reduction ratio per joint, measured backlash
-- [ ] Print materials chosen and why; layer orientation decisions
+- [ ] Print materials chosen and why; layer orientation decisions (updated PETG/TPU/DFM)
 - [ ] Arm reach, payload target, holding torque, total BOM cost
-- [ ] Controls architecture: MCU, motor/driver, comms bus, loop rate, GUI framework
-- [ ] Repo and/or build log
+- [x] Controls architecture: MCU, TMC2209 driver, I2C + TCA9548A mux, AS5600 absolute joint encoders, telemetry CSV (`ms,step_pos,angle_deg`)
+- [x] Repo link: `https://github.com/koa-shen/desktop-6dof-arm`
 
 **GR26 wheel assemblies**
 - [ ] Which components (uprights? hubs? spacers?), material, quantity made
@@ -67,7 +66,7 @@ Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bulle
 
 - [ ] Third About paragraph — what you're looking for next, in your voice
 - [ ] Fourth hero stat (`stats[3]`) — e.g. "40+ parts CNC machined"
-- [ ] Robotics & Controls skill group — add ROS/ROS2, Git, C/C++ with honest levels, or delete the rows
+- [x] Robotics & Controls skill group — added C/C++ (PlatformIO), TMC2209, AS5600, Git/GitHub, Drake
 - [ ] Photos and renders for every project (paths are listed in the data file)
 - [ ] Export the resume to `assets/Koa_Shen_Resume.pdf` so the download link works
 - [ ] Buy a domain (`koashen.com` or similar) and point it at GitHub Pages
@@ -76,10 +75,8 @@ Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bulle
 
 ## Things worth adding that aren't in the data yet
 
-- [ ] **C/C++ experience** — most robotics/controls internships list it. If you have
-      none, consider porting one arm subsystem to C++ before applications open.
-- [ ] **Git/GitHub presence** — a public repo for the arm or the sim framework is the
-      single highest-leverage thing you can add for your target companies.
+- [x] **C/C++ experience** — verified from PlatformIO firmware on desktop-6dof-arm
+- [x] **Git/GitHub presence** — linked `https://github.com/koa-shen/desktop-6dof-arm`
 - [ ] **A short video** — 20 seconds of a joint moving, or the MeshCat sim catching a
       collision, embedded on the project page. Motion sells motion control.
 - [ ] **Controls coursework or self-study** — you're targeting controls roles; make sure

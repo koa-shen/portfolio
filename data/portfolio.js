@@ -26,8 +26,8 @@ const PORTFOLIO = {
     location: "San Francisco Bay Area / Santa Barbara, CA",
     email: "FILLER: your.email@ucsb.edu",
     phone: "FILLER: (415) 555-0123  — optional, resume only",
-    linkedin: "FILLER: https://linkedin.com/in/your-handle",
-    github: "FILLER: https://github.com/your-handle",
+    linkedin: "FILLER: https://linkedin.com/in/koa-shen",
+    github: "https://github.com/koa-shen",
     // Drop the exported PDF at this path (see assets/README note)
     resumePdf: "assets/Koa_Shen_Resume.pdf",
     // Hero portrait or a hero render of your best project
@@ -240,8 +240,8 @@ const PORTFOLIO = {
       dates: "Summer 2026 – Present",
       featured: true,
       summary:
-        "Ground-up 6-DOF arm built around printed cycloidal reducers, with custom controls, GUI, and closed-loop encoder feedback in development.",
-      tags: ["Cycloidal Drives", "FDM Design", "Mechatronics", "AS5600 Encoders", "Drake", "Python"],
+        "6-DOF desktop manipulator designed with custom cycloidal reducers, PETG structural components, TMC2209 stepper drivers, AS5600 magnetic encoders on joint output axes, and C++/PlatformIO firmware.",
+      tags: ["C++", "PlatformIO", "TMC2209", "AS5600 Encoders", "TCA9548A Mux", "Cycloidal Drives", "PETG / DFM", "Drake"],
       cover: "FILLER: assets/images/robot-arm/cover.jpg",
       images: [
         "FILLER: assets/images/robot-arm/cycloidal-exploded.png — exploded CAD view of a reducer",
@@ -252,32 +252,31 @@ const PORTFOLIO = {
       sections: [
         {
           heading: "Goal",
-          body: "Build a capable 6-DOF manipulator using printed structure and off-the-shelf components, and use it as a hardware testbed for the same Drake-based planning stack I developed at SLAC.",
+          body: "Build a capable 6-DOF desktop manipulator using custom 3D-printed cycloidal reducers and off-the-shelf electronics, serving as a physical hardware testbed for the Drake-based planning framework developed at SLAC.",
         },
         {
-          heading: "Cycloidal drives",
-          body: "Designed printed cycloidal reducers that pair off-the-shelf bearings and hardware with printed cycloidal discs and housings, trading cost for a design that tolerates FDM tolerances. Material selection was chosen per part against the loading and wear it sees.",
+          heading: "Actuation & Firmware",
+          body: "Driven by NEMA 17 stepper motors (1.5A, 42 N·cm) paired with TMC2209 silent drivers. Built custom C++ firmware using PlatformIO for microcontrollers, implementing phase-based bringup, step/dir pulse generation, and real-time CSV telemetry (ms, step_pos, angle_deg).",
+        },
+        {
+          heading: "Position Sensing",
+          body: "AS5600 12-bit magnetic absolute encoders mounted directly on joint output axes to measure true joint angle post-reduction. Multi-joint I²C bus management handled via a TCA9548A multiplexer to resolve I²C address collisions.",
+        },
+        {
+          heading: "DFM & Materials",
+          body: "Printed on a Bambu P1S using PETG for structural and encoder mounting parts for thermal and mechanical stability near warm motors, TPU for cable strain relief, and custom M3 fastener hardware layouts.",
         },
         {
           heading: "Design details to add",
-          body: "FILLER: Reduction ratio per joint, measured backlash, print material choices and why (PETG/PA-CF/etc.), layer orientation decisions, holding torque, arm reach and payload target, total BOM cost. These specifics are what make a personal project read as engineering rather than a hobby.",
+          body: "FILLER: Reduction ratio per joint, measured backlash, holding torque, arm reach and payload target, total BOM cost. These specifics will solidify the hardware numbers.",
         },
         {
-          heading: "Controls (in development)",
-          body: "Custom control system and GUI are in progress, with closed-loop joint control planned via AS5600 magnetic encoders.",
-        },
-        {
-          heading: "Controls stack to specify",
-          body: "FILLER: What's the actual plan — microcontroller choice, motor/driver selection, communication (CAN? UART?), control loop rate, GUI framework. Even as a plan, stating it concretely shows you can architect a system.",
-        },
-        {
-          heading: "Simulation",
-          body: "Kinematic simulation and path planning reuse the open-source robotics framework I developed at SLAC, leveraging Drake and related libraries.",
+          heading: "Simulation & Future Architecture",
+          body: "Kinematic simulation and trajectory optimization powered by Python and Drake. Future architecture migration planned toward SPI/CAN bus for higher joint telemetry bandwidth.",
         },
       ],
       links: [
-        { label: "FILLER: GitHub repo — strongly recommended for a robotics internship hunt", url: "#" },
-        { label: "FILLER: Build log / video playlist", url: "#" },
+        { label: "GitHub Repository (koa-shen/desktop-6dof-arm)", url: "https://github.com/koa-shen/desktop-6dof-arm" },
       ],
     },
 
@@ -361,9 +360,10 @@ const PORTFOLIO = {
       { name: "VS Code", level: 3 },
       { name: "MATLAB", level: 2 },
       { name: "Python", level: 2 },
+      { name: "C/C++ (Embedded / PlatformIO)", level: 2 },
       { name: "Solid Edge", level: 2 },
       { name: "Inventor / Fusion", level: 2 },
-      { name: "Arduino", level: 2 },
+      { name: "Arduino / Microcontrollers", level: 2 },
     ],
     Hardware: [
       { name: "Manual Machining", level: 3 },
@@ -376,14 +376,13 @@ const PORTFOLIO = {
       { name: "GD&T", level: 2 },
       { name: "Hand Calculations", level: 2 },
     ],
-    // Suggested extra group for a robotics/controls target — fill or delete.
     "Robotics & Controls": [
-      { name: "Drake", level: 2 },
-      { name: "Kinematic Simulation", level: 2 },
-      { name: "Collision Detection / Path Planning", level: 2 },
+      { name: "Drake (Kinematics & Path Planning)", level: 2 },
+      { name: "TMC2209 Stepper Control", level: 2 },
+      { name: "AS5600 Magnetic Encoders (I²C / Mux)", level: 2 },
+      { name: "Kinematic Simulation & Collision Detection", level: 2 },
+      { name: "Git / GitHub", level: 2.5 },
       { name: "FILLER: ROS / ROS2 — add with an honest level, or delete", level: 1 },
-      { name: "FILLER: Git — you almost certainly use it; rate it", level: 1 },
-      { name: "FILLER: C/C++ — add if you have any, common ask for controls roles", level: 1 },
     ],
   },
 
