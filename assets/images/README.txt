@@ -7,8 +7,10 @@
 #   assets/images/robot-arm/
 #   assets/images/gr26-wheels/
 #   assets/images/gr26-safety/
+#   assets/images/exploratorium/
+#   assets/images/hawkes-lab/
 #
-# Compress before committing — target under ~400 KB per image.
+# Compress before committing when practical — target under ~400 KB per image.
 # Squoosh (squoosh.app) or `magick convert -resize 1600x -quality 82` works well.
 #
 # Missing files render as a dashed placeholder tile, so the page never breaks.

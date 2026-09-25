@@ -149,11 +149,13 @@ const PORTFOLIO = {
       summary:
         "Open-source Python framework for collision detection and path planning across 20+ DOF X-ray beamline motion systems in compact, enclosed spaces.",
       tags: ["Python", "Drake", "CoACD", "MeshCat", "OpenCascade", "Path Planning"],
-      cover: "FILLER: assets/images/digital-twin/cover.jpg",
+      cover: "assets/images/digital-twin/TWIN LAB FRONT.png",
       images: [
-        "FILLER: assets/images/digital-twin/meshcat-scene.png — screenshot of the MeshCat visualization",
-        "FILLER: assets/images/digital-twin/collision-demo.gif — short clip of collision detection catching an interference",
-        "FILLER: assets/images/digital-twin/stage-inventory.png — the stage inventory / library structure",
+        "assets/images/digital-twin/TWIN LAB ISO 1.png",
+        "assets/images/digital-twin/TWIN LAB ISO 2.png",
+        "assets/images/digital-twin/TWIN LAB COLLISION WARNING.png",
+        "assets/images/digital-twin/TWIN LAB CONTROL PANEL.png",
+        "assets/images/digital-twin/DETECTOR STAGE ASSEMBLY.png",
       ],
       // Detail page sections. Keep the engineering narrative: problem -> constraints -> approach -> result.
       sections: [
@@ -196,11 +198,13 @@ const PORTFOLIO = {
       summary:
         "Ground-up redesign of a frequently used, poorly packaged beamline optics assembly — kinematic mounts, alignment lasers, irises, and added stages — validated against crash risk with simulation and hand calcs.",
       tags: ["Solid Edge", "PDM", "Kinematic Mounts", "Statics & Dynamics", "GD&T", "Optomechanics"],
-      cover: "FILLER: assets/images/polycapillary/cover.jpg",
+      cover: "assets/images/polycapillary/POLYCAP REAL ISO.jpg",
       images: [
-        "FILLER: assets/images/polycapillary/cad-render.png — isometric render of the new assembly",
-        "FILLER: assets/images/polycapillary/before-after.png — old vs. new packaging comparison",
-        "FILLER: assets/images/polycapillary/installed.jpg — photo of the hardware installed on the beamline",
+        "assets/images/polycapillary/POLYCAP LASER RENDER ISO FRONT.png",
+        "assets/images/polycapillary/POLYCAP LASER INTERNALS RENDER.png",
+        "assets/images/polycapillary/POLYCAP STACK IRIS RENDER FRONT.png",
+        "assets/images/polycapillary/POLYCAP STANDARD RENDER INTERNALS.png",
+        "assets/images/polycapillary/POLYCAP STATIC MOUNT.png",
       ],
       sections: [
         {
@@ -244,12 +248,13 @@ const PORTFOLIO = {
       summary:
         "6-DOF desktop manipulator designed with custom cycloidal reducers, PETG structural components, TMC2209 stepper drivers, AS5600 magnetic encoders on joint output axes, and C++/PlatformIO firmware.",
       tags: ["C++", "PlatformIO", "TMC2209", "AS5600 Encoders", "TCA9548A Mux", "Cycloidal Drives", "PETG / DFM", "Drake"],
-      cover: "FILLER: assets/images/robot-arm/cover.jpg",
+      cover: "assets/images/robot-arm/FULL REDUCER ASSEMBLY RENDER ISO.jpg",
       images: [
-        "FILLER: assets/images/robot-arm/cycloidal-exploded.png — exploded CAD view of a reducer",
-        "FILLER: assets/images/robot-arm/printed-parts.jpg — photo of printed reducer hardware",
-        "FILLER: assets/images/robot-arm/arm-assembly.jpg — current state of the arm",
-        "FILLER: assets/images/robot-arm/backlash-test.mp4 — video of a joint running",
+        "assets/images/robot-arm/FULL REDUCER ASSEMBLY RENDER EXPLODED ISO.jpg",
+        "assets/images/robot-arm/REDUCER SECTION SIDE VIEW.png",
+        "assets/images/robot-arm/ASSEMBLED REDUCER AND STEPPER.jpg",
+        "assets/images/robot-arm/STEPPER WITH REDUCER AND ENCODER.jpg",
+        "assets/images/robot-arm/ENCODER WIRING SETUP.jpg",
       ],
       sections: [
         {
@@ -291,11 +296,12 @@ const PORTFOLIO = {
       summary:
         "CNC machined suspension wheel assemblies programmed in Mastercam and cut on Haas mills and lathes, iterated with the suspension design team through GD&T feedback.",
       tags: ["Mastercam", "Haas", "CNC Mill", "CNC Lathe", "GD&T", "DFM"],
-      cover: "FILLER: assets/images/gr26-wheels/cover.jpg",
+      cover: "assets/images/gr26-wheels/SPINDLE CNC MILLING COMPLETE.jpg",
       images: [
-        "FILLER: assets/images/gr26-wheels/toolpath.png — Mastercam toolpath screenshot",
-        "FILLER: assets/images/gr26-wheels/machining.jpg — part on the Haas",
-        "FILLER: assets/images/gr26-wheels/finished-part.jpg — finished upright/hub",
+        "assets/images/gr26-wheels/UPRIGHT MACHINING IN PROGRESS.jpg",
+        "assets/images/gr26-wheels/SPINDLE IN CNC LATHE.jpg",
+        "assets/images/gr26-wheels/SOFTJAWS MACHINING.jpg",
+        "assets/images/gr26-wheels/FINISHED CLEVISES.jpg",
       ],
       sections: [
         {
@@ -331,12 +337,13 @@ const PORTFOLIO = {
       summary:
         "Led a 15-person team from ergonomics sketches through installation: floor closeout, firewall, heat insulation, custom-molded composite seat, weight-optimized quick-release steering wheel, and Confor foam headrest. Passed FSAE EV technical inspection fully rules-compliant.",
       tags: ["Composites", "Ergonomics", "Sheet Metal", "Project Management", "FSAE Rules"],
-      cover: "FILLER: assets/images/gr26-safety/cover.jpg",
+      cover: "assets/images/gr26-safety/GR26 SAFETY SYSTEMS.png",
       images: [
-        "FILLER: assets/images/gr26-safety/seat-mold.jpg — seat layup or mold",
-        "FILLER: assets/images/gr26-safety/steering-wheel.jpg — the quick-release wheel",
-        "FILLER: assets/images/gr26-safety/cockpit.jpg — finished cockpit",
-        "FILLER: assets/images/gr26-safety/ergonomics-sketch.jpg — early ergonomics study",
+        "assets/images/gr26-safety/GR26 SEAT.png",
+        "assets/images/gr26-safety/GR26 STEERING WHEEL ISO.png",
+        "assets/images/gr26-safety/DRIVER COCKPIT.jpg",
+        "assets/images/gr26-safety/GR26 ERGO JIG WITH DRIVER.png",
+        "assets/images/gr26-safety/FIREWALL GAP COVER.jpg",
       ],
       sections: [
         {
@@ -366,6 +373,43 @@ const PORTFOLIO = {
       ],
       links: [],
     },
+
+    {
+      id: "exploratorium-exhibits",
+      title: "Interactive Exhibit Mechanism Redesigns",
+      org: "Exploratorium",
+      dates: "2025",
+      featured: false,
+      summary:
+        "Redesigned and fabricated durable mechanisms for high-use public exhibits, combining reverse engineering with manual machining, welding, and visitor-focused reliability improvements.",
+      tags: ["Reverse Engineering", "Manual Machining", "Welding", "CAD", "Mechanism Design"],
+      cover: "assets/images/exploratorium/ARP FORMS MECHANISM.jpg",
+      images: [
+        "assets/images/exploratorium/AERIAL OF VIEWER MACHINING.jpg",
+        "assets/images/exploratorium/CLOSE UP OF VIEWER MACHINING.jpg",
+        "assets/images/exploratorium/SPINNING PATTERNS ENCODER MOUNT.jpg",
+      ],
+      sections: [
+        {
+          heading: "Problem",
+          body: "Public exhibits experience constant, unpredictable use, so a mechanism that works on a bench can still fail quickly in the gallery. Several exhibits needed more than routine maintenance: their damaged or unreliable components had to be understood, redesigned, and fabricated around the constraints of the existing installation.",
+        },
+        {
+          heading: "Projects",
+          body: "I led full overhauls of Arp Forms, Monochromatic Room, and Spinning Patterns. The work included a redesigned load-spreading bezel for Arp Forms' acrylic enclosure, custom HDPE polarized-filter viewer glasses for Monochromatic Room, and redesigned encoder mounts and viewer assemblies for Spinning Patterns.",
+        },
+        {
+          heading: "Fabrication",
+          body: "I reverse-engineered failed parts and made replacements with manual machining, welding, woodshop, and makerspace equipment. The redesigns had to be manufacturable with the tools on hand and robust enough to withstand continual visitor interaction.",
+        },
+        {
+          heading: "Handoff",
+          body: "Every redesigned component was documented in CAD and Confluence so future technicians can access the design intent, reassemble mechanisms, and remanufacture wear items without repeating the original investigation.",
+        },
+      ],
+      links: [],
+    },
+
   ],
 
   /* ===================== SKILLS ===================== */

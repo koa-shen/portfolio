@@ -67,7 +67,7 @@ Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bulle
 - [ ] Third About paragraph — what you're looking for next, in your voice
 - [ ] Fourth hero stat (`stats[3]`) — e.g. "40+ parts CNC machined"
 - [x] Robotics & Controls skill group — added C/C++ (PlatformIO), TMC2209, AS5600, Git/GitHub, Drake
-- [ ] Photos and renders for every project (paths are listed in the data file)
+- [x] Photos and renders for every project — staged in `assets/images/`
 - [ ] Export the resume to `assets/Koa_Shen_Resume.pdf` so the download link works
 - [ ] Buy a domain (`koashen.com` or similar) and point it at GitHub Pages
 
