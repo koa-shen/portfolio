@@ -1,20 +1,19 @@
 # Content checklist
 
-Everything below is a `FILLER:` string in [data/portfolio.js](data/portfolio.js).
-Search the file for `FILLER:` to find them all. Check items off as you replace them.
+Use this as a launch checklist. There are no active `FILLER:` strings in [data/portfolio.js](data/portfolio.js).
 
 ---
 
 ## Tier 1 — blocks launch
 
-- [ ] **Email** — the one you'll put on applications (`meta.email`)
-- [ ] **LinkedIn URL** (`meta.linkedin`)
+- [x] **Email** — the one you'll put on applications (`meta.email`)
+- [x] **LinkedIn URL** (`meta.linkedin`)
 - [x] **GitHub URL** (`meta.github`) — updated to `https://github.com/koa-shen`
-- [ ] **Phone** — resume only, optional (`meta.phone`)
-- [ ] **Hero image** — portrait, or a hero render of the SLAC framework / robot arm (`meta.heroImage`)
-- [ ] **Relevant coursework** — 6–8 courses (`education[0].details`)
-- [ ] **Cumulative GPA** — include only if strong; major GPA of 3.97 is already listed
-- [ ] **Application term** — confirm Summer 2027 (`target.term`)
+- [x] **Phone** — resume only, optional (`meta.phone`)
+- [x] **Hero image** (`meta.heroImage`)
+- [x] **Relevant coursework** (`education[0].details`)
+- [x] **Cumulative GPA** — 3.94
+- [x] **Application term** — Summer 2027
 - [x] **SLAC publication clearance** — cleared by user
 
 ## Tier 2 — the numbers that win interviews
@@ -64,11 +63,11 @@ Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bulle
 
 ## Tier 3 — polish
 
-- [ ] Third About paragraph — what you're looking for next, in your voice
-- [ ] Fourth hero stat (`stats[3]`) — e.g. "40+ parts CNC machined"
+- [x] Third About paragraph — tightened for launch
+- [x] Fourth hero stat — 40+ parts CNC machined
 - [x] Robotics & Controls skill group — added C/C++ (PlatformIO), TMC2209, AS5600, Git/GitHub, Drake
 - [x] Photos and renders for every project — staged in `assets/images/`
-- [ ] Export the resume to `assets/Koa_Shen_Resume.pdf` so the download link works
+- [x] Export the resume to `assets/Koa_Shen_Resume.pdf` so the download link works
 - [ ] Buy a domain (`koashen.com` or similar) and point it at GitHub Pages
 
 ---

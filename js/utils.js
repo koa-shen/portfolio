@@ -42,12 +42,12 @@ function plain(value) {
  * Image that degrades to a labeled placeholder tile when the file is a
  * FILLER path or simply isn't on disk yet.
  */
-function imageOrPlaceholder(src, alt = '') {
+function imageOrPlaceholder(src, alt = '', loading = 'lazy') {
   if (!src || isFiller(src)) {
     return `<div class="ph">${escapeHtml(fillerText(src || 'FILLER: add image'))}</div>`;
   }
   const safe = escapeHtml(src);
-  return `<img src="${safe}" alt="${escapeHtml(alt)}" loading="lazy"
+  return `<img src="${safe}" alt="${escapeHtml(alt)}" loading="${loading}"
     onerror="this.outerHTML='<div class=&quot;ph&quot;>missing file: ${safe}</div>'">`;
 }
 

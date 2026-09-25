@@ -30,10 +30,15 @@
       <ul>${e.details.map(li).join('')}</ul>
     </div>`).join('');
 
-  /* Experience — paid roles first, then teams/research */
+  /* Resume keeps the strongest distinct roles; full history stays on the portfolio. */
+  const resumeOrganizations = new Set([
+    "SLAC National Accelerator Laboratory — LCLS",
+    "Exploratorium",
+    "Gaucho Racing (FSAE EV) — UC Santa Barbara",
+  ]);
   const ordered = [
-    ...D.experience.filter((x) => x.type === 'paid'),
-    ...D.experience.filter((x) => x.type !== 'paid'),
+    ...D.experience.filter((x) => x.type === 'paid' && resumeOrganizations.has(x.org)),
+    ...D.experience.filter((x) => x.type !== 'paid' && resumeOrganizations.has(x.org)),
   ];
 
   const experience = ordered.map((x) => `
@@ -46,11 +51,16 @@
         <p class="r-sub">${text(x.org)}</p>
         <span class="r-when">${text(x.location)}</span>
       </div>
-      <ul>${x.bullets.map(li).join('')}</ul>
+      <ul>${li(x.bullets[0])}</ul>
     </div>`).join('');
 
-  /* Projects — featured only, one line each, to keep this to a page */
-  const projects = D.projects.filter((p) => p.featured).map((p) => `
+  /* Complement the experience section with projects that show distinct depth. */
+  const resumeProjectIds = new Set([
+    "robot-arm",
+    "chassis-welding-jig",
+    "steering-wheel-development",
+  ]);
+  const projects = D.projects.filter((p) => resumeProjectIds.has(p.id)).map((p) => `
     <div class="r-entry">
       <div class="r-row">
         <p class="r-title">${text(p.title)}</p>
@@ -58,7 +68,6 @@
       </div>
       <ul>
         <li>${text(p.summary)}</li>
-        <li><em>Tools:</em> ${p.tags.map((t) => escapeHtml(plain(t))).join(', ')}</li>
       </ul>
     </div>`).join('');
 

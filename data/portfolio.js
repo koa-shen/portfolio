@@ -51,7 +51,7 @@ const PORTFOLIO = {
     paragraphs: [
       "I'm a third-year Mechanical Engineering student at UC Santa Barbara focused on robotics and motion control. My work sits at the seam between design and implementation: I like problems where the CAD, the hand calcs, the toolpath, and the control loop all have to agree with each other.",
       "At SLAC National Accelerator Laboratory I built a Python-based digital twin framework for multi-axis X-ray beamline stages, then used it to drive a redesign of a high-traffic optical assembly. On Gaucho Racing I lead the chassis and ergonomics side of our FSAE EV car and machine suspension hardware on Haas mills and lathes. In between, I'm building a 6-DOF printed robotic manipulator from scratch, cycloidal drives and all.",
-      "Looking ahead, I want to keep growing into the kind of engineer who can hold the whole system in view, not just the piece in front of them — understanding how a bit of design, simulation, code, or machining work fits into the larger project and integrates with what my collaborators are building. I'm also chasing specific skills: ROS, C++, machine design, FEA in ANSYS, and a stronger grip on control theory, some from coursework and some from my own projects. For now that means continuing at SLAC on design and simulation work, and hopefully joining a new lab at UCSB where I can get thrown at problems I haven't seen before. Longer term, I'm aiming for a full-time Summer 2027 internship in controls, robotics, or autonomous actuation — ideally somewhere I click with the people and learn fast. I'm hoping this next year sharpens exactly where I want to specialize, which should also make me a stronger fit when it's time to pick a robotics/controls capstone project.",
+      "I'm building toward a Summer 2027 internship in controls, robotics, or autonomous actuation. That means continuing design and simulation work at SLAC, taking on new research problems at UCSB, and strengthening my foundation in ROS, C++, machine design, FEA, and control theory.",
     ],
   },
 
@@ -81,11 +81,11 @@ const PORTFOLIO = {
       type: "paid",
       tags: ["Design", "GD&T", "Kinematic Simulation", "Collision Detection", "Controls"],
       bullets: [
-        "Built an open-source Python digital-twin framework (Drake, CoACD, MeshCat, OpenCascade) for collision detection and path planning on 20+ DOF motion assemblies operating in tightly enclosed beamline enclosures.",
+        "Built an open-source Python digital-twin framework (Drake, CoACD, MeshCat, OpenCascade) with live collision detection for 20+ DOF motion assemblies operating in tightly enclosed beamline enclosures; path planning remains in development.",
         "Redesigned a high-traffic polycapillary optics assembly — kinematic mounts, alignment lasers, irises, and added stages — using the simulation framework to cut interference risk and improve focusing reliability.",
         "Performed statics and dynamics hand calculations to qualify stages and mounts against loading cases protecting $100k+ detectors from crash and drop failures.",
         "Produced design and PDM-controlled documentation in Siemens Solid Edge, applying GD&T for manufacture and inspection.",
-        "Built out a public stage-catalog library covering the majority of LCLS's common motion stages; nearing full EPICS controls compatibility, which will let any hutch engineer model and simulate their own assembly without rewriting kinematics.",
+        "Built a 15-stage reusable catalog and began applying the framework to three top-level hutch assemblies; EPICS controls compatibility is in progress so hutch engineers can model and simulate their own assemblies without rewriting kinematics.",
       ],
     },
     {
@@ -147,7 +147,7 @@ const PORTFOLIO = {
       dates: "2026",
       featured: true,
       summary:
-        "Open-source kinematic-simulation framework that began by finding collisions in a high-DOF polycapillary assembly and grew into a platform for safe motion planning and controls integration.",
+        "Open-source kinematic-simulation framework with live collision detection, 15 reusable stage models, and active adoption across three high-level hutch assemblies; motion planning remains in development.",
       tags: ["Python", "Drake", "CoACD", "MeshCat", "OpenCascade", "Path Planning"],
       cover: "assets/images/digital-twin/TWIN LAB FRONT.png",
       images: [
@@ -169,15 +169,15 @@ const PORTFOLIO = {
         },
         {
           heading: "Approach",
-          body: "I built a Python framework on top of Drake for kinematics and planning, OpenCascade for CAD ingestion, CoACD for approximate convex decomposition of complex geometry into collision-tractable meshes, and MeshCat for visualization. Stages are inventoried into a reusable library so a new assembly can be described and simulated without re-deriving its kinematics.",
+          body: "I built a Python framework on top of Drake for kinematics, OpenCascade for CAD ingestion, CoACD for approximate convex decomposition of complex geometry into collision-tractable meshes, and MeshCat for visualization. Fifteen common motion stages are now inventoried into a reusable library so a new assembly can be described and simulated without re-deriving its kinematics.",
         },
         {
           heading: "Beyond collision detection",
-          body: "Once the collision model was working, the same framework became useful for more than identifying interferences: it provides the kinematic basis for homing sequences, path planning, and explicit safe and no-go zones. Those capabilities matter most on high-DOF assemblies with incomplete encoder coverage, where an operator needs more confidence than a static CAD check can provide.",
+          body: "Live collision detection is operational. The same framework also provides the kinematic basis for future homing sequences, path planning, and explicit safe and no-go zones; those capabilities remain in development. They matter most on high-DOF assemblies with incomplete encoder coverage, where an operator needs more confidence than a static CAD check can provide.",
         },
         {
           heading: "Results",
-          body: "The largest model to date covers 28 total DOF across a mix of linear, rotary, and tip-tilt stages, all cataloged in a reusable stage library. Collision checking runs in real time using CoACD convex-hull decomposition with a secondary mesh triangle-triangle distance query for verification, both leaning on Drake's fast collision-query algorithms — one of the reasons I chose Drake over MuJoCo. Applying the framework to the XCS polycapillary test assembly (built years before this simulation work began) surfaced at least 10 actionable design changes needed for true interference resistance: a helium-purged acrylic enclosure redesign, repositioned stage stacks, new breadboard-mounting brackets, and encoder retrofits on stages that currently have no closed-loop feedback at all. Full path planning is still in progress — the collision-detection core is done, but integration is gated on controls-team bandwidth rather than the simulation itself. Compared to commercial alternatives like Siemens Process Simulate (~$25k/year per seat), this framework runs faster, with lower latency, tailored to LCLS's rapid-iteration workflow, at zero licensing cost — saving SLAC an estimated tens to hundreds of thousands of dollars depending on seat count.",
+          body: "The largest model to date covers 28 total DOF across a mix of linear, rotary, and tip-tilt stages, with 15 reusable stages in the current catalog. Collision checking is live, using CoACD convex-hull decomposition with a secondary mesh triangle-triangle distance query for verification, both leaning on Drake's fast collision-query algorithms. Applying the framework to the XCS polycapillary test assembly surfaced at least 10 actionable design changes needed for true interference resistance: a helium-purged acrylic enclosure redesign, repositioned stage stacks, new breadboard-mounting brackets, and encoder retrofits on stages that currently have no closed-loop feedback. The framework is now being applied to three top-level hutch assemblies; full path planning and EPICS integration remain in progress.",
         },
         {
           heading: "What I'd do differently",
@@ -246,8 +246,8 @@ const PORTFOLIO = {
       dates: "Summer 2026 – Present",
       featured: true,
       summary:
-        "6-DOF desktop manipulator designed with custom cycloidal reducers, PETG structural components, TMC2209 stepper drivers, AS5600 magnetic encoders on joint output axes, and C++/PlatformIO firmware.",
-      tags: ["C++", "PlatformIO", "TMC2209", "AS5600 Encoders", "TCA9548A Mux", "Cycloidal Drives", "PETG / DFM", "Drake"],
+        "6-DOF desktop manipulator under development with custom cycloidal reducers, PETG structural components, TMC2209 stepper drivers, a motor-shaft AS5600 encoder bench setup, and C++/PlatformIO firmware.",
+      tags: ["C++", "PlatformIO", "TMC2209", "AS5600 Encoder", "Cycloidal Drives", "PETG / DFM", "Drake"],
       cover: "assets/images/robot-arm/FULL REDUCER ASSEMBLY RENDER ISO.jpg",
       images: [
         "assets/images/robot-arm/FULL REDUCER ASSEMBLY RENDER EXPLODED ISO.jpg",
@@ -267,7 +267,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Position Sensing",
-          body: "AS5600 12-bit magnetic absolute encoders mounted directly on joint output axes to measure true joint angle post-reduction. Multi-joint I²C bus management handled via a TCA9548A multiplexer to resolve I²C address collisions.",
+          body: "The current single-joint bench setup uses an AS5600 12-bit magnetic encoder on the motor shaft to detect missed steps and characterize the reducer. A direct output-axis encoder and the TCA9548A I²C multiplexer are planned for multi-joint hardware, where they will measure true post-reduction joint angle and resolve shared-address collisions.",
         },
         {
           heading: "DFM & Materials",
@@ -278,8 +278,8 @@ const PORTFOLIO = {
           body: "Each cycloidal reducer runs a 15:1 reduction, sized to be compatible with any NEMA 17 stepper: it fits within the motor's 42x42mm face profile and is shorter axially than the stepper itself, so it packages cleanly into linkages without growing the joint envelope. Measured backlash, holding torque, arm reach, payload target, and total BOM cost are still being characterized as the build progresses.",
         },
         {
-          heading: "Simulation & Future Architecture",
-          body: "Kinematic simulation and trajectory optimization powered by Python and Drake. Future architecture migration planned toward SPI/CAN bus for higher joint telemetry bandwidth.",
+          heading: "Current Validation & Future Architecture",
+          body: "The project is currently in 15:1 reducer characterization: live firmware records motor-angle data and switch-based output dead band, while torque, thermal behavior, payload, and reach remain to be measured. Kinematic simulation and trajectory optimization are planned in Python and Drake, with a future SPI/CAN architecture for higher joint-telemetry bandwidth.",
         },
       ],
       links: [
@@ -399,7 +399,7 @@ const PORTFOLIO = {
         },
         {
           heading: "GR25 baseline",
-          body: "I led a three-person team to build the GR25 fixture under a $1,500 budget. The 80/20-and-plywood design constrained 81 chassis tubes to CAD within 0.050 in at the nodes and provided the team with a functioning precision-welding reference for the car.",
+          body: "I led a three-person team to build the GR25 fixture under a $1,500 budget. The 80/20 frame and laser-cut plywood panels constrained 81 chassis tubes to CAD within 0.050 in at the nodes, while keeping the fixture modular and inexpensive enough to revise alongside the team's continuous chassis design changes. It reduced assembly time 50% from the prior fixture, whose laser-cut slots had not been toleranced and required extensive hand-sanding.",
         },
         {
           heading: "What needed to change",
@@ -407,7 +407,7 @@ const PORTFOLIO = {
         },
         {
           heading: "GR26 hybrid jig",
-          body: "For GR26, the team shifted design philosophy: 3D-printed locating brackets were combined with 80/20 and plywood to make the jig easier to assemble while improving positional control. The hybrid system focused precision where it mattered at the tube nodes rather than relying on an increasingly complicated all-plywood fixture.",
+          body: "For GR26, the team shifted design philosophy: 3D-printed locating brackets were combined with 80/20 and plywood to make the jig easier to assemble while improving positional control. The hybrid system focused precision where it mattered at the tube nodes rather than relying on an increasingly complicated all-plywood fixture, cutting assembly time a further 30% from the GR25 design.",
         },
       ],
       links: [],
@@ -439,7 +439,11 @@ const PORTFOLIO = {
         },
         {
           heading: "Engineering and research",
-          body: "During GR25, I secured $2,000 in undergraduate research funding for wheel R&D and used hand calculations and FEA to compare CFRP, GFRP, 6061-T6, and 7075-T6 options for the baseplate. That work reduced assembly weight by 25% and cost by 30% from the preceding design.",
+          body: "During GR25, I secured $2,000 in undergraduate research funding for wheel R&D and used hand calculations and FEA to compare CFRP, GFRP, 6061-T6, and 7075-T6 options for the baseplate. The wheel was tested for ergonomics, strength, and FSAE compliance; that work reduced assembly weight by 25% and cost by 30% from the preceding design.",
+        },
+        {
+          heading: "Integrated driver interface",
+          body: "The steering wheel had to function as both a structural and electronic driver interface, integrating buttons, potentiometers, a digital display, and a quick-release mechanism for driver egress. That made packaging, wiring, control placement, and mechanical safety part of the same design problem rather than separate handoffs.",
         },
         {
           heading: "GR26 collaboration",
@@ -460,7 +464,7 @@ const PORTFOLIO = {
       dates: "2025",
       featured: false,
       summary:
-        "Redesigned and fabricated durable mechanisms for high-use public exhibits, combining reverse engineering with manual machining, welding, and visitor-focused reliability improvements.",
+        "Completed three major exhibit overhauls and serviced 100+ public exhibits, combining reverse engineering with manual machining, welding, and visitor-focused reliability improvements.",
       tags: ["Reverse Engineering", "Manual Machining", "Welding", "CAD", "Mechanism Design"],
       cover: "assets/images/exploratorium/ARP FORMS MECHANISM.jpg",
       images: [
@@ -470,20 +474,28 @@ const PORTFOLIO = {
       ],
       sections: [
         {
-          heading: "Problem",
-          body: "Public exhibits experience constant, unpredictable use, so a mechanism that works on a bench can still fail quickly in the gallery. Several exhibits needed more than routine maintenance: their damaged or unreliable components had to be understood, redesigned, and fabricated around the constraints of the existing installation.",
+          heading: "Context",
+          body: "Public exhibits experience constant, unpredictable use, so a mechanism that works on a bench can still fail quickly in the gallery. I worked on three focused reliability problems: leaks and acrylic cracking in Arp Forms, replacement polarized viewers for Monochromatic Room, and sand-damaged rotary-encoder mounts in Spinning Patterns.",
         },
         {
-          heading: "Projects",
-          body: "I led full overhauls of Arp Forms, Monochromatic Room, and Spinning Patterns. The work included a redesigned load-spreading bezel for Arp Forms' acrylic enclosure, custom HDPE polarized-filter viewer glasses for Monochromatic Room, and redesigned encoder mounts and viewer assemblies for Spinning Patterns.",
+          heading: "Arp Forms renewal",
+          body: "Arp Forms demonstrates the non-Newtonian behavior of oobleck by driving a silicone membrane with a piston-crank mechanism. Oobleck was leaking through failures in the enclosure seal, while the membrane mounting and bolting pattern contributed to wear and acrylic-body stress fractures. I improved the bolting pattern, addressed membrane wear, redesigned the load-spreading bezel, and sealed existing cracks with acrylic solvent and silicone paste.",
         },
         {
-          heading: "Fabrication",
-          body: "I reverse-engineered failed parts and made replacements with manual machining, welding, woodshop, and makerspace equipment. The redesigns had to be manufacturable with the tools on hand and robust enough to withstand continual visitor interaction.",
+          heading: "Monochromatic Room viewers",
+          body: "When the viewer CAD was accidentally deleted, I reverse-engineered a replacement from an existing unit. The soft-starboard viewer holds polarized lenses for a yellow-lit room; it needed to stay ergonomic and safe while surviving heavy use. After applying GD&T, we machined replacement batches on a Haas CNC router with CAM and fixturing choices that minimized material waste and improved manufacturing tolerance.",
+        },
+        {
+          heading: "Spinning Patterns encoder mounts",
+          body: "Garnet sand was working into the gap between the rotary-encoder mount's flanged tube cap and its tube, making routine maintenance difficult and wearing the thin aluminum flange. I redesigned the part with a thicker flange, a properly toleranced outer diameter, and maintenance-oriented geometry, then manually machined the mounts onsite with a clocking setup for the blind tapped mounting holes.",
         },
         {
           heading: "Handoff",
           body: "Every redesigned component was documented in CAD and Confluence so future technicians can access the design intent, reassemble mechanisms, and remanufacture wear items without repeating the original investigation.",
+        },
+        {
+          heading: "Scale & savings",
+          body: "Alongside servicing 100+ exhibits during the summer, I completed three major overhauls. The Arp Forms renewal avoided more than $3,000 in replacement-part costs, and custom lathe tooling for the work saved approximately $500 in outsourced tools and labor.",
         },
       ],
       links: [],
