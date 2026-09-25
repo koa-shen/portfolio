@@ -147,7 +147,7 @@ const PORTFOLIO = {
       dates: "2026",
       featured: true,
       summary:
-        "Open-source Python framework for collision detection and path planning across 20+ DOF X-ray beamline motion systems in compact, enclosed spaces.",
+        "Open-source kinematic-simulation framework that began by finding collisions in a high-DOF polycapillary assembly and grew into a platform for safe motion planning and controls integration.",
       tags: ["Python", "Drake", "CoACD", "MeshCat", "OpenCascade", "Path Planning"],
       cover: "assets/images/digital-twin/TWIN LAB FRONT.png",
       images: [
@@ -161,7 +161,7 @@ const PORTFOLIO = {
       sections: [
         {
           heading: "Problem",
-          body: "LCLS beamline experiments pack many independently actuated stages into small, sealed enclosures. Any commanded move risks driving hardware into a neighbor, and a crash can destroy detectors worth six figures or burn irreplaceable beam time. Before this work, interference was checked by intuition and static CAD inspection.",
+          body: "The polycapillary test assembly at LCLS packs many independently actuated stages into a small, sealed enclosure. Any commanded move risks driving hardware into a neighbor, and a crash can destroy detectors worth six figures or burn irreplaceable beam time. Static CAD inspection could not practically evaluate every travel range or design revision, so interference was largely checked by intuition.",
         },
         {
           heading: "Constraints",
@@ -172,8 +172,8 @@ const PORTFOLIO = {
           body: "I built a Python framework on top of Drake for kinematics and planning, OpenCascade for CAD ingestion, CoACD for approximate convex decomposition of complex geometry into collision-tractable meshes, and MeshCat for visualization. Stages are inventoried into a reusable library so a new assembly can be described and simulated without re-deriving its kinematics.",
         },
         {
-          heading: "Scalability",
-          body: "The core design goal was reuse: a stage inventory plus a documented implementation workflow means other motion assemblies at SLAC can be modeled by an engineer who didn't write the framework.",
+          heading: "Beyond collision detection",
+          body: "Once the collision model was working, the same framework became useful for more than identifying interferences: it provides the kinematic basis for homing sequences, path planning, and explicit safe and no-go zones. Those capabilities matter most on high-DOF assemblies with incomplete encoder coverage, where an operator needs more confidence than a static CAD check can provide.",
         },
         {
           heading: "Results",
@@ -196,7 +196,7 @@ const PORTFOLIO = {
       dates: "2026",
       featured: true,
       summary:
-        "Ground-up redesign of a frequently used, poorly packaged beamline optics assembly — kinematic mounts, alignment lasers, irises, and added stages — validated against crash risk with simulation and hand calcs.",
+        "Redesign of a high-use beamline optics assembly, driven by collision-simulation findings and instrument-scientist feedback to improve alignment, maneuverability, and beam-time efficiency.",
       tags: ["Solid Edge", "PDM", "Kinematic Mounts", "Statics & Dynamics", "GD&T", "Optomechanics"],
       cover: "assets/images/polycapillary/POLYCAP REAL ISO.jpg",
       images: [
@@ -213,7 +213,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Design changes",
-          body: "Integrated kinematic mounts for repeatable removal and reinstallation, alignment lasers and irises for fast optical alignment, and additional motion stages to expand focusing capability. Packaging was reworked to reduce interference risk, guided by the digital twin framework.",
+          body: "Collision-simulation findings and direct feedback from instrument scientists drove new brackets, a more stable enclosure base mount, kinematic mounts for repeatable hot-swapping, alignment lasers and irises for semi-fine alignment, cable management and detector strain relief, and additional stages for detector maneuverability. Packaging was reworked to remove identified interference risks while making the assembly more usable in real experimental workflows.",
         },
         {
           heading: "Analysis",
@@ -221,7 +221,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Impact",
-          body: "Saves tens of thousands of dollars of beam time per experiment, with the assembly potentially deployed multiple times per year.",
+          body: "The underlying goal is to reduce setup and recovery time before and during experiments. LCLS beamtime costs approximately $70k per day, so saving even a few hours per year returns more value than the cost of a summer internship.",
         },
         {
           heading: "Alignment workflow",
@@ -335,7 +335,7 @@ const PORTFOLIO = {
       dates: "2025 – 2026",
       featured: false,
       summary:
-        "Led a 15-person team from ergonomics sketches through installation: floor closeout, firewall, heat insulation, custom-molded composite seat, weight-optimized quick-release steering wheel, and Confor foam headrest. Passed FSAE EV technical inspection fully rules-compliant.",
+        "Led a 15-person team from ergonomics sketches through installation of the GR26 driver environment: floor closeout, firewall, heat insulation, composite seat, and Confor foam headrest. Passed FSAE EV technical inspection fully rules-compliant.",
       tags: ["Composites", "Ergonomics", "Sheet Metal", "Project Management", "FSAE Rules"],
       cover: "assets/images/gr26-safety/GR26 SAFETY SYSTEMS.png",
       images: [
@@ -348,7 +348,7 @@ const PORTFOLIO = {
       sections: [
         {
           heading: "Scope",
-          body: "Owned the full driver environment: floor closeout, firewall, heat insulation, a custom-molded composite seat, a custom-molded steering wheel with weight optimization and quick-release, and a Confor foam headrest.",
+          body: "Owned the full driver environment: floor closeout, firewall, heat insulation, a custom-molded composite seat, and a Confor foam headrest. This work required packaging every component around the chassis, driver, powertrain heat, and FSAE rules.",
         },
         {
           heading: "Leadership",
@@ -359,8 +359,8 @@ const PORTFOLIO = {
           body: "The complete package passed technical inspection at FSAE EV competition with full rules compliance.",
         },
         {
-          heading: "Weight & comfort optimization",
-          body: "The composite seat came in around 4 lbs — the first year the team ran a composite seat program at all, so there wasn't much prior internal knowledge to build from, and comfort still has room to improve (a focus for the incoming ergo lead now that I've been promoted). The steering wheel had already dropped from 4 lbs to 3 lbs the prior year without optimization; with this year's optimization pass it dropped further to 1.7 lbs — less than half its original weight, with better comfort and force application.",
+          heading: "Seat development",
+          body: "The composite seat came in around 4 lbs. It was the team's first composite-seat program, so the work established a baseline for material selection, mold and layup process, fit, and installation; comfort remains a focus for the incoming ergonomics lead.",
         },
         {
           heading: "Fit strategy",
@@ -369,6 +369,85 @@ const PORTFOLIO = {
         {
           heading: "Results",
           body: "At FSAE EV 2026 (Brooklyn, Michigan, June 2026) the team placed 30th, up from 54th the year before — the first time the team passed technical inspection, and the first time it competed in a dynamic event, let alone all of them. Full development ran from early August 2025 to early May 2026, roughly nine months sketch-to-installed.",
+        },
+      ],
+      links: [],
+    },
+
+    {
+      id: "chassis-welding-jig",
+      title: "FSAE Chassis Welding Jig Evolution",
+      org: "Gaucho Racing",
+      dates: "2024 – 2026",
+      featured: true,
+      summary:
+        "Designed successive welding fixtures that locate the racecar's tube chassis at its CAD-defined nodes, progressing from an 80/20-and-plywood GR25 jig to a more accurate, assembly-friendly hybrid system for GR26.",
+      tags: ["Welding Fixtures", "Assembly Design", "80/20", "3D Printing", "Laser Cutting", "Tolerance Stackup"],
+      cover: "assets/images/chassis-jig/GR26 CHASSIS JIG ISO.png",
+      images: [
+        "assets/images/chassis-jig/GR25 CHASSIS JIG AERIAL.png",
+        "assets/images/chassis-jig/GR25 CHASSIS JIG ISO.png",
+        "assets/images/chassis-jig/GR25 CHASSIS JIG SIDE.png",
+        "assets/images/chassis-jig/GR26 CHASSIS JIG SIDE.png",
+        "assets/images/chassis-jig/CH26.ChassisJig8020 RENDER ISO.jpg",
+        "assets/images/chassis-jig/CHASSIS FIXTURE IN TRUCKBED.jpg",
+      ],
+      sections: [
+        {
+          heading: "Why the jig matters",
+          body: "The welding fixture establishes the chassis node positions that define wheelbase, suspension hardpoints, and the rest of the vehicle geometry. Tolerance stackup in the fixture becomes chassis error after welding, potentially changing wheelbase and contributing to suspension chatter and other vehicle-dynamics problems.",
+        },
+        {
+          heading: "GR25 baseline",
+          body: "I led a three-person team to build the GR25 fixture under a $1,500 budget. The 80/20-and-plywood design constrained 81 chassis tubes to CAD within 0.050 in at the nodes and provided the team with a functioning precision-welding reference for the car.",
+        },
+        {
+          heading: "What needed to change",
+          body: "The GR25 system worked, but assembly was difficult and the structure could become overconstrained. Laser-cut variation and wood warpage also limited confidence in repeated setup and accuracy, especially where many fixture interfaces accumulated around the chassis.",
+        },
+        {
+          heading: "GR26 hybrid jig",
+          body: "For GR26, the team shifted design philosophy: 3D-printed locating brackets were combined with 80/20 and plywood to make the jig easier to assemble while improving positional control. The hybrid system focused precision where it mattered at the tube nodes rather than relying on an increasingly complicated all-plywood fixture.",
+        },
+      ],
+      links: [],
+    },
+
+    {
+      id: "steering-wheel-development",
+      title: "FSAE Steering Wheel Development",
+      org: "Gaucho Racing",
+      dates: "2024 – 2026",
+      featured: false,
+      summary:
+        "Led and then supervised successive steering-wheel iterations that reduced mass, improved driver comfort and force application, and coordinated manufacturing and vehicle integration across subteams.",
+      tags: ["Ergonomics", "Composites", "CAD", "Manufacturing Sourcing", "Vehicle Integration", "FSAE"],
+      cover: "assets/images/steering-wheel/GR26 STEERING WHEEL ISO.png",
+      images: [
+        "assets/images/steering-wheel/GR24 STEERING WHEEL.png",
+        "assets/images/steering-wheel/GR25 STEERING WHEEL 1 FRONT.png",
+        "assets/images/steering-wheel/GR25 STEERING WHEEL 1 BACK.png",
+        "assets/images/steering-wheel/GR25 STEERING WHEEL 2 FRONT.png",
+        "assets/images/steering-wheel/GR25 STEERING WHEEL 2 INTERNALS.png",
+        "assets/images/steering-wheel/GR25 STEERING WHEEL DEVELOPMENT.png",
+        "assets/images/steering-wheel/ER26SteeringWheelQR RENDER EXPLODED ISO.jpg",
+      ],
+      sections: [
+        {
+          heading: "Development arc",
+          body: "I managed steering-wheel development as the responsible engineer during the GR25 design cycle, then continued contributing as the chassis and ergonomics lead during GR26. The project evolved through several designs instead of treating the wheel as a one-off part, with each cycle retaining what worked and addressing mass, grip, and integration issues from the previous car.",
+        },
+        {
+          heading: "Engineering and research",
+          body: "During GR25, I secured $2,000 in undergraduate research funding for wheel R&D and used hand calculations and FEA to compare CFRP, GFRP, 6061-T6, and 7075-T6 options for the baseplate. That work reduced assembly weight by 25% and cost by 30% from the preceding design.",
+        },
+        {
+          heading: "GR26 collaboration",
+          body: "After moving into the leadership role, I worked with the next design engineer to develop a better GR26 wheel from the prior work. I provided technical guidance while sourcing materials and manufacturing, coordinating interfaces with the relevant subteams, and keeping the design aligned with the full driver-system package.",
+        },
+        {
+          heading: "Result",
+          body: "Across the design cycles, the steering-wheel assembly moved from 4 lb to 3 lb and then to 1.7 lb for GR26, while improving driver comfort and force application at the wheels. The final result was a lighter quick-release wheel that was better integrated with the car and the people driving it.",
         },
       ],
       links: [],
