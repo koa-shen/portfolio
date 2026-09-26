@@ -104,13 +104,13 @@ const PORTFOLIO = {
     },
     {
       org: "Gaucho Racing (FSAE EV) — UC Santa Barbara",
-      role: "Chassis & Ergonomics Lead / Fabrication Team Lead",
+      role: "Fabrication Team Lead",
       dates: "Fall 2024 – Present",
       location: "Santa Barbara, CA",
       type: "project",
       tags: ["Assembly Design", "Mechatronics", "Project Management", "CNC", "Welding"],
       bullets: [
-        "Lead a 15-person team through ergonomics sketches, detail design, manufacturing, and installation of the GR26 driver safety systems; passed technical inspection at FSAE EV competition fully rules-compliant.",
+        "Previously led a 15-person team through ergonomics sketches, detail design, manufacturing, and installation of the GR26 driver safety systems; passed technical inspection at FSAE EV competition fully rules-compliant.",
         "CNC machined GR26 suspension wheel assemblies on Haas mills and lathes, programming toolpaths in Mastercam and iterating on GD&T feedback with the suspension design team.",
         "Own chassis and ergonomics packaging, including welded tube structures, tube notching, and assembly design.",
         "Placed 30th at FSAE EV 2026 (Brooklyn, MI), up from 54th the year before — the team's first time passing technical inspection and competing in every dynamic event.",
@@ -166,6 +166,10 @@ const PORTFOLIO = {
           body: "The largest model to date covers 28 total DOF across a mix of linear, rotary, and tip-tilt stages, with 15 reusable stages in the current catalog. Collision checking is live, using CoACD convex-hull decomposition with a secondary mesh triangle-triangle distance query for verification, both leaning on Drake's fast collision-query algorithms. Applying the framework to the XCS polycapillary test assembly surfaced at least 10 actionable design changes needed for true interference resistance: a helium-purged acrylic enclosure redesign, repositioned stage stacks, new breadboard-mounting brackets, and encoder retrofits on stages that currently have no closed-loop feedback. The framework is now being applied to three top-level hutch assemblies; full path planning and EPICS integration remain in progress.",
         },
         {
+          heading: "Operational impact",
+          body: "Replacing intuition-based clearance checks with repeatable motion simulation lets engineers find potential interference before hardware is moved during an experiment. That reduces collision exposure for high-value detectors and optics and supports safer design iteration; the framework identifies risks but cannot guarantee that collisions or schedule disruptions will be eliminated.",
+        },
+        {
           heading: "What I'd do differently",
           body: "I'd reconsider the GUI. MeshCat came bundled with Drake and was the path of least resistance, but it's a limited visualization layer — it has no real button support, only sliders, which gets awkward when you want the sim to expose more than a parameter sweep. I'd also revisit the CoACD mesh decomposition step: it enables fast real-time collision queries, but generating a new decomposition after a CAD revision takes about two hours. That's still far faster than commercial alternatives, but slow enough that a rapid-iteration designer might give up on simulating a new revision rather than wait — and speeding that up would make the tool much more compelling to adopt.",
         },
@@ -207,19 +211,15 @@ const PORTFOLIO = {
         },
         {
           heading: "Impact",
-          body: "The underlying goal is to reduce setup and recovery time before and during experiments. LCLS beamtime costs approximately $70k per day, so saving even a few hours per year returns more value than the cost of a summer internship.",
+          body: "The redesign moves precision alignment out of the live-beam workflow and simplifies setup and recovery, saving hours of beamtime per year across an assembly used in an estimated 1–2 experiments annually. At approximately $150k per day (about $6.25k per hour), those hours represent an estimated thousands to tens of thousands of dollars in annual beamtime value, not audited cash savings; the annual time and value estimates should be confirmed with the instrument team. LCLS experiments are scheduled far in advance and run on fixed schedules, so improved setup reliability also lowers the risk of delays or scrapped runs that consume staff, instrument, and preparation resources beyond beamtime itself.",
         },
         {
           heading: "Alignment workflow",
-          body: "Previously, precise alignment happened live, with the beam on: technicians used diode sensors to center the beam, then translated the stack to swap the crystal in for the diode. Doing that during active beamtime is stressful and expensive (beam time runs into the thousands of dollars per hour), and once the chamber is sealed and helium-purged, any crash or drop ends the experiment outright. The redesign front-loads alignment instead: hot-swappable kinematic mounts let optics be laser-aligned without helium in the chamber, and added manual stages — driven by micrometers with locking screws, since a slipped carriage could drop the detector — make beam-centering on the detector far more controlled. Combined with the interference-prevention work, the live-beam portion of the procedure is now simpler and lower-risk than before.",
+          body: "Previously, precise alignment happened live, with the beam on: technicians used diode sensors to center the beam, then translated the stack to swap the crystal in for the diode. Once the chamber is sealed and helium-purged, a crash or drop can end the experiment. The redesign front-loads alignment instead: hot-swappable kinematic mounts let optics be laser-aligned without helium in the chamber, and added manual stages — driven by micrometers with locking screws — make beam-centering on the detector more controlled. Together with the interference-prevention work, this simplifies the live-beam procedure and reduces collision and handling exposure for detectors worth $100k+ and other sensitive optics.",
         },
         {
           heading: "Numbers",
-          body: "Added 2 DOF to the assembly, bringing it to 30 DOF total. Kinematic mount repeatability follows the Newport M-BK-1A spec sheet. The assembly serves an estimated 1–2 experiments per year. Precise mass and enclosure dimensions, plus a cleared cost-savings figure, are pending final CAD and sign-off from my SLAC supervisor.",
-        },
-        {
-          heading: "Clearance note",
-          body: "Cost-savings estimate is in progress with my SLAC supervisor — will publish once confirmed.",
+          body: "Added 2 DOF to the assembly, bringing it to 30 DOF total. Kinematic mount repeatability follows the Newport M-BK-1A spec sheet. The assembly serves an estimated 1–2 experiments per year. Precise mass and enclosure dimensions are pending final CAD.",
         },
       ],
       links: [],

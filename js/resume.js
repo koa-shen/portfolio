@@ -13,7 +13,7 @@
     D.meta.email,
     D.meta.linkedin,
     D.meta.github,
-  ].map((v) => `<span>${text(v)}</span>`).join('');
+  ].map((v) => `<span>${text(v.replace(/^https?:\/\//i, ''))}</span>`).join('');
 
   /* Education */
   const education = D.education.map((e) => `
@@ -42,16 +42,19 @@
 
   const resumeExperienceBullets = {
     "SLAC National Accelerator Laboratory — LCLS": [
-      "Built a Drake/CoACD digital twin; live collision detection models 28 DOF across a 15-stage catalog.",
-      "Applying it to three hutch assemblies and the polycapillary redesign; path planning and EPICS remain in development.",
+      "Built an open-source Python digital twin (Drake, CoACD) with live collision detection across 28 DOF and a reusable 15-stage catalog; began applying it to three top-level hutch assemblies.",
+      "Applied simulation findings to redesign the high-use polycapillary optics assembly, improving alignment and detector maneuverability while reducing collision and handling exposure for $100k+ detectors.",
+      "Moved precision alignment out of the live-beam workflow, saving hours of beamtime per year and improving setup reliability for experiments scheduled far in advance.",
     ],
     Exploratorium: [
-      "Serviced 100+ exhibits and led three major overhauls; Arp Forms fixes avoided $3,000+ in replacement costs.",
-      "Saved about $500 with custom lathe tooling; trained 150+ hours in machining, CNC routing, and TIG welding.",
+      "Reverse-engineered repairs for 100+ exhibits under continuous public use and led three major overhauls; the Arp Forms redesign avoided $3,000+ in replacement costs.",
+      "Fabricated replacement parts across machining, welding, and woodshop; custom lathe tooling saved about $500.",
+      "Produced updated CAD and Confluence documentation for redesigned components; completed 150+ hours of machining, CNC routing, and TIG welding training.",
     ],
     "Gaucho Racing (FSAE EV) — UC Santa Barbara": [
-      "Lead a 15-person chassis/ergonomics team; GR26 passed inspection and placed 30th at FSAE EV 2026.",
-      "CNC-machined suspension assemblies on Haas mills/lathes with Mastercam; managed five driver components and welding fixtures.",
+      "Fabrication Team Lead; last school year, led a 15-person Chassis & Ergonomics team through GR26 safety-system design, manufacturing, and installation.",
+      "CNC-machined GR26 suspension assemblies on Haas mills and lathes with Mastercam, iterating GD&T feedback with the suspension design team.",
+      "GR26 passed technical inspection and placed 30th at FSAE EV 2026, up from 54th; optimized the quick-release steering wheel from 3 lb to 1.7 lb.",
     ],
   };
 
