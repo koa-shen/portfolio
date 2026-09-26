@@ -19,7 +19,7 @@ const PORTFOLIO = {
   meta: {
     name: "Koa Shen",
     role: "Mechanical Engineering B.S. @ UC Santa Barbara",
-    focus: "Robotics · Motion Systems · Design for Manufacturing",
+    focus: "Robotics · Controls · Motion Systems · Design for Manufacturing",
     // Short punchy line under your name on the hero. Rewrite in your voice.
     tagline:
       "I design, simulate, and machine motion systems — from 20-DOF X-ray beamline stages at SLAC to cycloidal-drive robot arms on my bench at home.",

@@ -94,7 +94,7 @@ body {
 @media print {
   body { background: #fff; font-size: 10pt; line-height: 1.28; }
   .toolbar { display: none; }
-  .page { width: auto; min-height: 0; margin: 0; padding: 0.22in 0.45in; box-shadow: none; }
+  .page { width: auto; min-height: 0; margin: 0; padding: 0.12in 0.45in; box-shadow: none; }
   .r-head { padding-bottom: .25rem; margin-bottom: .4rem; }
   .r-sec { margin-bottom: .35rem; }
   .r-entry { margin-bottom: .3rem; }
