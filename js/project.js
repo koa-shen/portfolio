@@ -36,7 +36,7 @@
     <p class="detail__summary">${text(project.summary)}</p>
     <div class="tags">${project.tags.map((t) => `<span class="tag">${text(t)}</span>`).join('')}</div>
 
-    <div class="detail__cover${project.compactImages ? ' detail__cover--compact' : ''}">${imageOrPlaceholder(project.cover, plain(project.title))}</div>
+    ${project.showDetailCover === false ? '' : `<div class="detail__cover${project.compactImages ? ' detail__cover--compact' : ''}">${imageOrPlaceholder(project.cover, plain(project.title))}</div>`}
 
     <div class="detail__body">
       <div class="detail__sections">
