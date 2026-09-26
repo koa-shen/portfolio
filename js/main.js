@@ -55,7 +55,7 @@
   /* ---------- projects ---------- */
   document.getElementById('projects-grid').innerHTML = D.projects.map((p) => `
     <a class="card reveal${p.featured ? ' card--feature' : ''}" href="project.html?id=${encodeURIComponent(p.id)}">
-      <div class="card__media">${imageOrPlaceholder(p.cover, p.title, 'eager')}</div>
+      <div class="card__media${p.compactImages ? ' card__media--compact' : ''}">${imageOrPlaceholder(p.cover, p.title, 'eager')}</div>
       <div class="card__body">
         <span class="card__org">${text(p.org)} · ${text(p.dates)}</span>
         <h3 class="card__title">${text(p.title)}</h3>

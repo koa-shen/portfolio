@@ -27,14 +27,16 @@
   ).join('');
 
   mount.innerHTML = `
-    <a class="back" href="index.html#projects">← All projects</a>
+    <div class="detail__topline">
+      <a class="back" href="index.html#projects">← All projects</a>
+      <span class="detail__org">${text(project.org)} · ${text(project.dates)}</span>
+    </div>
 
-    <span class="detail__org">${text(project.org)} · ${text(project.dates)}</span>
     <h1 class="detail__title">${text(project.title)}</h1>
     <p class="detail__summary">${text(project.summary)}</p>
     <div class="tags">${project.tags.map((t) => `<span class="tag">${text(t)}</span>`).join('')}</div>
 
-    <div class="detail__cover">${imageOrPlaceholder(project.cover, plain(project.title))}</div>
+    <div class="detail__cover${project.compactImages ? ' detail__cover--compact' : ''}">${imageOrPlaceholder(project.cover, plain(project.title))}</div>
 
     <div class="detail__body">
       <div class="detail__sections">
@@ -44,9 +46,18 @@
             <p>${text(s.body)}</p>
           </section>`).join('')}
 
+        ${project.video ? `
+          <section class="project-video">
+            <h3>${text(project.video.title || 'Project video')}</h3>
+            <video controls preload="metadata" playsinline poster="${escapeHtml(project.video.poster || project.cover)}" aria-label="${escapeHtml(`${plain(project.title)} video`)}">
+              <source src="${escapeHtml(project.video.src)}" type="video/mp4">
+              Your browser does not support MP4 video playback.
+            </video>
+          </section>` : ''}
+
         <section>
           <h3>Gallery</h3>
-          <div class="gallery">
+          <div class="gallery${project.compactImages ? ' gallery--compact' : ''}">
             ${(project.images || []).map((src) =>
               `<figure>${imageOrPlaceholder(src, plain(project.title))}</figure>`).join('')}
           </div>

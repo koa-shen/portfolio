@@ -21,8 +21,8 @@ body {
   background: #6b7280;
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   color: var(--ink);
-  font-size: 9.6pt;
-  line-height: 1.3;
+  font-size: 10pt;
+  line-height: 1.35;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
@@ -43,39 +43,40 @@ body {
 
 /* ---------- the page ---------- */
 .page {
-  width: 8.5in; min-height: 11in;
+  width: min(calc(100% - 2rem), 8.5in); min-height: 11in;
   margin: 1.5rem auto; padding: 0.4in 0.55in;
   background: var(--paper);
   box-shadow: 0 10px 40px rgba(0,0,0,.35);
 }
 
 /* ---------- header ---------- */
-.r-head { border-bottom: 2px solid var(--brand); padding-bottom: .3rem; margin-bottom: .6rem; }
-.r-name { font-size: 21pt; font-weight: 800; letter-spacing: -.02em; margin: 0; color: var(--brand); }
-.r-role { font-size: 10pt; color: var(--ink-dim); font-weight: 500; margin: .05rem 0 .2rem; }
-.r-contact { display: flex; flex-wrap: wrap; gap: .2rem .75rem; font-size: 8.9pt; color: var(--ink-dim); }
+.r-head { border-bottom: 2px solid var(--brand); padding-bottom: .4rem; margin-bottom: .75rem; }
+.r-name { font-size: 23pt; font-weight: 800; letter-spacing: -.02em; margin: 0; color: var(--brand); }
+.r-role { font-size: 10.5pt; color: var(--ink-dim); font-weight: 500; margin: .1rem 0 .3rem; }
+.r-contact { display: flex; flex-wrap: wrap; gap: .3rem .75rem; font-size: 9.2pt; color: var(--ink-dim); }
 .r-contact span::after { content: ''; }
 
 /* ---------- sections ---------- */
-.r-sec { margin-bottom: .55rem; }
+.r-sec { margin-bottom: .62rem; }
 .r-sec > h2 {
-  font-size: 9.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: .14em;
-  color: var(--brand); margin: 0 0 .22rem;
+  font-size: 9.7pt; font-weight: 700; text-transform: uppercase; letter-spacing: .14em;
+  color: var(--brand); margin: 0 0 .28rem;
   border-bottom: 1px solid var(--rule); padding-bottom: .12rem;
 }
 
-.r-entry { margin-bottom: .38rem; break-inside: avoid; }
+.r-entry { margin-bottom: .46rem; break-inside: avoid; }
 .r-entry:last-child { margin-bottom: 0; }
 .r-row { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
-.r-title { font-size: 10.1pt; font-weight: 700; margin: 0; }
-.r-sub { font-size: 9.4pt; color: var(--ink-dim); font-style: italic; margin: 0; }
-.r-when { font-size: 8.8pt; color: var(--ink-mute); white-space: nowrap; font-weight: 500; }
+.r-title { font-size: 10.5pt; font-weight: 700; margin: 0; }
+.r-sub { font-size: 9.8pt; color: var(--ink-dim); font-style: italic; margin: 0; }
+.r-when { font-size: 9.1pt; color: var(--ink-mute); white-space: nowrap; font-weight: 500; }
 
-.r-entry ul { margin: .1rem 0 0; padding-left: 1rem; }
-.r-entry li { margin-bottom: .06rem; }
+.r-entry ul { margin: .16rem 0 0; padding-left: 1.05rem; }
+.r-entry li { margin-bottom: .1rem; }
+.r-title, .r-sub, .r-when, .r-contact span { overflow-wrap: anywhere; }
 
 .r-skills { display: grid; gap: .1rem; }
-.r-skills div { font-size: 9.1pt; }
+.r-skills div { font-size: 9.4pt; }
 .r-skills b { color: var(--ink); }
 
 .r-tools { font-size: 9.4pt; color: var(--ink-mute); margin: .15rem 0 0; }
@@ -91,13 +92,30 @@ body {
 
 /* ---------- print ---------- */
 @media print {
-  body { background: #fff; font-size: 9.6pt; }
+  body { background: #fff; font-size: 10pt; line-height: 1.28; }
   .toolbar { display: none; }
-  .page { width: auto; min-height: 0; margin: 0; padding: 0.35in 0.45in; box-shadow: none; }
+  .page { width: auto; min-height: 0; margin: 0; padding: 0.22in 0.45in; box-shadow: none; }
+  .r-head { padding-bottom: .25rem; margin-bottom: .4rem; }
+  .r-sec { margin-bottom: .35rem; }
+  .r-entry { margin-bottom: .3rem; }
+  .r-entry ul { margin-top: .08rem; }
+  .r-entry li { margin-bottom: 0; }
   /* Placeholders should never land in a submitted PDF — they stay visible
      so you notice them, but printing marks them loudly. */
   .filler { background: #ffe28a !important; }
   a { color: inherit; text-decoration: none; }
+}
+
+@media (max-width: 600px) {
+  .toolbar { flex-wrap: wrap; justify-content: flex-start; }
+  .toolbar span { flex-basis: 100%; line-height: 1.4; }
+  .page { min-height: 0; margin: .75rem auto; padding: 1.1rem; }
+  .r-row { display: block; }
+  .r-when { display: block; white-space: normal; margin-top: .08rem; }
+  .r-entry { margin-bottom: .65rem; }
+  .r-entry ul { margin-top: .25rem; }
+  .r-entry li { margin-bottom: .25rem; }
+  .r-contact { gap: .3rem .65rem; }
 }
 
 @page { size: Letter; margin: 0.4in; }

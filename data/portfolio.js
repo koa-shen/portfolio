@@ -241,14 +241,20 @@ const PORTFOLIO = {
 
     {
       id: "robot-arm",
-      title: "6-DOF Printed Robotic Manipulator",
+      title: "Compact Cycloidal Reducer & Stepper Package",
       org: "Personal Project",
       dates: "Summer 2026 – Present",
-      featured: true,
+      featured: false,
+      compactImages: true,
       summary:
-        "6-DOF desktop manipulator under development with custom cycloidal reducers, PETG structural components, TMC2209 stepper drivers, a motor-shaft AS5600 encoder bench setup, and C++/PlatformIO firmware.",
-      tags: ["C++", "PlatformIO", "TMC2209", "AS5600 Encoder", "Cycloidal Drives", "PETG / DFM", "Drake"],
+        "In-progress development and bench validation of a compact 15:1 cycloidal reducer and NEMA 17 stepper package, with motor-shaft encoder feedback and custom firmware.",
+      tags: ["In Progress", "C++", "PlatformIO", "TMC2209", "AS5600 Encoder", "15:1 Cycloidal Reducer", "PETG / DFM"],
       cover: "assets/images/robot-arm/FULL REDUCER ASSEMBLY RENDER ISO.jpg",
+      video: {
+        title: "Single-Joint Motor and Reducer Bench Test",
+        src: "assets/videos/robot-arm-motor-test.mp4",
+        poster: "assets/images/robot-arm/MOTOR MODULE TEST VIDEO POSTER.jpg",
+      },
       images: [
         "assets/images/robot-arm/FULL REDUCER ASSEMBLY RENDER EXPLODED ISO.jpg",
         "assets/images/robot-arm/REDUCER SECTION SIDE VIEW.png",
@@ -258,7 +264,7 @@ const PORTFOLIO = {
       ],
       sections: [
         {
-          heading: "Goal",
+          heading: "Long-term goal",
           body: "Build a capable 6-DOF desktop manipulator using custom 3D-printed cycloidal reducers and off-the-shelf electronics, serving as a physical hardware testbed for the Drake-based planning framework developed at SLAC.",
         },
         {
@@ -407,7 +413,7 @@ const PORTFOLIO = {
         },
         {
           heading: "GR26 hybrid jig",
-          body: "For GR26, the team shifted design philosophy: 3D-printed locating brackets were combined with 80/20 and plywood to make the jig easier to assemble while improving positional control. The hybrid system focused precision where it mattered at the tube nodes rather than relying on an increasingly complicated all-plywood fixture, cutting assembly time a further 30% from the GR25 design.",
+          body: "For GR26, the team shifted design philosophy: 3D-printed locating brackets were combined with reused 80/20 and plywood to make the jig easier to assemble while improving positional control. Printing the brackets cost less in materials and labor than laser-cutting equivalent parts, while reusing the 80/20 avoided buying a new frame setup, stock, and machined components. The hybrid design focused precision at the tube nodes and cut assembly time a further 30% from GR25.",
         },
       ],
       links: [],

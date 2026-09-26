@@ -76,7 +76,7 @@ Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bulle
 
 - [x] **C/C++ experience** — verified from PlatformIO firmware on desktop-6dof-arm
 - [x] **Git/GitHub presence** — linked `https://github.com/koa-shen/desktop-6dof-arm`
-- [ ] **A short video** — 20 seconds of a joint moving, or the MeshCat sim catching a
-      collision, embedded on the project page. Motion sells motion control.
+- [x] **Robot-arm motion video** — single-joint motor/reducer bench test embedded on
+      the project page.
 - [ ] **Controls coursework or self-study** — you're targeting controls roles; make sure
       something on the page demonstrates feedback control, not just mechanism design.
