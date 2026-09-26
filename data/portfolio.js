@@ -144,7 +144,7 @@ const PORTFOLIO = {
       id: "digital-twin",
       title: "Digital Twin Simulation Framework for LCLS Motion Stages",
       org: "SLAC National Accelerator Laboratory",
-      dates: "2026",
+      dates: "2026 – Present",
       featured: true,
       summary:
         "Open-source kinematic-simulation framework with live collision detection, 15 reusable stage models, and active adoption across three high-level hutch assemblies; motion planning remains in development.",
@@ -193,7 +193,7 @@ const PORTFOLIO = {
       id: "polycapillary",
       title: "Polycapillary Optics Assembly Redesign",
       org: "SLAC National Accelerator Laboratory",
-      dates: "2026",
+      dates: "2026 – Present",
       featured: true,
       summary:
         "Redesign of a high-use beamline optics assembly, driven by collision-simulation findings and instrument-scientist feedback to improve alignment, maneuverability, and beam-time efficiency.",
@@ -384,18 +384,19 @@ const PORTFOLIO = {
       id: "chassis-welding-jig",
       title: "FSAE Chassis Welding Jig Evolution",
       org: "Gaucho Racing",
-      dates: "2024 – 2026",
+      dates: "Winter 2024 – Present",
       featured: true,
       summary:
         "Designed successive welding fixtures that locate the racecar's tube chassis at its CAD-defined nodes, progressing from an 80/20-and-plywood GR25 jig to a more accurate, assembly-friendly hybrid system for GR26.",
       tags: ["Welding Fixtures", "Assembly Design", "80/20", "3D Printing", "Laser Cutting", "Tolerance Stackup"],
-      cover: "assets/images/chassis-jig/GR26 CHASSIS JIG ISO.png",
+      cover: "assets/images/chassis-jig/CH26.ChassisJig8020 RENDER ISO.jpg",
       images: [
+        "assets/images/chassis-jig/CH26.ChassisJig8020 RENDER SIDE.jpg",
+        "assets/images/chassis-jig/GR26 CHASSIS JIG ISO.png",
+        "assets/images/chassis-jig/GR26 CHASSIS JIG SIDE.png",
         "assets/images/chassis-jig/GR25 CHASSIS JIG AERIAL.png",
         "assets/images/chassis-jig/GR25 CHASSIS JIG ISO.png",
         "assets/images/chassis-jig/GR25 CHASSIS JIG SIDE.png",
-        "assets/images/chassis-jig/GR26 CHASSIS JIG SIDE.png",
-        "assets/images/chassis-jig/CH26.ChassisJig8020 RENDER ISO.jpg",
         "assets/images/chassis-jig/CHASSIS FIXTURE IN TRUCKBED.jpg",
       ],
       sections: [
@@ -423,7 +424,7 @@ const PORTFOLIO = {
       id: "steering-wheel-development",
       title: "FSAE Steering Wheel Development",
       org: "Gaucho Racing",
-      dates: "2024 – 2026",
+      dates: "Fall 2024 – Present",
       featured: false,
       summary:
         "Led and then supervised successive steering-wheel iterations that reduced mass, improved driver comfort and force application, and coordinated manufacturing and vehicle integration across subteams.",
@@ -467,7 +468,7 @@ const PORTFOLIO = {
       id: "exploratorium-exhibits",
       title: "Interactive Exhibit Mechanism Redesigns",
       org: "Exploratorium",
-      dates: "2025",
+      dates: "Summer 2025",
       featured: false,
       summary:
         "Completed three major exhibit overhauls and serviced 100+ public exhibits, combining reverse engineering with manual machining, welding, and visitor-focused reliability improvements.",

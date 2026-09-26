@@ -24,6 +24,11 @@ assets/images/      Photos and renders
 Edit [data/portfolio.js](data/portfolio.js) and both the site and the resume update.
 You should almost never need to touch the HTML.
 
+## Text flow and spacing
+- Keep prose in paragraphs and let it wrap naturally; avoid manual `<br>` line breaks.
+- Group paired metadata with flexible rows and gaps; let them wrap on desktop and stack on narrow screens.
+- Adjust shared copy rhythm in `css/styles.css` using `--copy-leading`, `--paragraph-space`, `--section-space`, and `--heading-copy-space` before adding one-off margins.
+
 ## Placeholder content
 Any string in the data file starting with `FILLER:` is a placeholder. It renders with a
 yellow **NEEDS CONTENT** flag on the site and a **TODO** flag on the resume, so nothing
