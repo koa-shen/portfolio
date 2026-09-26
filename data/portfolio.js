@@ -460,7 +460,7 @@ const PORTFOLIO = {
       summary:
         "Completed three major exhibit overhauls and serviced 100+ public exhibits, combining reverse engineering with manual machining, welding, and visitor-focused reliability improvements.",
       tags: ["Reverse Engineering", "Manual Machining", "Welding", "CAD", "Mechanism Design"],
-      cover: "assets/images/exploratorium/ARP FORMS MECHANISM.jpg",
+      cover: "assets/images/exploratorium/REPEATABLE SETUP MANUAL MACHINING.jpg",
       images: [
         "assets/images/exploratorium/REPEATABLE SETUP MANUAL MACHINING.jpg",
         "assets/images/exploratorium/AERIAL OF VIEWER MACHINING.jpg",
