@@ -34,7 +34,6 @@
     "SLAC National Accelerator Laboratory — LCLS",
     "Exploratorium",
     "Gaucho Racing (FSAE EV) — UC Santa Barbara",
-    "Hawkes Lab — UC Santa Barbara",
   ]);
   const ordered = [
     ...D.experience.filter((x) => x.type === 'paid' && resumeOrganizations.has(x.org)),
@@ -53,9 +52,6 @@
     "Gaucho Racing (FSAE EV) — UC Santa Barbara": [
       "Lead a 15-person chassis/ergonomics team; GR26 passed inspection and placed 30th at FSAE EV 2026.",
       "CNC-machined suspension assemblies on Haas mills/lathes with Mastercam; managed five driver components and welding fixtures.",
-    ],
-    "Hawkes Lab — UC Santa Barbara": [
-      "Worked with graduate mentors on two robotics projects; trained 50+ hours in composites, 3D printing, waterjet, and actuation-test firmware.",
     ],
   };
 

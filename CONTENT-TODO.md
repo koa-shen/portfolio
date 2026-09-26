@@ -57,10 +57,6 @@ Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bulle
 - [ ] Exhibits serviced / redesigned (a count)
 - [ ] Anything you left behind: documentation, a process, a jig
 
-**Hawkes Lab**
-- [ ] What the research was actually about — one sentence of context
-- [ ] Publication, poster, or demo contributions; advisor / grad student
-
 ## Tier 3 — polish
 
 - [x] Third About paragraph — tightened for launch

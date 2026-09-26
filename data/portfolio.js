@@ -117,20 +117,6 @@ const PORTFOLIO = {
         "Optimized the quick-release steering wheel from 3 lbs to 1.7 lbs — under half its prior weight — while improving driver comfort and force application.",
       ],
     },
-    {
-      org: "Hawkes Lab — UC Santa Barbara",
-      role: "Undergraduate Researcher",
-      dates: "2025 – 2026 Academic Year",
-      location: "Santa Barbara, CA",
-      type: "project",
-      tags: ["Design", "Composites", "Arduino"],
-      bullets: [
-        "Designed and manufactured composite structures for soft/continuum robotics research hardware.",
-        "Built Arduino-based control and sensing for benchtop test setups.",
-        "Contributed to two ongoing projects under Prof. Elliot Hawkes: a flywheel-clutch jumping robot that stores jump energy in a spinning mass rather than an elastic release (Hawkes Lab's signature approach), making it far more reusable and a candidate for aerial scouting on thin-atmosphere planets; and a running-shoe midsole using variable-pressure air pouches instead of foam, with a composite shell providing the structural stiffness the pouches can't.",
-        "Designed mechanism components and a polycarbonate load-cell test enclosure for safely characterizing the jumping robot's launch potential; iterated several composite midsole layups (material, weave, cure process, and reinforcement geometry) to tune stiffness and bending response. Worked with graduate students James Clinton and Anders Seawright on the two projects, respectively — no publications or posters yet.",
-      ],
-    },
   ],
 
   /* ===================== PROJECTS ===================== */
