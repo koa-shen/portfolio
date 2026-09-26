@@ -283,7 +283,7 @@ const PORTFOLIO = {
       id: "gr26-wheel-assemblies",
       title: "GR26 CNC Wheel Assemblies",
       org: "Gaucho Racing",
-      dates: "2025 – 2026",
+      dates: "Winter 2025 – Spring 2026",
       featured: true,
       summary:
         "CNC machined suspension wheel assemblies programmed in Mastercam and cut on Haas mills and lathes, iterated with the suspension design team through GD&T feedback.",
