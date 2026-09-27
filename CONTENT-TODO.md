@@ -39,7 +39,8 @@ Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bulle
 - [ ] Cycloidal reducer — 15:1 per joint confirmed; measured backlash coming soon
 - [x] Print materials and orientation — PETG and ABS structural parts; layers oriented for radial housing loads and geometric accuracy; TPU strain relief planned
 - [ ] Upload a photo of the encoder-and-limit-switch backlash test setup
-- [ ] Arm reach, payload target, holding torque, total BOM cost — not found in the current public repo; add them to the README or provide the file path
+- [x] Arm targets — 381 mm reach, 0.5 kg useful payload, and no more than 5 s between opposite sides of the workspace; all provisional
+- [ ] Measured output holding torque and total BOM cost — prototype motor is rated at 42 N·cm; payload alone requires about 1.87 N·m at the shoulder
 - [x] Controls architecture: MCU, TMC2209 driver, I2C + TCA9548A mux, AS5600 absolute joint encoders, telemetry CSV (`ms,step_pos,angle_deg`)
 - [x] Repo link: `https://github.com/koa-shen/desktop-6dof-arm`
 

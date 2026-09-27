@@ -76,7 +76,7 @@
   ]);
   const resumeProjectSummaries = {
     "robot-arm": [
-      "Designed a compact 15:1 cycloidal reducer that fits within a NEMA 17's 42 mm square face for a planned 6-DOF desktop manipulator.",
+      "Designed a compact 15:1 cycloidal reducer within a NEMA 17's 42 mm square face for a planned 6-DOF arm targeting 381 mm reach and a 0.5 kg payload.",
       "Built PlatformIO C++ firmware for TMC2209 stepper control, including step/dir generation and real-time telemetry.",
       "Integrated a 12-bit AS5600 magnetic encoder to detect missed steps and characterize reducer motion; multi-joint output sensing remains planned.",
     ],

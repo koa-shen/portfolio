@@ -257,11 +257,11 @@ const PORTFOLIO = {
       sections: [
         {
           heading: "Long-term goal",
-          body: "Build a capable 6-DOF desktop manipulator using custom 3D-printed cycloidal reducers and off-the-shelf electronics, serving as a physical hardware testbed for the Drake-based planning framework developed at SLAC.",
+          body: "Build a 6-DOF desktop manipulator using custom 3D-printed cycloidal reducers and off-the-shelf electronics, serving as a physical hardware testbed for the Drake-based planning framework developed at SLAC. Provisional whole-arm targets are 0.5 kg of useful payload, about 381 mm (15 in) of reach from the base axis to the tool center point, and a move between opposite sides of the usable workspace in no more than five seconds. These are design goals, not validated capabilities.",
         },
         {
           heading: "Actuation & Firmware",
-          body: "Driven by NEMA 17 stepper motors (1.5A, 42 N·cm) paired with TMC2209 silent drivers. Built custom C++ firmware using PlatformIO for microcontrollers, implementing phase-based bringup, step/dir pulse generation, and real-time CSV telemetry (ms, step_pos, angle_deg).",
+          body: "The single-joint prototype uses a 1.5 A NEMA 17 stepper with a nominal 42 N·cm holding-torque rating, paired with a TMC2209 silent driver. Built custom C++ firmware using PlatformIO for microcontrollers, implementing phase-based bringup, step/dir pulse generation, and real-time CSV telemetry (ms, step_pos, angle_deg). The exact motor remains to be confirmed before final whole-arm design.",
         },
         {
           heading: "Position Sensing",
@@ -273,7 +273,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Reduction & Packaging",
-          body: "Each cycloidal reducer runs a 15:1 reduction, sized to be compatible with any NEMA 17 stepper: it fits within the motor's 42x42mm face profile and is shorter axially than the stepper itself, so it packages cleanly into linkages without growing the joint envelope. Measured backlash, holding torque, arm reach, payload target, and total BOM cost are still being characterized as the build progresses.",
+          body: "Each cycloidal reducer runs a 15:1 reduction, sized to be compatible with any NEMA 17 stepper: it fits within the motor's 42x42mm face profile and is shorter axially than the stepper itself, so it packages cleanly into linkages without growing the joint envelope. At the 0.5 kg payload target and 381 mm extension, payload alone applies about 1.87 N·m of static shoulder torque before gripper, link, efficiency, and dynamic loads are included. Measured output holding torque, backlash, and total BOM cost remain pending.",
         },
         {
           heading: "Current Validation & Future Architecture",
