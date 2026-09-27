@@ -64,7 +64,8 @@ const PORTFOLIO = {
       location: "Santa Barbara, CA",
       gpa: "3.97 Major GPA · 3.94 Cumulative GPA",
       details: [
-        "Relevant coursework: Statics, Dynamics, Intro to Mechanics of Materials, Advanced Mechanics of Materials, Circuits, Intro MATLAB, Intermediate MATLAB, Calculus-based Physics series, Calculus series.",
+        "Relevant coursework: Statics, Dynamics, Dynamical Systems (in progress), Machine Learning (in progress), Intro and Advanced Mechanics of Materials, Circuits, MATLAB, Calculus-based Physics, and Calculus.",
+        "Planned this academic year: Mechatronics, Robotics Lab, and Inverse Kinematics.",
         "Dean's Honors, College of Engineering — every quarter to date.",
       ],
     },
@@ -111,10 +112,10 @@ const PORTFOLIO = {
       tags: ["Assembly Design", "Mechatronics", "Project Management", "CNC", "Welding"],
       bullets: [
         "Previously led a 15-person team through ergonomics sketches, detail design, manufacturing, and installation of the GR26 driver safety systems; passed technical inspection at FSAE EV competition fully rules-compliant.",
-        "CNC machined GR26 suspension wheel assemblies on Haas mills and lathes, programming toolpaths in Mastercam and iterating on GD&T feedback with the suspension design team.",
+        "CNC machined 4130 chromoly steel and 7075-T6 aluminum GR26 suspension components on Haas TM mills and lathes, holding bearing interfaces within 0.0005 in.",
         "Own chassis and ergonomics packaging, including welded tube structures, tube notching, and assembly design.",
-        "Placed 30th at FSAE EV 2026 (Brooklyn, MI), up from 54th the year before — the team's first time passing technical inspection and competing in every dynamic event.",
-        "Optimized the quick-release steering wheel from 3 lbs to 1.7 lbs — under half its prior weight — while improving driver comfort and force application.",
+        "Placed 30th at 2026 Michigan FSAE Electric, 2nd among UC teams, best UC in endurance, and 4th among California teams.",
+        "Helped evolve the quick-release steering wheel from 5 lbs in 2024 to 1.7 lbs in its final 2026 form through iterative design and FEA-driven weight optimization.",
       ],
     },
   ],
@@ -268,7 +269,7 @@ const PORTFOLIO = {
         },
         {
           heading: "DFM & Materials",
-          body: "Structural components are printed in PETG and ABS on a Bambu P1S, with custom layouts for M3 fasteners. TPU strain relief and more complete cable routing are planned once the motion chain exists; the current bench wiring remains loose while the joint architecture is still being developed.",
+          body: "Structural components are printed in PETG and ABS on a Bambu P1S, with layer orientation chosen to maximize radial load capacity in the reducer housing's primary loading case. Print orientation is also selected for geometric accuracy because tight tolerances determine the compromise between backlash and mechanical resistance. TPU strain relief and more complete cable routing are planned once the motion chain exists; the current bench wiring remains loose while the joint architecture is still being developed.",
         },
         {
           heading: "Reduction & Packaging",
@@ -291,8 +292,8 @@ const PORTFOLIO = {
       dates: "Winter 2025 – Spring 2026",
       featured: true,
       summary:
-        "CNC machined suspension wheel assemblies programmed in Mastercam and cut on Haas mills and lathes, iterated with the suspension design team through GD&T feedback.",
-      tags: ["Mastercam", "Haas", "CNC Mill", "CNC Lathe", "GD&T", "DFM"],
+        "CNC machined 33 precision suspension components on Haas TM mills and lathes, holding critical bearing interfaces within 0.0005 in and improving spindle manufacturability through design review.",
+      tags: ["Mastercam", "Haas", "4130 Steel", "7075-T6 Aluminum", "CNC Mill", "CNC Lathe", "GD&T", "DFM"],
       cover: "assets/images/gr26-wheels/SPINDLE CNC MILLING COMPLETE.jpg",
       images: [
         "assets/images/gr26-wheels/UPRIGHT MACHINING IN PROGRESS.jpg",
@@ -303,23 +304,23 @@ const PORTFOLIO = {
       sections: [
         {
           heading: "Scope",
-          body: "Machined the wheel-end assemblies for the GR26 car's suspension, covering both milling and turning operations.",
+          body: "Machined 8 precision-bored clevises and 16 precision-bored rod ends from 4130 chromoly steel, plus 5 identical spindles and 4 unique but similar or mirrored uprights from 7075-T6 aluminum for the GR26 suspension. The clevises and rod ends receive edge-crimped bearings before being welded to the control arms; the spindle and upright bearing interfaces were the most demanding features. Every job ran on a Haas TM mill or Haas TM lathe.",
         },
         {
           heading: "Design for manufacturing",
-          body: "Worked directly with the suspension design team, feeding GD&T and manufacturability feedback back into the design so the parts could actually be held, fixtured, and inspected.",
+          body: "Worked directly with the suspension design team, feeding GD&T and manufacturability constraints into design reviews. Although only the rear wheels are driven, I proposed using the tripod-coupling housing on all five spindles so the same proven CAM programs could produce four installed parts and one spare. One spindle was still scrapped, but standardizing the design likely prevented at least two additional scrap parts and shortened programming and setup time.",
         },
         {
           heading: "Components & tolerances",
-          body: "Machined uprights, spindles, spacers, and brackets in 7075-T6 aluminum — 5 of each (except uprights, which are wheel-specific) to cover all four wheels plus a spare. Held +/-0.0005in on the wheel hub bearing interfaces (a slight mallet press fit) and +/-0.0002in on the spherical bearing interface for the rod ends (a slip fit, then edge-crimped). Cycle time wasn't optimized for speed — the priority was accuracy, surface finish, and machine/operator safety.",
+          body: "Held a 0.0004 in total tolerance window on the clevis and rod-end bores, with cycle times of about five minutes per part. Held 0.0005 in on the spindle outside-diameter bearing interfaces and upright bore bearing interfaces. Critical fits were measured and confirmed with go/no-go tests.",
         },
         {
           heading: "Fixturing",
-          body: "Used custom softjaws machined from 6061 for most milling operations. Uprights, being one-of-one parts, were held with breadboard step-clamp setups since repeatability wasn't a factor; spacers and brackets used standard vice and parallel-bar setups.",
+          body: "Used breadboard step-clamp setups for most operations. The five identical spindles used a pair of custom softjaws with two locating faces to establish repeatable datums across their different operations.",
         },
         {
           heading: "DFM impact",
-          body: "Scrap rate was mostly a function of Mastercam programming error rather than the design, so DFM feedback didn't move that number. Lead time was the real win: feature-orientation adjustments and tolerance checks caught during design review saved entire machine setups — a savings that multiplies across every replica part made.",
+          body: "The uprights were the highest-risk parts: they tended to flex during machining and push the bearing bore out of tolerance, consuming one-third of the starting stock as scrap. That loss was accepted given the geometry and precision required. The larger lead-time win came from standardizing all five spindles around the tripod-coupling housing, which reused proven CAM and reduced the opportunity for additional setup and programming failures.",
         },
       ],
       links: [],
@@ -365,7 +366,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Results",
-          body: "At FSAE EV 2026 (Brooklyn, Michigan, June 2026) the team placed 30th, up from 54th the year before — the first time the team passed technical inspection, and the first time it competed in a dynamic event, let alone all of them. Full development ran from early August 2025 to early May 2026, roughly nine months sketch-to-installed.",
+          body: "At 2026 Michigan FSAE Electric, the team placed 30th overall, 2nd among UC teams, best among UC teams in endurance, and 4th among California teams. It was the team's first time passing technical inspection and competing in every dynamic event. Full development ran from initial sketches in early July 2025 through the finished car in mid-May 2026, roughly 10 months sketch-to-installed.",
         },
       ],
       links: [],
@@ -449,7 +450,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Result",
-          body: "Across the design cycles, the steering-wheel assembly moved from 4 lb to 3 lb and then to 1.7 lb for GR26, while improving driver comfort and force application at the wheels. The final result was a lighter quick-release wheel that was better integrated with the car and the people driving it.",
+          body: "Across the design cycles, the steering-wheel assembly moved from 5 lb in 2024 to 4 lb in 2025 and 3 lb in the initial 2026 design. Weight-optimization FEA then brought the final 2026 version to 1.7 lb while improving driver comfort and force application at the wheels.",
         },
       ],
       links: [],
@@ -493,7 +494,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Handoff",
-          body: "Every redesigned component was documented in CAD and Confluence so future technicians can access the design intent, reassemble mechanisms, and remanufacture wear items without repeating the original investigation.",
+          body: "I documented which PDM designs were current in Confluence, linked directly to the files, and left remanufacturing instructions and CAM files. The handoff was designed so the next technician can produce custom spares without repeating the original reverse engineering or process development.",
         },
         {
           heading: "Scale & savings",

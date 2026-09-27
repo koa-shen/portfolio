@@ -50,7 +50,7 @@
     ],
     "Gaucho Racing (FSAE EV) — UC Santa Barbara": [
       "Fabrication Team Lead; in the 2025–26 academic year, led a 15-person Chassis & Ergonomics team through GR26 safety-system design, manufacturing, and installation.",
-      "CNC-machined GR26 suspension assemblies on Haas mills and lathes with Mastercam, iterating GD&T feedback with the suspension design team.",
+      "CNC-machined 33 suspension components from 4130 steel and 7075-T6 aluminum, holding critical bearing interfaces within 0.0005 in and standardizing five spindles around proven CAM.",
     ],
   };
 
@@ -82,7 +82,7 @@
     ],
     "digital-twin": ["Built a Drake-based digital twin with OpenCascade CAD import, CoACD collision meshes, and MeshCat visualization; millisecond-scale checks cover 305 active bodies in a 32-DOF assembly, using a catalog of 15 common LCLS stages."],
     "polycapillary": ["Redesigned a 32-DOF optics assembly with three kinematic bases and six hot-swappable optics, targeting 1–2 hours of alignment savings per shift-day and roughly $30k in annual value."],
-    "steering-wheel-development": ["Integrated buttons, potentiometers, a display, and quick-release hardware; reduced mass from 4 lb to 1.7 lb across design revisions while improving driver fit."],
+    "steering-wheel-development": ["Integrated buttons, potentiometers, a display, and quick-release hardware; reduced mass from 5 lb in 2024 to 1.7 lb in 2026 through iterative design and weight-optimization FEA."],
   };
   const projects = D.projects.filter((p) => resumeProjectIds.has(p.id)).map((p) => `
     <div class="r-entry">
