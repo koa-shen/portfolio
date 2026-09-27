@@ -21,19 +21,19 @@ Use this as a launch checklist. There are no active `FILLER:` strings in [data/p
 Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bullet upgrade.
 
 **Digital twin framework (your flagship)**
-- [ ] Largest model: how many DOF, how many bodies?
-- [ ] How many stages inventoried into the library?
-- [ ] Planning / collision-check solve time
-- [ ] Interferences caught before they reached hardware
-- [ ] Adoption: how many assemblies, hutches, or engineers now use it?
-- [ ] Real constraints (enclosure envelope, latency, existing controls integration)
-- [ ] Public repo link, if the code can be open-sourced
-- [ ] "What I'd do differently" paragraph
+- [x] Largest model — 32 DOF and 305 active bodies
+- [x] How many stages inventoried into the library? — 15 commonly used LCLS stages
+- [x] Planning / collision-check solve time — planning TBD; collision checks take a few ms
+- [x] Interferences caught — at least five use-restricting pinch points found retroactively
+- [x] Adoption: three assemblies currently simulated
+- [x] Real constraints — vacuum/helium envelopes, compact FEH beamline, Solid Edge/Teamcenter and EPICS interoperability
+- [x] Public repo link — `https://github.com/slaclab/twin-lab/`
+- [x] "What I'd do differently" paragraph
 
 **Polycapillary redesign**
-- [ ] Alignment time before vs. after
-- [ ] DOF added, assembly mass, kinematic mount repeatability
-- [ ] Experiments served per year + the dollar figure you're cleared to publish
+- [x] Alignment time before vs. after — not yet tested; projected savings of 1–2 hours per shift-day
+- [x] DOF and repeatability — 2 DOF added; 3 kinematic bases and 6 hot-swappable optics at <100 µrad repeatability; mass is not relevant
+- [x] Experiments served per year + projected value — 2 experiments per year on average; approximately $30k annual savings once implemented
 
 **Robot arm**
 - [ ] Cycloidal reduction ratio per joint, measured backlash

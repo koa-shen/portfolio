@@ -22,7 +22,7 @@ const PORTFOLIO = {
     focus: "Robotics · Controls · Motion Systems · Design for Manufacturing",
     // Short punchy line under your name on the hero. Rewrite in your voice.
     tagline:
-      "I design, simulate, and machine motion systems — from 20-DOF X-ray beamline stages at SLAC to cycloidal-drive robot arms on my bench at home.",
+      "I design, simulate, and machine motion systems — from a 32-DOF X-ray beamline assembly at SLAC to cycloidal-drive robot arms on my bench at home.",
     location: "San Francisco Bay Area / Santa Barbara, CA",
     email: "koashensf@gmail.com",
     phone: "(415) 810-8344",
@@ -38,7 +38,7 @@ const PORTFOLIO = {
   /* Four quick credibility hits. Keep them concrete. */
   stats: [
     { value: "3.97", label: "Major GPA" },
-    { value: "20+ DOF", label: "Simulated at SLAC" },
+    { value: "32 DOF", label: "Simulated at SLAC" },
     { value: "15", label: "Engineers Led" },
     { value: "40+", label: "Parts CNC Machined" },
   ],
@@ -81,11 +81,11 @@ const PORTFOLIO = {
       type: "paid",
       tags: ["Design", "GD&T", "Kinematic Simulation", "Collision Detection", "Controls"],
       bullets: [
-        "Built an open-source Python digital-twin framework (Drake, CoACD, MeshCat, OpenCascade) with live collision detection for 20+ DOF motion assemblies operating in tightly enclosed beamline enclosures; path planning remains in development.",
+        "Built an open-source Python digital-twin framework (Drake, CoACD, MeshCat, OpenCascade) with millisecond-scale collision checks for motion assemblies up to 32 DOF; path planning remains in development.",
         "Redesigned a high-traffic polycapillary optics assembly — kinematic mounts, alignment lasers, irises, and added stages — using the simulation framework to cut interference risk and improve focusing reliability.",
         "Performed statics and dynamics hand calculations to qualify stages and mounts against loading cases protecting $100k+ detectors from crash and drop failures.",
         "Produced design and PDM-controlled documentation in Siemens Solid Edge, applying GD&T for manufacture and inspection.",
-        "Built a 15-stage reusable catalog and began applying the framework to three top-level hutch assemblies; EPICS controls compatibility is in progress so hutch engineers can model and simulate their own assemblies without rewriting kinematics.",
+        "Cataloged 15 stages commonly used across LCLS and applied the framework to three assemblies, with interoperability designed around Solid Edge, Teamcenter PDM, and the controls team's EPICS database.",
       ],
     },
     {
@@ -133,7 +133,7 @@ const PORTFOLIO = {
       dates: "2026 – Present",
       featured: true,
       summary:
-        "Open-source kinematic-simulation framework with live collision detection, 15 reusable stage models, and active adoption across three high-level hutch assemblies; motion planning remains in development.",
+        "Open-source kinematic-simulation framework with millisecond-scale collision checks, 15 reusable stage models, and three assemblies currently simulated; motion planning remains in development.",
       tags: ["Python", "Drake", "CoACD", "MeshCat", "OpenCascade", "Path Planning"],
       cover: "assets/images/digital-twin/TWIN LAB FRONT.png",
       images: [
@@ -147,11 +147,11 @@ const PORTFOLIO = {
       sections: [
         {
           heading: "Problem",
-          body: "The polycapillary test assembly at LCLS packs many independently actuated stages into a small, sealed enclosure. Any commanded move risks driving hardware into a neighbor, and a crash can destroy detectors worth six figures or burn irreplaceable beam time. Static CAD inspection could not practically evaluate every travel range or design revision, so interference was largely checked by intuition.",
+          body: "The XCS polycapillary assembly at LCLS packs 32 DOF into a small, sealed enclosure. Any commanded move risks driving hardware into a neighbor, and a crash can destroy detectors worth six figures or burn irreplaceable beam time. Collision checking is currently retroactive, so the simulation is being used to expose restrictions in the existing assembly before future planning and controls integration can prevent unsafe moves.",
         },
         {
           heading: "Constraints",
-          body: "A ~20ms planning latency target, an enclosure envelope of roughly 3x2x2 ft (with a protruding section for a long detector stage) that leaves little safety margin for 28 DOF of hardware, and mandatory interoperability with SLAC's EPICS controls system — which runs on a private, access-restricted network for the controls team. Tooling also had to stay open-source: commercial options like Siemens Process Simulate cost roughly $25k/year per seat, which doesn't scale to a lab of engineers who need to iterate rapidly.",
+          body: "Enclosure envelopes are driven by vacuum or helium pumping requirements as well as competing space claims along the beamline. Space is especially scarce in the Far Experimental Hall, where XCS sits in a compact facility excavated into a hill. The workflow also needs to interoperate with Siemens Solid Edge, Teamcenter PDM, and the controls team's EPICS database. Tooling had to stay open-source: commercial options like Siemens Process Simulate cost roughly $25k/year per seat, which doesn't scale to a lab of engineers who need to iterate rapidly.",
         },
         {
           heading: "Approach",
@@ -159,19 +159,19 @@ const PORTFOLIO = {
         },
         {
           heading: "Beyond collision detection",
-          body: "Live collision detection is operational. The same framework also provides the kinematic basis for future homing sequences, path planning, and explicit safe and no-go zones; those capabilities remain in development. They matter most on high-DOF assemblies with incomplete encoder coverage, where an operator needs more confidence than a static CAD check can provide.",
+          body: "Interactive collision checking is operational within the simulation, but it is currently retroactive rather than connected to live controls. The same framework provides the kinematic basis for future homing sequences, path planning, and explicit safe and no-go zones; those capabilities remain in development. They matter most on high-DOF assemblies with incomplete encoder coverage, where an operator needs more confidence than a static CAD check can provide.",
         },
         {
           heading: "Results",
-          body: "The largest model to date covers 28 total DOF across a mix of linear, rotary, and tip-tilt stages, with 15 reusable stages in the current catalog. Collision checking is live, using CoACD convex-hull decomposition with a secondary mesh triangle-triangle distance query for verification, both leaning on Drake's fast collision-query algorithms. Applying the framework to the XCS polycapillary test assembly surfaced at least 10 actionable design changes needed for true interference resistance: a helium-purged acrylic enclosure redesign, repositioned stage stacks, new breadboard-mounting brackets, and encoder retrofits on stages that currently have no closed-loop feedback. The framework is now being applied to three top-level hutch assemblies; full path planning and EPICS integration remain in progress.",
+          body: "The largest model to date is the XCS polycapillary assembly, with 32 DOF and 305 active bodies spanning linear, rotary, and tip-tilt motion. The reusable catalog now contains 15 stages commonly used at LCLS, and collision checks complete in a few milliseconds using CoACD convex-hull decomposition and Drake's collision-query algorithms. Retroactive checking of the XCS assembly has identified at least five genuine pinch points that restrict its use. Three assemblies are currently being simulated; full path planning and EPICS integration remain in development.",
         },
         {
           heading: "Operational impact",
-          body: "Replacing intuition-based clearance checks with repeatable motion simulation lets engineers find potential interference before hardware is moved during an experiment. That reduces collision exposure for high-value detectors and optics and supports safer design iteration; the framework identifies risks but cannot guarantee that collisions or schedule disruptions will be eliminated.",
+          body: "Repeatable motion simulation has made at least five real restrictions in the existing XCS polycapillary assembly visible to engineers. Collision checking is still retroactive rather than connected to live controls, but these findings can guide hardware revisions now and provide concrete cases for future path planning and EPICS integration.",
         },
         {
           heading: "What I'd do differently",
-          body: "I'd reconsider the GUI. MeshCat came bundled with Drake and was the path of least resistance, but it's a limited visualization layer — it has no real button support, only sliders, which gets awkward when you want the sim to expose more than a parameter sweep. I'd also revisit the CoACD mesh decomposition step: it enables fast real-time collision queries, but generating a new decomposition after a CAD revision takes about two hours. That's still far faster than commercial alternatives, but slow enough that a rapid-iteration designer might give up on simulating a new revision rather than wait — and speeding that up would make the tool much more compelling to adopt.",
+          body: "First, I would start with a smaller assembly so the core framework matured faster and path planning could begin earlier. Starting with a large, realistic assembly did accelerate development of the stage catalog, but it was a clear schedule tradeoff. Second, I would verify the CAD against the physical assembly before simulation. We discovered deep into STEP-file simulation that the CAD no longer matched the hardware, forcing CAD repairs and simulation work to run in parallel during a 10-week summer program. Third, I would involve XCS controls personnel, instrument scientists, and operators earlier. Their input could have accelerated EPICS live/replay and path planning while shaping the simulation around the needs of experiment runs.",
         },
       ],
       links: [
@@ -199,11 +199,11 @@ const PORTFOLIO = {
       sections: [
         {
           heading: "Problem",
-          body: "The existing polycapillary assembly is used constantly across experiments but was poorly designed: alignment was slow and unreliable, packaging invited interference with neighboring hardware, and setup consumed X-ray beam time that costs tens of thousands of dollars per experiment.",
+          body: "The polycapillary assembly serves about two experiments per year, each typically running for a week. During those runs, alignment is slow and unreliable, packaging invites interference with neighboring hardware, and setup consumes X-ray beam time that costs tens of thousands of dollars per experiment.",
         },
         {
           heading: "Design changes",
-          body: "Collision-simulation findings and direct feedback from instrument scientists drove new brackets, a more stable enclosure base mount, kinematic mounts for repeatable hot-swapping, alignment lasers and irises for semi-fine alignment, cable management and detector strain relief, and additional stages for detector maneuverability. Packaging was reworked to remove identified interference risks while making the assembly more usable in real experimental workflows.",
+          body: "Collision-simulation findings and direct feedback from instrument scientists drove new brackets, a more stable enclosure base mount, three kinematic bases with six optical components on hot-swappable top plates, alignment lasers and irises for semi-fine alignment, cable management and detector strain relief, and two additional DOF for detector maneuverability. Packaging was reworked to remove identified interference risks while making the assembly more usable in real experimental workflows.",
         },
         {
           heading: "Analysis",
@@ -211,7 +211,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Impact",
-          body: "The redesign moves precision alignment out of the live-beam workflow and simplifies setup and recovery, saving hours of beamtime per year across an assembly used in an estimated 1–2 experiments annually. At approximately $150k per day (about $6.25k per hour), those hours represent an estimated thousands to tens of thousands of dollars in annual beamtime value, not audited cash savings; the annual time and value estimates should be confirmed with the instrument team. LCLS experiments are scheduled far in advance and run on fixed schedules, so improved setup reliability also lowers the risk of delays or scrapped runs that consume staff, instrument, and preparation resources beyond beamtime itself.",
+          body: "The redesign is projected to save roughly 1–2 hours of alignment work per shift-day during week-long experiments, which use the assembly about twice per year on average. Because no polycapillary experiment runs are scheduled in the immediate future, the improvement has not yet been timed in operation. Once all fixes are implemented, the expected annual value is on the order of $30k; this is a planning estimate rather than audited cash savings. Improved setup reliability should also lower the risk of delays or scrapped runs that consume staff, instrument, and preparation resources beyond beamtime itself.",
         },
         {
           heading: "Alignment workflow",
@@ -219,7 +219,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Numbers",
-          body: "Added 2 DOF to the assembly, bringing it to 30 DOF total. Kinematic mount repeatability follows the Newport M-BK-1A spec sheet. The assembly serves an estimated 1–2 experiments per year. Precise mass and enclosure dimensions are pending final CAD.",
+          body: "Added 2 DOF, bringing the assembly to 32 DOF total, along with three kinematic bases supporting six optical components on hot-swappable top plates. The kinematic interfaces provide less than 100 microradians of repeatability. The assembly serves two experiments per year on average; total assembly mass is not a meaningful design metric for this application.",
         },
       ],
       links: [],

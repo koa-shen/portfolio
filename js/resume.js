@@ -80,8 +80,8 @@
       "Built PlatformIO C++ firmware for TMC2209 stepper control, including step/dir generation and real-time telemetry.",
       "Integrated a 12-bit AS5600 magnetic encoder to detect missed steps and characterize reducer motion; multi-joint output sensing remains planned.",
     ],
-    "digital-twin": ["Built a Drake-based digital twin with OpenCascade CAD import, CoACD collision meshes, and MeshCat visualization; live checks cover 28 DOF across 15 reusable stages, with adoption across three hutch assemblies in progress."],
-    "polycapillary": ["Redesigned alignment with hot-swap mounts, lasers, irises, and detector stages to save hours of beamtime annually and reduce collision exposure for $100k+ detectors."],
+    "digital-twin": ["Built a Drake-based digital twin with OpenCascade CAD import, CoACD collision meshes, and MeshCat visualization; millisecond-scale checks cover 305 active bodies in a 32-DOF assembly, using a catalog of 15 common LCLS stages."],
+    "polycapillary": ["Redesigned a 32-DOF optics assembly with three kinematic bases and six hot-swappable optics, targeting 1–2 hours of alignment savings per shift-day and roughly $30k in annual value."],
     "steering-wheel-development": ["Integrated buttons, potentiometers, a display, and quick-release hardware; reduced mass from 4 lb to 1.7 lb across design revisions while improving driver fit."],
   };
   const projects = D.projects.filter((p) => resumeProjectIds.has(p.id)).map((p) => `
