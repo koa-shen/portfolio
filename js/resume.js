@@ -13,7 +13,7 @@
     D.meta.email,
     D.meta.linkedin,
     D.meta.github,
-  ].map((v) => `<span>${text(v)}</span>`).join('');
+  ].map((v) => `<span>${text(v.replace(/^https?:\/\//i, ''))}</span>`).join('');
 
   /* Education */
   const education = D.education.map((e) => `
@@ -42,16 +42,15 @@
 
   const resumeExperienceBullets = {
     "SLAC National Accelerator Laboratory — LCLS": [
-      "Built a Drake/CoACD digital twin; live collision detection models 28 DOF across a 15-stage catalog.",
-      "Applying it to three hutch assemblies and the polycapillary redesign; path planning and EPICS remain in development.",
+      "Developed reusable simulation and mechanical-analysis workflows for high-DOF LCLS beamline assemblies.",
+      "Translated interference and loading findings into safer motion and alignment designs for detector-heavy experiments.",
     ],
     Exploratorium: [
-      "Serviced 100+ exhibits and led three major overhauls; Arp Forms fixes avoided $3,000+ in replacement costs.",
-      "Saved about $500 with custom lathe tooling; trained 150+ hours in machining, CNC routing, and TIG welding.",
+      "Reverse-engineered and fabricated repairs for 100+ public exhibits; led three major overhauls, with the Arp Forms redesign avoiding $3,000+ in replacement costs.",
     ],
     "Gaucho Racing (FSAE EV) — UC Santa Barbara": [
-      "Lead a 15-person chassis/ergonomics team; GR26 passed inspection and placed 30th at FSAE EV 2026.",
-      "CNC-machined suspension assemblies on Haas mills/lathes with Mastercam; managed five driver components and welding fixtures.",
+      "Fabrication Team Lead; in the 2025–26 academic year, led a 15-person Chassis & Ergonomics team through GR26 safety-system design, manufacturing, and installation.",
+      "CNC-machined GR26 suspension assemblies on Haas mills and lathes with Mastercam, iterating GD&T feedback with the suspension design team.",
     ],
   };
 
@@ -71,13 +70,19 @@
   /* Complement the experience section with projects that show distinct depth. */
   const resumeProjectIds = new Set([
     "robot-arm",
-    "chassis-welding-jig",
+    "digital-twin",
+    "polycapillary",
     "steering-wheel-development",
   ]);
   const resumeProjectSummaries = {
-    "robot-arm": "15:1 cycloidal reducer/stepper package in bench validation; fits within a NEMA 17's 42 mm square envelope.",
-    "chassis-welding-jig": "GR25 jig located 81 tubes within 0.050 in and cut assembly time 50%; GR26 hybrid design reduced it another 30%.",
-    "steering-wheel-development": "GR25 R&D cut wheel mass 25% and cost 30%; the GR26 wheel reached 1.7 lb with improved ergonomics.",
+    "robot-arm": [
+      "Designed a compact 15:1 cycloidal reducer that fits within a NEMA 17's 42 mm square face for a planned 6-DOF desktop manipulator.",
+      "Built PlatformIO C++ firmware for TMC2209 stepper control, including step/dir generation and real-time telemetry.",
+      "Integrated a 12-bit AS5600 magnetic encoder to detect missed steps and characterize reducer motion; multi-joint output sensing remains planned.",
+    ],
+    "digital-twin": ["Built a Drake-based digital twin with OpenCascade CAD import, CoACD collision meshes, and MeshCat visualization; live checks cover 28 DOF across 15 reusable stages, with adoption across three hutch assemblies in progress."],
+    "polycapillary": ["Redesigned alignment with hot-swap mounts, lasers, irises, and detector stages to save hours of beamtime annually and reduce collision exposure for $100k+ detectors."],
+    "steering-wheel-development": ["Integrated buttons, potentiometers, a display, and quick-release hardware; reduced mass from 4 lb to 1.7 lb across design revisions while improving driver fit."],
   };
   const projects = D.projects.filter((p) => resumeProjectIds.has(p.id)).map((p) => `
     <div class="r-entry">
@@ -85,14 +90,14 @@
         <p class="r-title">${text(p.title)}</p>
         <span class="r-when">${text(p.dates)}</span>
       </div>
-      <ul><li>${escapeHtml(resumeProjectSummaries[p.id])}</li></ul>
+      <ul>${resumeProjectSummaries[p.id].map((summary) => `<li>${escapeHtml(summary)}</li>`).join('')}</ul>
     </div>`).join('');
 
   /* Skills — comma lists, ATS-friendly */
   const resumeSkills = {
-    Software: ["SolidWorks", "Solid Edge", "Mastercam", "Python", "C/C++", "PlatformIO", "MATLAB"],
-    Fabrication: ["CNC / manual machining", "GD&T", "Composites", "Welding", "3D printing"],
-    "Robotics & Controls": ["Drake", "Kinematic simulation / collision detection", "TMC2209", "AS5600 encoders"],
+    "CAD & Manufacturing": ["SolidWorks", "Solid Edge", "Inventor / Fusion", "Mastercam", "GD&T", "CNC / manual machining", "Composites", "Welding", "Sheet metal"],
+    Programming: ["Python", "C/C++", "PlatformIO", "MATLAB", "Arduino / microcontrollers", "Git / GitHub"],
+    "Robotics & Controls": ["Drake kinematics / path planning", "Collision detection", "TMC2209 stepper control", "AS5600 encoders / I2C multiplexing"],
   };
   const skills = Object.entries(resumeSkills).map(([group, list]) => `
     <div><b>${escapeHtml(group)}:</b> ${list.map(escapeHtml).join(', ')}</div>`).join('');

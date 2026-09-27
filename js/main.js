@@ -99,7 +99,7 @@
   document.getElementById('contactLinks').innerHTML = [
     isFiller(D.meta.email)
       ? `<span class="filler">Email — ${escapeHtml(fillerText(D.meta.email))}</span>`
-      : `<a class="btn" href="mailto:${escapeHtml(D.meta.email)}">Email me</a>`,
+      : `<a class="btn" href="mailto:${escapeHtml(D.meta.email)}">Email me</a><button class="btn btn--ghost" id="copyEmail" type="button">Copy email</button>`,
     isFiller(D.meta.linkedin)
       ? `<span class="filler">LinkedIn — ${escapeHtml(fillerText(D.meta.linkedin))}</span>`
       : `<a class="btn btn--ghost" href="${escapeHtml(D.meta.linkedin)}" target="_blank" rel="noopener">LinkedIn</a>`,
@@ -108,6 +108,19 @@
       : `<a class="btn btn--ghost" href="${escapeHtml(D.meta.github)}" target="_blank" rel="noopener">GitHub</a>`,
     `<a class="btn btn--ghost" href="resume.html">Resume</a>`,
   ].join('');
+
+  const copyEmail = document.getElementById('copyEmail');
+  if (copyEmail) {
+    copyEmail.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(D.meta.email);
+        copyEmail.textContent = 'Copied';
+        window.setTimeout(() => { copyEmail.textContent = 'Copy email'; }, 1800);
+      } catch {
+        window.prompt('Copy this email address:', D.meta.email);
+      }
+    });
+  }
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
