@@ -234,7 +234,7 @@ const PORTFOLIO = {
       compactImages: true,
       summary:
         "In-progress development and bench validation of a compact 15:1 cycloidal reducer and NEMA 17 stepper package, with motor-shaft encoder feedback and custom firmware.",
-      tags: ["In Progress", "C++", "PlatformIO", "TMC2209", "AS5600 Encoder", "15:1 Cycloidal Reducer", "PETG / DFM"],
+      tags: ["In Progress", "C++", "PlatformIO", "TMC2209", "AS5600 Encoder", "15:1 Cycloidal Reducer", "PETG / ABS"],
       cover: "assets/images/robot-arm/FULL REDUCER ASSEMBLY RENDER ISO.jpg",
       video: {
         title: "Single-Joint Motor and Reducer Bench Test",
@@ -263,7 +263,7 @@ const PORTFOLIO = {
         },
         {
           heading: "DFM & Materials",
-          body: "Printed on a Bambu P1S using PETG for structural and encoder mounting parts for thermal and mechanical stability near warm motors, TPU for cable strain relief, and custom M3 fastener hardware layouts.",
+          body: "Structural components are printed in PETG and ABS on a Bambu P1S, with custom layouts for M3 fasteners. TPU strain relief and more complete cable routing are planned once the motion chain exists; the current bench wiring remains loose while the joint architecture is still being developed.",
         },
         {
           heading: "Reduction & Packaging",
@@ -271,7 +271,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Current Validation & Future Architecture",
-          body: "The project is currently in 15:1 reducer characterization: live firmware records motor-angle data and switch-based output dead band, while torque, thermal behavior, payload, and reach remain to be measured. Kinematic simulation and trajectory optimization are planned in Python and Drake, with a future SPI/CAN architecture for higher joint-telemetry bandwidth.",
+          body: "The project is currently in 15:1 reducer characterization. The backlash test uses encoder feedback with a limit switch: the shaft is preloaded against the switch, then backed off while the encoder measures the interval of shaft motion before the switch signal changes. The measured backlash value, torque, thermal behavior, payload, and reach remain pending. Kinematic simulation and trajectory optimization are planned in Python and Drake, with a future SPI/CAN architecture for higher joint-telemetry bandwidth.",
         },
       ],
       links: [

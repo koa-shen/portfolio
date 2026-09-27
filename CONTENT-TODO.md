@@ -36,8 +36,9 @@ Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bulle
 - [x] Experiments served per year + projected value — 2 experiments per year on average; approximately $30k annual savings once implemented
 
 **Robot arm**
-- [ ] Cycloidal reduction ratio per joint, measured backlash
-- [ ] Print materials chosen and why; layer orientation decisions (updated PETG/TPU/DFM)
+- [ ] Cycloidal reducer — 15:1 per joint confirmed; measured backlash coming soon
+- [ ] Print materials and orientation — PETG and ABS used structurally; TPU strain relief and cable management planned; layer-orientation rationale still needed
+- [ ] Upload a photo of the encoder-and-limit-switch backlash test setup
 - [ ] Arm reach, payload target, holding torque, total BOM cost
 - [x] Controls architecture: MCU, TMC2209 driver, I2C + TCA9548A mux, AS5600 absolute joint encoders, telemetry CSV (`ms,step_pos,angle_deg`)
 - [x] Repo link: `https://github.com/koa-shen/desktop-6dof-arm`
