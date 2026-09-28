@@ -257,7 +257,7 @@ const PORTFOLIO = {
       sections: [
         {
           heading: "Long-term goal",
-          body: "Build a 6-DOF desktop manipulator using custom 3D-printed cycloidal reducers and off-the-shelf electronics, serving as a physical hardware testbed for the Drake-based planning framework developed at SLAC. Provisional whole-arm targets are 0.5 kg of useful payload, about 381 mm (15 in) of reach from the base axis to the tool center point, and a move between opposite sides of the usable workspace in no more than five seconds. These are design goals, not validated capabilities.",
+          body: "Build a 6-DOF desktop manipulator using custom 3D-printed cycloidal reducers and off-the-shelf electronics, serving as a physical hardware testbed for the Drake-based planning framework developed at SLAC. Provisional whole-arm targets are 0.5 kg of useful payload, about 381 mm (15 in) of reach from the base axis to the tool center point, and a move between opposite sides of the usable workspace in no more than five seconds. These are design goals, not validated capabilities. Other numerical values are provisional estimates unless explicitly identified as confirmed or measured.",
         },
         {
           heading: "Actuation & Firmware",

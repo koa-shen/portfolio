@@ -40,7 +40,7 @@ Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bulle
 - [x] Print materials and orientation — PETG and ABS structural parts; layers oriented for radial housing loads and geometric accuracy; TPU strain relief planned
 - [ ] Upload a photo of the encoder-and-limit-switch backlash test setup
 - [x] Arm targets — 381 mm reach, 0.5 kg useful payload, and no more than 5 s between opposite sides of the workspace; all provisional
-- [ ] Measured output holding torque and total BOM cost — prototype motor is rated at 42 N·cm; payload alone requires about 1.87 N·m at the shoulder
+- [ ] Measured output holding torque and total BOM cost — prototype motor has a nominal 42 N·cm rating; the roughly 1.87 N·m payload-only shoulder torque is an estimate based on provisional reach and payload targets
 - [x] Controls architecture: MCU, TMC2209 driver, I2C + TCA9548A mux, AS5600 absolute joint encoders, telemetry CSV (`ms,step_pos,angle_deg`)
 - [x] Repo link: `https://github.com/koa-shen/desktop-6dof-arm`
 

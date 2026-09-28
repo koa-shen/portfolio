@@ -80,7 +80,10 @@
       "Built PlatformIO C++ firmware for TMC2209 stepper control, including step/dir generation and real-time telemetry.",
       "Integrated a 12-bit AS5600 magnetic encoder to detect missed steps and characterize reducer motion; multi-joint output sensing remains planned.",
     ],
-    "digital-twin": ["Built a Drake-based digital twin with OpenCascade CAD import, CoACD collision meshes, and MeshCat visualization; millisecond-scale checks cover 305 active bodies in a 32-DOF assembly, using a catalog of 15 common LCLS stages."],
+    "digital-twin": [
+      "Built a Drake-based digital twin with OpenCascade CAD import, CoACD collision meshes, and MeshCat visualization; millisecond-scale checks cover 305 active bodies in a 32-DOF assembly, using a catalog of 15 common LCLS stages.",
+      "Applied the framework to three assemblies; retroactive XCS collision checks exposed at least five use-restricting pinch points.",
+    ],
     "polycapillary": ["Redesigned a 32-DOF optics assembly with three kinematic bases and six hot-swappable optics, targeting 1–2 hours of alignment savings per shift-day and roughly $30k in annual value."],
     "steering-wheel-development": ["Integrated buttons, potentiometers, a display, and quick-release hardware; reduced mass from 5 lb in 2024 to 1.7 lb in 2026 through iterative design and weight-optimization FEA."],
   };
@@ -105,7 +108,7 @@
   document.getElementById('resume').innerHTML = `
     <header class="r-head">
       <h1 class="r-name">${text(D.meta.name)}</h1>
-      <p class="r-role">${text(D.meta.role)} · ${text(D.meta.focus)}</p>
+      <p class="r-role">${text(D.meta.role)} · ${text(D.meta.focus.replace("Design for Manufacturing", "DFM"))}</p>
       <div class="r-contact">${contactBits}</div>
     </header>
 
