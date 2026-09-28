@@ -33,6 +33,11 @@ const PORTFOLIO = {
     resumePdf: "assets/Koa_Shen_Resume.pdf",
     // Hero portrait or a hero render of your best project
     heroImage: "assets/images/hero.jpg",
+    personalPhotos: [
+      "assets/images/personal photos/DSC04070.JPG",
+      "assets/images/personal photos/DSC04745.JPG",
+      "assets/images/personal photos/IMG_5488.jpeg",
+    ],
   },
 
   /* ===================== HERO STAT STRIP ===================== */

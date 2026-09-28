@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="js/theme.js"></script>
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -39,6 +40,14 @@
   <div class="wrap footer__inner">
     <span>© <span id="year"></span> Koa Shen</span>
     <a href="index.html#projects">← All projects</a>
+    <label class="theme-picker">
+      <span>Theme</span>
+      <select id="themePreference" aria-label="Color theme">
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>
   </div>
 </footer>
 

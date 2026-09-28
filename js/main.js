@@ -34,6 +34,9 @@
       <div class="stat__l">${text(s.label)}</div>
     </div>`).join('');
 
+  document.getElementById('heroPhotos').innerHTML = D.meta.personalPhotos.map((src, index) => `
+    <figure>${imageOrPlaceholder(src, `${plain(D.meta.name)}, personal photo ${index + 1}`)}</figure>`).join('');
+
   /* ---------- about ---------- */
   document.getElementById('about-body').innerHTML =
     D.about.paragraphs.map((p) => `<p>${text(p)}</p>`).join('');
