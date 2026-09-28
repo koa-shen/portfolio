@@ -428,7 +428,6 @@ const PORTFOLIO = {
         "assets/images/steering-wheel/GR25 STEERING WHEEL 1 BACK.png",
         "assets/images/steering-wheel/GR25 STEERING WHEEL 2 FRONT.png",
         "assets/images/steering-wheel/GR25 STEERING WHEEL 2 INTERNALS.png",
-        "assets/images/steering-wheel/GR25 STEERING WHEEL DEVELOPMENT.png",
         "assets/images/steering-wheel/ER26SteeringWheelQR RENDER EXPLODED ISO.jpg",
       ],
       sections: [
