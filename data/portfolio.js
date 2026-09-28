@@ -28,6 +28,7 @@ const PORTFOLIO = {
     phone: "(415) 810-8344",
     linkedin: "https://linkedin.com/in/koa-shen/",
     github: "https://github.com/koa-shen",
+    website: "koashen.com",
     // Drop the exported PDF at this path (see assets/README note)
     resumePdf: "assets/Koa_Shen_Resume.pdf",
     // Hero portrait or a hero render of your best project
@@ -64,7 +65,7 @@ const PORTFOLIO = {
       location: "Santa Barbara, CA",
       gpa: "3.97 Major GPA · 3.94 Cumulative GPA",
       details: [
-        "Relevant coursework: Statics, Dynamics, Dynamical Systems (in progress), Machine Learning (in progress), Intro and Advanced Mechanics of Materials, Circuits, MATLAB, Calculus-based Physics, and Calculus.",
+        "Relevant coursework: Statics, Dynamics, Dynamical Systems (in progress), Machine Learning (in progress), Intro and Advanced Mechanics of Materials, Circuits, MATLAB, and Calculus-based Physics.",
         "Planned this academic year: Mechatronics, Robotics Lab, and Inverse Kinematics.",
         "Dean's Honors, College of Engineering — every quarter to date.",
       ],
@@ -512,6 +513,7 @@ const PORTFOLIO = {
       { name: "Mastercam", level: 3 },
       { name: "Bambu Studio", level: 3 },
       { name: "VS Code", level: 3 },
+      { name: "Teamcenter", level: 2 },
       { name: "MATLAB", level: 2 },
       { name: "Python", level: 2 },
       { name: "C/C++ (Embedded / PlatformIO)", level: 2 },

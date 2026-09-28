@@ -13,6 +13,7 @@
     D.meta.email,
     D.meta.linkedin,
     D.meta.github,
+    D.meta.website,
   ].map((v) => `<span>${text(v.replace(/^https?:\/\//i, ''))}</span>`).join('');
 
   /* Education */
@@ -26,7 +27,12 @@
         <p class="r-sub">${text(e.degree)} — ${text(e.gpa)}</p>
         <span class="r-when">${text(e.location)}</span>
       </div>
-      <ul>${e.details.map(li).join('')}</ul>
+      <ul>${e.details
+        .filter((detail) => !detail.startsWith('Planned this academic year:'))
+        .map((detail) => detail.startsWith("Dean's Honors, College of Engineering")
+          ? "Consistently earned Dean's Honors in the College of Engineering."
+          : detail)
+        .map(li).join('')}</ul>
     </div>`).join('');
 
   /* Resume keeps the strongest distinct roles; full history stays on the portfolio. */
@@ -42,15 +48,15 @@
 
   const resumeExperienceBullets = {
     "SLAC National Accelerator Laboratory — LCLS": [
-      "Worked across CAD import, kinematic modeling, collision checks, and mechanical load cases for high-DOF beamline assemblies.",
-      "Applied model findings to the XCS optics redesign and documented interfaces across Solid Edge, Teamcenter, and the controls team's EPICS environment.",
+      "Built simulation and load-case workflows spanning CAD import, kinematics, and collision checks for high-DOF beamline assemblies.",
+      "Applied XCS findings to the optics redesign and documented Solid Edge, Teamcenter, and EPICS interfaces.",
     ],
     Exploratorium: [
-      "Serviced 100+ public exhibits and led three major overhauls; the Arp Forms redesign avoided more than $3,000 in replacement costs.",
+      "Serviced 100+ exhibits and led three overhauls; the Arp Forms redesign avoided $3,000+ in replacement costs.",
     ],
     "Gaucho Racing (FSAE EV) — UC Santa Barbara": [
-      "Led a 15-person Chassis & Ergonomics team through GR26 safety-system design, manufacturing, and installation in 2025–26.",
-      "CNC-machined 33 suspension components from 4130 steel and 7075-T6 aluminum, holding critical bearing interfaces within 0.0005 in and standardizing five spindles around proven CAM.",
+      "Led a 15-person team through GR26 safety-system design, fabrication, and installation; passed FSAE technical inspection.",
+      "CNC-machined 33 parts from 4130 steel and 7075-T6 aluminum; held bearing interfaces to 0.0005 in and standardized five spindles.",
     ],
   };
 
@@ -76,16 +82,16 @@
   ]);
   const resumeProjectSummaries = {
     "robot-arm": [
-      "Designed a compact 15:1 cycloidal reducer within a NEMA 17's 42 mm square face for a planned 6-DOF arm; 381 mm reach and 0.5 kg payload are unvalidated design targets.",
+      "Designed a compact 15:1 cycloidal reducer for a planned 6-DOF arm compatible with NEMA 17; 381 mm reach and 0.5 kg payload remain unvalidated targets.",
       "Built PlatformIO C++ firmware for TMC2209 stepper control, including step/dir generation and real-time telemetry.",
-      "Integrated a 12-bit AS5600 magnetic encoder to detect missed steps and characterize reducer motion; multi-joint output sensing remains planned.",
+      "Integrated a 12-bit AS5600 encoder for missed-step detection; multi-joint output sensing remains planned.",
     ],
     "digital-twin": [
-      "Built a Drake-based digital twin with OpenCascade CAD import, CoACD collision meshes, and MeshCat visualization; millisecond-scale checks cover 305 active bodies in a 32-DOF assembly, using a catalog of 15 common LCLS stages.",
-      "Applied the framework to three assemblies; retroactive XCS collision checks exposed at least five use-restricting pinch points.",
+      "Built a 32-DOF Drake digital twin (305 bodies) with OpenCascade, CoACD, and MeshCat; millisecond checks span 15 LCLS stages.",
+      "Applied it to three assemblies; retroactive XCS checks exposed at least five pinch points restricting use.",
     ],
     "polycapillary": ["Developed a redesign for a 32-DOF optics assembly with three kinematic bases and six hot-swappable optics; projected savings of 1–2 hours per shift-day and roughly $30k in annual value are not yet verified."],
-    "steering-wheel-development": ["Integrated buttons, potentiometers, a display, and quick-release hardware; reduced mass from 5 lb in 2024 to 1.7 lb in 2026 through iterative design and weight-optimization FEA."],
+    "steering-wheel-development": ["Integrated buttons, potentiometers, a display, and quick-release; reduced wheel mass from 5 lb to 1.7 lb through iterative design and FEA."],
   };
   const projects = D.projects.filter((p) => resumeProjectIds.has(p.id)).map((p) => `
     <div class="r-entry">
@@ -98,7 +104,7 @@
 
   /* Skills — comma lists, ATS-friendly */
   const resumeSkills = {
-    "CAD & Manufacturing": ["SolidWorks", "Solid Edge", "Inventor / Fusion", "Mastercam", "GD&T", "CNC / manual machining", "Composites", "Welding", "Sheet metal"],
+    "CAD & Manufacturing": ["SolidWorks", "Solid Edge", "Teamcenter PDM", "Inventor / Fusion", "Mastercam", "GD&T", "CNC / manual machining", "Composites", "Welding", "Sheet metal"],
     Programming: ["Python", "C/C++", "PlatformIO", "MATLAB", "Arduino / microcontrollers", "Git / GitHub"],
     "Robotics & Controls": ["Drake kinematics (path planning in development)", "Collision detection", "TMC2209 stepper control", "AS5600 encoders / I2C multiplexing"],
   };
@@ -108,7 +114,7 @@
   document.getElementById('resume').innerHTML = `
     <header class="r-head">
       <h1 class="r-name">${text(D.meta.name)}</h1>
-      <p class="r-role">${text(D.meta.role)} · ${text(D.meta.focus.replace("Design for Manufacturing", "DFM"))} · Seeking Summer 2027 internship</p>
+      <p class="r-role">${text(D.meta.role)} · Robotics · Motion Systems</p>
       <div class="r-contact">${contactBits}</div>
     </header>
 
