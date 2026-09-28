@@ -44,6 +44,10 @@
           <section>
             <h3>${text(s.heading)}</h3>
             <p>${text(s.body)}</p>
+            ${s.image ? `<figure class="detail__section-image">
+              ${imageOrPlaceholder(s.image, plain(s.imageAlt || project.title))}
+              ${s.imageCaption ? `<figcaption>${text(s.imageCaption)}</figcaption>` : ''}
+            </figure>` : ''}
           </section>`).join('')}
 
         ${project.video ? `
@@ -88,19 +92,19 @@
     imageViewer.showModal();
   };
 
-  mount.querySelectorAll('.detail__cover img, .gallery img').forEach((image) => {
+  mount.querySelectorAll('.detail__cover img, .gallery img, .detail__section-image img').forEach((image) => {
     image.tabIndex = 0;
     image.setAttribute('role', 'button');
     image.setAttribute('aria-label', `View larger: ${image.alt}`);
   });
 
   mount.addEventListener('click', (event) => {
-    const image = event.target.closest('.detail__cover img, .gallery img');
+    const image = event.target.closest('.detail__cover img, .gallery img, .detail__section-image img');
     if (image) openImage(image);
   });
 
   mount.addEventListener('keydown', (event) => {
-    if (event.target.matches('.detail__cover img, .gallery img') && (event.key === 'Enter' || event.key === ' ')) {
+    if (event.target.matches('.detail__cover img, .gallery img, .detail__section-image img') && (event.key === 'Enter' || event.key === ' ')) {
       event.preventDefault();
       openImage(event.target);
     }

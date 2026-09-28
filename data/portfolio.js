@@ -142,7 +142,6 @@ const PORTFOLIO = {
         "assets/images/digital-twin/TWIN LAB ISO 2.png",
         "assets/images/digital-twin/TWIN LAB COLLISION WARNING.png",
         "assets/images/digital-twin/TWIN LAB CONTROL PANEL.png",
-        "assets/images/digital-twin/DETECTOR STAGE ASSEMBLY.png",
       ],
       // Detail page sections. Keep the engineering narrative: problem -> constraints -> approach -> result.
       sections: [
@@ -189,13 +188,12 @@ const PORTFOLIO = {
       summary:
         "Redesign of a high-use beamline optics assembly, driven by collision-simulation findings and instrument-scientist feedback to improve alignment, maneuverability, and beam-time efficiency.",
       tags: ["Solid Edge", "PDM", "Kinematic Mounts", "Statics & Dynamics", "GD&T", "Optomechanics"],
-      cover: "assets/images/polycapillary/POLYCAP REAL ISO.jpg",
+      cover: "assets/images/polycapillary/POLYCAP LASER RENDER ISO FRONT.png",
       images: [
-        "assets/images/polycapillary/POLYCAP LASER RENDER ISO FRONT.png",
+        "assets/images/polycapillary/POLYCAP REAL ISO.jpg",
         "assets/images/polycapillary/POLYCAP LASER INTERNALS RENDER.png",
         "assets/images/polycapillary/POLYCAP STACK IRIS RENDER FRONT.png",
         "assets/images/polycapillary/POLYCAP STANDARD RENDER INTERNALS.png",
-        "assets/images/polycapillary/POLYCAP STATIC MOUNT.png",
       ],
       sections: [
         {
@@ -245,7 +243,6 @@ const PORTFOLIO = {
       images: [
         "assets/images/robot-arm/FULL REDUCER ASSEMBLY RENDER EXPLODED ISO.jpg",
         "assets/images/robot-arm/FULL REDUCER ASSEMBLY RENDER EXPLODED SIDE.jpg",
-        "assets/images/robot-arm/FULL REDUCER ASSEMBLY SECTION RENDER SIDE.jpg",
         "assets/images/robot-arm/BOM LAYOUT REAL.jpg",
         "assets/images/robot-arm/CORE SUBASSEMBLY REAL.jpg",
         "assets/images/robot-arm/REDUCER AND HOUSING SEPARATE REAL.jpg",
@@ -298,7 +295,6 @@ const PORTFOLIO = {
       images: [
         "assets/images/gr26-wheels/UPRIGHT MACHINING IN PROGRESS.jpg",
         "assets/images/gr26-wheels/SPINDLE IN CNC LATHE.jpg",
-        "assets/images/gr26-wheels/SOFTJAWS MACHINING.jpg",
         "assets/images/gr26-wheels/FINISHED CLEVISES.jpg",
       ],
       sections: [
@@ -313,6 +309,9 @@ const PORTFOLIO = {
         {
           heading: "Components & tolerances",
           body: "Held a 0.0004 in total tolerance window on the clevis and rod-end bores, with cycle times of about five minutes per part. Held 0.0005 in on the spindle outside-diameter bearing interfaces and upright bore bearing interfaces. Critical fits were measured and confirmed with go/no-go tests.",
+          image: "assets/images/gr26-wheels/SOFTJAWS MACHINING.jpg",
+          imageAlt: "Repeatable machining setup for the GR clevis bores",
+          imageCaption: "Repeatable setup used to machine the GR clevis bores.",
         },
         {
           heading: "Fixturing",
