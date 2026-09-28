@@ -84,7 +84,7 @@
       "Built a Drake-based digital twin with OpenCascade CAD import, CoACD collision meshes, and MeshCat visualization; millisecond-scale checks cover 305 active bodies in a 32-DOF assembly, using a catalog of 15 common LCLS stages.",
       "Applied the framework to three assemblies; retroactive XCS collision checks exposed at least five use-restricting pinch points.",
     ],
-    "polycapillary": ["Redesigned a 32-DOF optics assembly with three kinematic bases and six hot-swappable optics; projected alignment savings of 1–2 hours per shift-day and roughly $30k annually remain unmeasured."],
+    "polycapillary": ["Developed a redesign for a 32-DOF optics assembly with three kinematic bases and six hot-swappable optics; projected savings of 1–2 hours per shift-day and roughly $30k in annual value are not yet verified."],
     "steering-wheel-development": ["Integrated buttons, potentiometers, a display, and quick-release hardware; reduced mass from 5 lb in 2024 to 1.7 lb in 2026 through iterative design and weight-optimization FEA."],
   };
   const projects = D.projects.filter((p) => resumeProjectIds.has(p.id)).map((p) => `
@@ -108,7 +108,7 @@
   document.getElementById('resume').innerHTML = `
     <header class="r-head">
       <h1 class="r-name">${text(D.meta.name)}</h1>
-      <p class="r-role">${text(D.meta.role)} · ${text(D.meta.focus.replace("Design for Manufacturing", "DFM"))}</p>
+      <p class="r-role">${text(D.meta.role)} · ${text(D.meta.focus.replace("Design for Manufacturing", "DFM"))} · Seeking Summer 2027 internship</p>
       <div class="r-contact">${contactBits}</div>
     </header>
 

@@ -22,7 +22,7 @@ const PORTFOLIO = {
     focus: "Robotics · Controls · Motion Systems · Design for Manufacturing",
     // Short punchy line under your name on the hero. Rewrite in your voice.
     tagline:
-      "I connect simulation, mechanical design, and fabrication to build motion systems, from 32-DOF X-ray beamline assemblies at SLAC to cycloidal-drive robot arms.",
+      "I connect simulation, mechanical design, and fabrication to build motion systems, from 32-DOF X-ray beamline assemblies at SLAC to a cycloidal-drive robot arm.",
     location: "San Francisco Bay Area / Santa Barbara, CA",
     email: "koashensf@gmail.com",
     phone: "(415) 810-8344",
@@ -40,7 +40,7 @@ const PORTFOLIO = {
     { value: "3.97", label: "Major GPA" },
     { value: "32 DOF", label: "Simulated at SLAC" },
     { value: "15", label: "Engineers Led" },
-    { value: "40+", label: "Parts CNC Machined" },
+    { value: "40+", label: "CNC-Machined Parts" },
   ],
 
   /* ===================== ABOUT ===================== */
@@ -114,7 +114,7 @@ const PORTFOLIO = {
         "Previously led a 15-person team through ergonomics sketches, detail design, manufacturing, and installation of the GR26 driver safety systems; passed technical inspection at FSAE EV competition fully rules-compliant.",
         "CNC-machined 4130 chromoly steel and 7075-T6 aluminum GR26 suspension components on Haas TM mills and lathes, holding bearing interfaces within 0.0005 in.",
         "Own chassis and ergonomics packaging, including welded tube structures, tube notching, and assembly design.",
-        "Placed 30th at 2026 Michigan FSAE Electric, 2nd among UC teams, best UC in endurance, and 4th among California teams.",
+        "Placed 30th at 2026 Michigan FSAE Electric, 2nd among UC teams, best among UC teams in endurance, and 4th among California teams.",
         "Helped evolve the quick-release steering wheel from 5 lbs in 2024 to 1.7 lbs in its final 2026 form through iterative design and FEA-driven weight optimization.",
       ],
     },
@@ -258,7 +258,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Actuation & Firmware",
-          body: "The single-joint prototype uses a 1.5 A NEMA 17 stepper with a nominal 42 N·cm holding-torque rating, paired with a TMC2209 silent driver. Built custom C++ firmware using PlatformIO for microcontrollers, implementing phase-based bringup, step/dir pulse generation, and real-time CSV telemetry (ms, step_pos, angle_deg). The exact motor remains to be confirmed before final whole-arm design.",
+          body: "The single-joint prototype uses a 1.5 A NEMA 17 stepper with a nominal 42 N·cm holding-torque rating, paired with a TMC2209 silent driver. I built custom C++ firmware in PlatformIO for phase-based bring-up, step/dir pulse generation, and real-time CSV telemetry (ms, step_pos, angle_deg). The exact motor remains to be confirmed before the whole-arm design is finalized.",
         },
         {
           heading: "Position Sensing",
@@ -270,7 +270,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Reduction & Packaging",
-          body: "Each cycloidal reducer runs a 15:1 reduction, sized to be compatible with any NEMA 17 stepper: it fits within the motor's 42x42mm face profile and is shorter axially than the stepper itself, so it packages cleanly into linkages without growing the joint envelope. At the 0.5 kg payload target and 381 mm extension, payload alone applies about 1.87 N·m of static shoulder torque before gripper, link, efficiency, and dynamic loads are included. Measured output holding torque, backlash, and total BOM cost remain pending.",
+          body: "Each cycloidal reducer provides 15:1 reduction and is sized for a NEMA 17 stepper. It fits within the motor's 42 mm square face and is shorter axially than the stepper, allowing it to package into linkages without increasing the joint envelope. At the provisional 0.5 kg payload and 381 mm reach targets, payload alone would apply about 1.87 N·m of static shoulder torque, before accounting for the gripper, links, efficiency, or dynamic loads. Measured output holding torque, backlash, and total BOM cost remain pending.",
         },
         {
           heading: "Current Validation & Future Architecture",
@@ -289,7 +289,7 @@ const PORTFOLIO = {
       dates: "Winter 2025 – Spring 2026",
       featured: true,
       summary:
-        "CNC machined 33 precision suspension components on Haas TM mills and lathes, holding critical bearing interfaces within 0.0005 in and improving spindle manufacturability through design review.",
+        "CNC-machined 33 precision suspension components on Haas TM mills and lathes, holding critical bearing interfaces within 0.0005 in and improving spindle manufacturability through design review.",
       tags: ["Mastercam", "Haas", "4130 Steel", "7075-T6 Aluminum", "CNC Mill", "CNC Lathe", "GD&T", "DFM"],
       cover: "assets/images/gr26-wheels/SPINDLE CNC MILLING COMPLETE.jpg",
       images: [
@@ -332,7 +332,7 @@ const PORTFOLIO = {
       dates: "2025 – 2026",
       featured: false,
       summary:
-        "Led a 15-person team from ergonomics sketches through installation of the GR26 driver environment: floor closeout, firewall, heat insulation, composite seat, and Confor foam headrest. Passed FSAE EV technical inspection fully rules-compliant.",
+        "Led a 15-person team from ergonomics sketches through installation of the GR26 driver environment: floor closeout, firewall, heat insulation, composite seat, and Confor foam headrest. Delivered a rules-compliant package that passed FSAE EV technical inspection.",
       tags: ["Composites", "Ergonomics", "Sheet Metal", "Project Management", "FSAE Rules"],
       cover: "assets/images/gr26-safety/GR26 SAFETY SYSTEMS.png",
       images: [
@@ -361,7 +361,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Fit strategy",
-          body: "FSAE rules require accommodating 5th-percentile-female to 95th-percentile-male drivers, but our actual driver pool clustered around the 35th-percentile male. So the cockpit was built to stay usable across the full rules-mandated range while being truly optimized for our real drivers: a seat molded directly to them, a steering wheel molded to their grip, headrest placement set from their feedback, and pedal placement calibrated to their leg length, with optional mounting positions for drivers at the percentile extremes.",
+          body: "FSAE rules require accommodating drivers from the 5th-percentile female to the 95th-percentile male. Our driver pool clustered around the 35th-percentile male, so the cockpit had to meet the full rules-mandated range while fitting our drivers closely: a seat molded to them, a steering wheel shaped to their grip, headrest placement informed by their feedback, and pedal placement calibrated to their leg length. Optional mounting positions accommodate drivers near the percentile extremes.",
         },
         {
           heading: "Results",
