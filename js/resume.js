@@ -48,15 +48,15 @@
 
   const resumeExperienceBullets = {
     "SLAC National Accelerator Laboratory — LCLS": [
-      "Built simulation and load-case workflows spanning CAD import, kinematics, and collision checks for high-DOF beamline assemblies.",
+      "Built CAD import, kinematics, collision-check, and load-case workflows for high-DOF LCLS assemblies.",
       "Applied XCS findings to the optics redesign and documented Solid Edge, Teamcenter, and EPICS interfaces.",
     ],
     Exploratorium: [
       "Serviced 100+ exhibits and led three overhauls; the Arp Forms redesign avoided $3,000+ in replacement costs.",
     ],
     "Gaucho Racing (FSAE EV) — UC Santa Barbara": [
-      "Led a 15-person team through GR26 safety-system design, fabrication, and installation; passed FSAE technical inspection.",
-      "CNC-machined 33 parts from 4130 steel and 7075-T6 aluminum; held bearing interfaces to 0.0005 in and standardized five spindles.",
+      "Led 15 people through GR26 safety-system design and installation; passed FSAE technical inspection.",
+      "CNC-machined 33 parts from 4130 steel and 7075-T6 aluminum; held fits to 0.0005 in and standardized five spindles.",
     ],
   };
 
@@ -82,16 +82,16 @@
   ]);
   const resumeProjectSummaries = {
     "robot-arm": [
-      "Designed a compact 15:1 cycloidal reducer for a planned 6-DOF arm compatible with NEMA 17; 381 mm reach and 0.5 kg payload remain unvalidated targets.",
+      "Designed a 15:1 cycloidal reducer for NEMA 17; planned arm targets (unvalidated): 6 DOF, 381 mm reach, 0.5 kg payload.",
       "Built PlatformIO C++ firmware for TMC2209 stepper control, including step/dir generation and real-time telemetry.",
       "Integrated a 12-bit AS5600 encoder for missed-step detection; multi-joint output sensing remains planned.",
     ],
     "digital-twin": [
-      "Built a 32-DOF Drake digital twin (305 bodies) with OpenCascade, CoACD, and MeshCat; millisecond checks span 15 LCLS stages.",
+      "Built a 32-DOF Drake twin (305 bodies) with OpenCascade, CoACD, MeshCat; millisecond checks span 15 LCLS stages.",
       "Applied it to three assemblies; retroactive XCS checks exposed at least five pinch points restricting use.",
     ],
     "polycapillary": ["Developed a redesign for a 32-DOF optics assembly with three kinematic bases and six hot-swappable optics; projected savings of 1–2 hours per shift-day and roughly $30k in annual value are not yet verified."],
-    "steering-wheel-development": ["Integrated buttons, potentiometers, a display, and quick-release; reduced wheel mass from 5 lb to 1.7 lb through iterative design and FEA."],
+    "steering-wheel-development": ["Integrated wheel buttons, potentiometers, display, and quick-release; FEA-guided iteration cut mass from 5 lb to 1.7 lb."],
   };
   const projects = D.projects.filter((p) => resumeProjectIds.has(p.id)).map((p) => `
     <div class="r-entry">

@@ -65,7 +65,7 @@ const PORTFOLIO = {
       location: "Santa Barbara, CA",
       gpa: "3.97 Major GPA · 3.94 Cumulative GPA",
       details: [
-        "Relevant coursework: Statics, Dynamics, Dynamical Systems (in progress), Machine Learning (in progress), Intro and Advanced Mechanics of Materials, Circuits, MATLAB, and Calculus-based Physics.",
+        "Relevant coursework: Statics, Dynamics, Dynamical Systems and Machine Learning (in progress), Mechanics of Materials, Circuits, MATLAB, and Calculus-based Physics.",
         "Planned this academic year: Mechatronics, Robotics Lab, and Inverse Kinematics.",
         "Dean's Honors, College of Engineering — every quarter to date.",
       ],
