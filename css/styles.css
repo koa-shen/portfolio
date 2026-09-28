@@ -398,6 +398,23 @@ li.filler { display: list-item; margin-left: 0; }
 .gallery .ph { aspect-ratio: 4/3; border-radius: var(--radius-sm); }
 .gallery--compact { grid-template-columns: repeat(auto-fit, minmax(220px, 280px)); justify-content: center; }
 .gallery--compact img { aspect-ratio: auto; max-height: 240px; object-fit: contain; background: var(--surface-2); }
+.detail__cover img, .gallery img { cursor: zoom-in; }
+.detail__cover img:focus-visible, .gallery img:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+.image-viewer {
+  position: fixed; max-width: min(96vw, 1400px); max-height: 96dvh;
+  padding: 3rem 1rem 1rem; border: 1px solid var(--line);
+  border-radius: var(--radius); background: var(--surface); color: var(--text);
+}
+.image-viewer::backdrop { background: rgb(0 0 0 / .88); }
+.image-viewer img {
+  width: auto; height: auto; max-width: calc(96vw - 2rem);
+  max-height: calc(96dvh - 5rem); object-fit: contain;
+}
+.image-viewer__close {
+  position: absolute; top: .5rem; right: .65rem;
+  border: 0; background: transparent; color: inherit;
+  font: inherit; font-size: 1.75rem; line-height: 1; cursor: pointer;
+}
 
 .notfound { text-align: center; padding: 6rem 0; }
 
