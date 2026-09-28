@@ -31,7 +31,7 @@
         .filter((detail) => !detail.startsWith('Planned this academic year:'))
         .filter((detail) => !detail.startsWith("Dean's Honors, College of Engineering"))
         .map((detail) => detail.startsWith('Relevant coursework:')
-          ? 'Coursework: Statics, Dynamics, Mechanics of Materials, Circuits, MATLAB. Current: Dynamical Systems and Machine Learning.'
+          ? 'Coursework: Dynamics, Mechanics of Materials, Circuits, MATLAB. Current: Dynamical Systems and Machine Learning.'
           : detail)
         .map(li).join('')}</ul>
     </div>`).join('');
@@ -106,7 +106,7 @@
   /* Skills — comma lists, ATS-friendly */
   const resumeSkills = {
     "CAD & Manufacturing": ["SolidWorks", "Solid Edge", "Teamcenter PDM", "Inventor/Fusion", "Mastercam", "GD&T", "CNC/manual machining"],
-    Programming: ["Python", "C/C++", "PlatformIO", "MATLAB", "Arduino", "Git/GitHub", "VS Code", "EPICS"],
+    "Software & Programming": ["Python", "C/C++", "PlatformIO", "MATLAB", "Arduino", "Git/GitHub", "VS Code", "EPICS", "OpenCascade", "CoACD", "MeshCat"],
     "Robotics & Controls": ["Drake kinematics", "Collision detection", "TMC2209 stepper control", "AS5600 encoders/I2C multiplexing"],
   };
   const skills = Object.entries(resumeSkills).map(([group, list]) => `
