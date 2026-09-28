@@ -139,9 +139,10 @@ const PORTFOLIO = {
       tags: ["Python", "Drake", "CoACD", "MeshCat", "OpenCascade", "Path Planning (In Development)"],
       cover: "assets/images/digital-twin/TWIN LAB FRONT.png",
       images: [
+        "assets/images/digital-twin/TWIN LAB FRONT BEAM PATH.png",
+        "assets/images/digital-twin/TWIN LAB FRONT CLOSE UP.png",
+        "assets/images/digital-twin/TWIN LAB ISO WITH CONTROL PANEL.png",
         "assets/images/digital-twin/TWIN LAB ISO 1.png",
-        "assets/images/digital-twin/TWIN LAB ISO 2.png",
-        "assets/images/digital-twin/TWIN LAB COLLISION WARNING.png",
         "assets/images/digital-twin/TWIN LAB CONTROL PANEL.png",
       ],
       // Detail page sections. Keep the engineering narrative: problem -> constraints -> approach -> result.
