@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Favicon Preview — Koa Shen</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2rem;
+    background: #eaf0f3; color: #17272f;
+    font: 16px/1.5 system-ui, sans-serif;
+  }
+  main { width: min(100%, 760px); margin: 0 auto; }
+  h1 { margin: 0 0 1.5rem; font-size: 1.5rem; }
+  .previews { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  figure {
+    display: grid; justify-items: center; gap: 1rem;
+    min-width: 0; margin: 0; padding: 1.5rem;
+    border: 1px solid #cbd7dc; border-radius: 8px;
+  }
+  .dark { background: #0b0f14; color: #e6edf5; }
+  .light { background: #f4f7f8; color: #17272f; }
+  .large { width: 192px; height: 192px; }
+  .sizes { display: flex; align-items: center; gap: 1rem; }
+  .size-64 { width: 64px; height: 64px; }
+  .size-32 { width: 32px; height: 32px; }
+  .size-16 { width: 16px; height: 16px; }
+  figcaption { font-weight: 600; }
+  @media (max-width: 560px) {
+    body { padding: 1rem; }
+    .previews { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Portfolio Favicon</h1>
+  <div class="previews">
+    <figure class="dark">
+      <figcaption>Dark theme</figcaption>
+      <img class="large" src="favicon.svg?v=5" alt="KS monogram favicon, dark theme">
+      <div class="sizes" aria-label="Smaller icon sizes">
+        <img class="size-64" src="favicon.svg?v=5" alt="">
+        <img class="size-32" src="favicon.svg?v=5" alt="">
+        <img class="size-16" src="favicon.svg?v=5" alt="">
+      </div>
+    </figure>
+    <figure class="light">
+      <figcaption>Light theme</figcaption>
+      <img class="large" src="favicon-light.svg?v=5" alt="KS monogram favicon, light theme">
+      <div class="sizes" aria-label="Smaller icon sizes">
+        <img class="size-64" src="favicon-light.svg?v=5" alt="">
+        <img class="size-32" src="favicon-light.svg?v=5" alt="">
+        <img class="size-16" src="favicon-light.svg?v=5" alt="">
+      </div>
+    </figure>
+  </div>
+</main>
+</body>
+</html>

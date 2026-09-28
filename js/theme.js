@@ -20,8 +20,8 @@
     root.dataset.theme = theme;
     if (favicon) {
       favicon.href = theme === 'light'
-        ? 'assets/favicon-light.svg?v=3'
-        : 'assets/favicon.svg?v=3';
+        ? 'assets/favicon-light.svg?v=5'
+        : 'assets/favicon.svg?v=5';
     }
   };
 

@@ -1,9 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="12" fill="#f4f7f8"/>
-  <path d="M32 7 C35 7 37 11 39 12 C42 13 45 10 48 12 C51 14 50 18 52 21 C54 24 59 24 59 28 C59 31 56 34 56 36 C56 39 60 42 58 45 C56 48 52 48 50 51 C48 54 49 58 46 59 C43 60 40 56 37 56 C34 56 33 61 29 60 C26 59 25 55 22 54 C19 53 15 56 12 54 C9 52 11 48 9 45 C7 42 3 41 4 37 C5 34 8 32 8 29 C8 26 4 23 6 20 C8 17 12 17 14 14 C16 11 15 7 19 6 C22 5 25 9 28 9 C30 9 30 7 32 7 Z" fill="#145f96"/>
-  <g fill="#f4f7f8" stroke="#087867" stroke-width="1.5">
-    <circle cx="32" cy="19" r="3.5"/>
-    <circle cx="20.7" cy="38.5" r="3.5"/>
-    <circle cx="43.3" cy="38.5" r="3.5"/>
-  </g>
+  <text x="32" y="43" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" letter-spacing="-2" fill="#145f96">KS</text>
+  <circle cx="52" cy="15" r="3" fill="#087867"/>
 </svg>
