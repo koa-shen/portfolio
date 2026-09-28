@@ -421,7 +421,7 @@ const PORTFOLIO = {
       summary:
         "Led and then supervised successive steering-wheel iterations that reduced mass, improved driver comfort and force application, and coordinated manufacturing and vehicle integration across subteams.",
       tags: ["Ergonomics", "Composites", "CAD", "Manufacturing Sourcing", "Vehicle Integration", "FSAE"],
-      cover: "assets/images/steering-wheel/GR26 STEERING WHEEL ISO.png",
+      cover: "assets/images/steering-wheel/ER26SteeringWheelQR RENDER EXPLODED ISO.jpg",
       images: [
         "assets/images/steering-wheel/GR24 STEERING WHEEL.png",
         "assets/images/steering-wheel/GR25 STEERING WHEEL 1 FRONT.png",
