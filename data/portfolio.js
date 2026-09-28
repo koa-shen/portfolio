@@ -82,7 +82,7 @@ const PORTFOLIO = {
   experience: [
     {
       org: "SLAC National Accelerator Laboratory — LCLS",
-      role: "Engineering Intern",
+      role: "Mechanical Engineering Intern",
       dates: "Summer 2026 – Present (extended to part-time remote)",
       location: "Menlo Park, CA",
       type: "paid",

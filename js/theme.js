@@ -3,6 +3,7 @@
   const root = document.documentElement;
   const systemScheme = window.matchMedia('(prefers-color-scheme: light)');
   const validPreferences = new Set(['system', 'light', 'dark']);
+  const favicon = document.querySelector('#siteFavicon');
 
   let preference = 'system';
   try {
@@ -13,9 +14,15 @@
   }
 
   const applyPreference = () => {
-    root.dataset.theme = preference === 'system'
+    const theme = preference === 'system'
       ? (systemScheme.matches ? 'light' : 'dark')
       : preference;
+    root.dataset.theme = theme;
+    if (favicon) {
+      favicon.href = theme === 'light'
+        ? 'assets/favicon-light.svg?v=3'
+        : 'assets/favicon.svg?v=3';
+    }
   };
 
   applyPreference();
