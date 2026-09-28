@@ -21,11 +21,11 @@ Use this as a launch checklist. There are no active `FILLER:` strings in [data/p
 Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bullet upgrade.
 
 **Digital twin framework (your flagship)**
-- [ ] Largest model: how many DOF, how many bodies?
+- [x] Largest model: 30 DOF in the polycapillary assembly
 - [ ] How many stages inventoried into the library?
-- [ ] Planning / collision-check solve time
+- [x] Model load time: about 30 seconds
 - [ ] Interferences caught before they reached hardware
-- [ ] Adoption: how many assemblies, hutches, or engineers now use it?
+- [x] Adoption: actively being applied to three large, high-DOF LCLS assemblies
 - [ ] Real constraints (enclosure envelope, latency, existing controls integration)
 - [ ] Public repo link, if the code can be open-sourced
 - [ ] "What I'd do differently" paragraph
@@ -74,5 +74,5 @@ Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bulle
 - [x] **Git/GitHub presence** — linked `https://github.com/koa-shen/desktop-6dof-arm`
 - [x] **Robot-arm motion video** — single-joint motor/reducer bench test embedded on
       the project page.
-- [ ] **Controls coursework or self-study** — you're targeting controls roles; make sure
-      something on the page demonstrates feedback control, not just mechanism design.
+- [x] **Closed-loop controls evidence** — validated encoder feedback, automatic position-error
+      compensation, and missed-step detection on the robot-arm bench setup.

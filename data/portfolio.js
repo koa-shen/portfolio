@@ -38,7 +38,7 @@ const PORTFOLIO = {
   /* Four quick credibility hits. Keep them concrete. */
   stats: [
     { value: "3.97", label: "Major GPA" },
-    { value: "20+ DOF", label: "Simulated at SLAC" },
+    { value: "30 DOF", label: "Polycapillary assembly" },
     { value: "15", label: "Engineers Led" },
     { value: "40+", label: "Parts CNC Machined" },
   ],
@@ -81,11 +81,11 @@ const PORTFOLIO = {
       type: "paid",
       tags: ["Design", "GD&T", "Kinematic Simulation", "Collision Detection", "Controls"],
       bullets: [
-        "Built an open-source Python digital-twin framework (Drake, CoACD, MeshCat, OpenCascade) with live collision detection for 20+ DOF motion assemblies operating in tightly enclosed beamline enclosures; path planning remains in development.",
+        "Built an open-source Python digital-twin framework (Drake, CoACD, MeshCat, OpenCascade) with live collision detection for 30-DOF motion assemblies operating in tightly enclosed beamline enclosures; path planning remains in development.",
         "Redesigned a high-traffic polycapillary optics assembly — kinematic mounts, alignment lasers, irises, and added stages — using the simulation framework to cut interference risk and improve focusing reliability.",
         "Performed statics and dynamics hand calculations to qualify stages and mounts against loading cases protecting $100k+ detectors from crash and drop failures.",
         "Produced design and PDM-controlled documentation in Siemens Solid Edge, applying GD&T for manufacture and inspection.",
-        "Built a 15-stage reusable catalog and began applying the framework to three top-level hutch assemblies; EPICS controls compatibility is in progress so hutch engineers can model and simulate their own assemblies without rewriting kinematics.",
+        "Built a 15-stage reusable catalog and is actively applying the framework to three large, high-DOF LCLS assemblies; EPICS controls compatibility is in progress so hutch engineers can model and simulate their own assemblies without rewriting kinematics.",
       ],
     },
     {
@@ -133,8 +133,8 @@ const PORTFOLIO = {
       dates: "2026 – Present",
       featured: true,
       summary:
-        "Open-source kinematic-simulation framework with live collision detection, 15 reusable stage models, and active adoption across three high-level hutch assemblies; motion planning remains in development.",
-      tags: ["Python", "Drake", "CoACD", "MeshCat", "OpenCascade", "Path Planning"],
+        "Open-source kinematic-simulation framework with live collision detection, 15 reusable stage models, and active adoption across three large, high-DOF LCLS assemblies; model loading takes about 30 seconds and motion planning remains in development.",
+      tags: ["In Progress", "Python", "Drake", "CoACD", "MeshCat", "OpenCascade", "Path Planning"],
       cover: "assets/images/digital-twin/TWIN LAB FRONT.png",
       images: [
         "assets/images/digital-twin/TWIN LAB ISO 1.png",
@@ -163,7 +163,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Results",
-          body: "The largest model to date covers 28 total DOF across a mix of linear, rotary, and tip-tilt stages, with 15 reusable stages in the current catalog. Collision checking is live, using CoACD convex-hull decomposition with a secondary mesh triangle-triangle distance query for verification, both leaning on Drake's fast collision-query algorithms. Applying the framework to the XCS polycapillary test assembly surfaced at least 10 actionable design changes needed for true interference resistance: a helium-purged acrylic enclosure redesign, repositioned stage stacks, new breadboard-mounting brackets, and encoder retrofits on stages that currently have no closed-loop feedback. The framework is now being applied to three top-level hutch assemblies; full path planning and EPICS integration remain in progress.",
+          body: "The XCS polycapillary assembly covers 30 total DOF across a mix of linear, rotary, and tip-tilt stages, with 15 reusable stages in the current catalog. Collision checking is live, using CoACD convex-hull decomposition with a secondary mesh triangle-triangle distance query for verification, both leaning on Drake's fast collision-query algorithms. Loading a model takes about 30 seconds. Applying the framework to the XCS polycapillary test assembly surfaced at least 10 actionable design changes needed for true interference resistance: a helium-purged acrylic enclosure redesign, repositioned stage stacks, new breadboard-mounting brackets, and encoder retrofits on stages that currently have no closed-loop feedback. The framework is now being actively adopted on three large, high-DOF LCLS assemblies; full path planning and EPICS integration remain in progress.",
         },
         {
           heading: "Operational impact",
@@ -187,7 +187,7 @@ const PORTFOLIO = {
       featured: true,
       summary:
         "Redesign of a high-use beamline optics assembly, driven by collision-simulation findings and instrument-scientist feedback to improve alignment, maneuverability, and beam-time efficiency.",
-      tags: ["Solid Edge", "PDM", "Kinematic Mounts", "Statics & Dynamics", "GD&T", "Optomechanics"],
+      tags: ["In Progress", "Solid Edge", "PDM", "Kinematic Mounts", "Statics & Dynamics", "GD&T", "Optomechanics"],
       cover: "assets/images/polycapillary/POLYCAP REAL ISO.jpg",
       images: [
         "assets/images/polycapillary/POLYCAP LASER RENDER ISO FRONT.png",
@@ -233,7 +233,7 @@ const PORTFOLIO = {
       featured: false,
       compactImages: true,
       summary:
-        "In-progress development and bench validation of a compact 15:1 cycloidal reducer and NEMA 17 stepper package, with motor-shaft encoder feedback and custom firmware.",
+        "Bench-validated closed-loop control of a compact 15:1 cycloidal reducer and NEMA 17 stepper package, with motor-shaft encoder feedback, automatic error compensation, and missed-step detection in custom firmware.",
       tags: ["In Progress", "C++", "PlatformIO", "TMC2209", "AS5600 Encoder", "15:1 Cycloidal Reducer", "PETG / DFM"],
       cover: "assets/images/robot-arm/FULL REDUCER ASSEMBLY RENDER ISO.jpg",
       video: {
@@ -264,7 +264,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Position Sensing",
-          body: "The current single-joint bench setup uses an AS5600 12-bit magnetic encoder on the motor shaft to detect missed steps and characterize the reducer. A direct output-axis encoder and the TCA9548A I²C multiplexer are planned for multi-joint hardware, where they will measure true post-reduction joint angle and resolve shared-address collisions.",
+          body: "The single-joint bench setup uses an AS5600 12-bit magnetic encoder on the motor shaft for validated position feedback and missed-step detection. The Arduino Uno sends a command to the TMC2209 driver, which drives the stepper; the encoder reads the new position and feeds it back to the Uno, which recognizes position error and issues a compensating command. A direct output-axis encoder and the TCA9548A I²C multiplexer are planned for multi-joint hardware, where they will measure true post-reduction joint angle and resolve shared-address collisions.",
         },
         {
           heading: "DFM & Materials",
@@ -275,8 +275,8 @@ const PORTFOLIO = {
           body: "Each cycloidal reducer runs a 15:1 reduction, sized to be compatible with any NEMA 17 stepper: it fits within the motor's 42x42mm face profile and is shorter axially than the stepper itself, so it packages cleanly into linkages without growing the joint envelope. Measured backlash, holding torque, arm reach, payload target, and total BOM cost are still being characterized as the build progresses.",
         },
         {
-          heading: "Current Validation & Future Architecture",
-          body: "The project is currently in 15:1 reducer characterization: live firmware records motor-angle data and switch-based output dead band, while torque, thermal behavior, payload, and reach remain to be measured. Kinematic simulation and trajectory optimization are planned in Python and Drake, with a future SPI/CAN architecture for higher joint-telemetry bandwidth.",
+          heading: "Closed-Loop Validation & Future Architecture",
+          body: "Closed-loop tests have been completed and encoder feedback has been validated on the single-joint bench setup, including automatic compensation for position error and missed-step detection. The project remains in 15:1 reducer characterization; torque, thermal behavior, payload, and reach remain to be measured. Kinematic simulation and trajectory optimization are planned in Python and Drake, with a future SPI/CAN architecture for higher joint-telemetry bandwidth.",
         },
       ],
       links: [
@@ -375,7 +375,7 @@ const PORTFOLIO = {
       id: "chassis-welding-jig",
       title: "FSAE Chassis Welding Jig Evolution",
       org: "Gaucho Racing",
-      dates: "Winter 2024 – Present",
+      dates: "Winter 2024 – Spring 2026",
       featured: true,
       summary:
         "Designed successive welding fixtures that locate the racecar's tube chassis at its CAD-defined nodes, progressing from an 80/20-and-plywood GR25 jig to a more accurate, assembly-friendly hybrid system for GR26.",
@@ -415,7 +415,7 @@ const PORTFOLIO = {
       id: "steering-wheel-development",
       title: "FSAE Steering Wheel Development",
       org: "Gaucho Racing",
-      dates: "Fall 2024 – Present",
+      dates: "Fall 2024 – Spring 2026",
       featured: false,
       summary:
         "Led and then supervised successive steering-wheel iterations that reduced mass, improved driver comfort and force application, and coordinated manufacturing and vehicle integration across subteams.",
@@ -535,6 +535,8 @@ const PORTFOLIO = {
       { name: "Drake (Kinematics & Path Planning)", level: 2 },
       { name: "TMC2209 Stepper Control", level: 2 },
       { name: "AS5600 Magnetic Encoders (I²C / Mux)", level: 2 },
+      { name: "Closed-Loop Position Feedback", level: 2 },
+      { name: "Missed-Step Detection", level: 2 },
       { name: "Kinematic Simulation & Collision Detection", level: 2 },
       { name: "Git / GitHub", level: 2.5 },
     ],
