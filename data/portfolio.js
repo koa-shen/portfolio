@@ -18,11 +18,11 @@ const PORTFOLIO = {
   /* ===================== IDENTITY / CONTACT ===================== */
   meta: {
     name: "Koa Shen",
-    role: "Mechanical Engineering B.S. @ UC Santa Barbara",
+    role: "B.S. Candidate in Mechanical Engineering · UC Santa Barbara",
     focus: "Robotics · Controls · Motion Systems · Design for Manufacturing",
     // Short punchy line under your name on the hero. Rewrite in your voice.
     tagline:
-      "I design, simulate, and machine motion systems — from a 32-DOF X-ray beamline assembly at SLAC to cycloidal-drive robot arms on my bench at home.",
+      "I connect simulation, mechanical design, and fabrication to build motion systems, from 32-DOF X-ray beamline assemblies at SLAC to cycloidal-drive robot arms.",
     location: "San Francisco Bay Area / Santa Barbara, CA",
     email: "koashensf@gmail.com",
     phone: "(415) 810-8344",
@@ -49,9 +49,9 @@ const PORTFOLIO = {
     // 2-3 short paragraphs. Draft below is built from what you told me —
     // edit the tone until it sounds like you.
     paragraphs: [
-      "I'm a third-year Mechanical Engineering student at UC Santa Barbara focused on robotics and motion control. My work sits at the seam between design and implementation: I like problems where the CAD, the hand calcs, the toolpath, and the control loop all have to agree with each other.",
-      "At SLAC National Accelerator Laboratory I built a Python-based digital twin framework for multi-axis X-ray beamline stages, then used it to drive a redesign of a high-traffic optical assembly. On Gaucho Racing I lead the chassis and ergonomics side of our FSAE EV car and machine suspension hardware on Haas mills and lathes. In between, I'm building a 6-DOF printed robotic manipulator from scratch, cycloidal drives and all.",
-      "I'm building toward a Summer 2027 internship in controls, robotics, or autonomous actuation. That means continuing design and simulation work at SLAC, taking on new research problems at UCSB, and strengthening my foundation in ROS, C++, machine design, FEA, and control theory.",
+      "I'm a mechanical engineering student at UC Santa Barbara focused on robotics and motion control. I work across CAD, analysis, fabrication, and controls, with a particular interest in turning models into reliable hardware.",
+      "At SLAC, I develop simulation and mechanical-design workflows for X-ray beamline motion stages. With Gaucho Racing, I lead chassis and ergonomics work and machine suspension hardware. In my own projects, I build and test mechatronic systems, including a cycloidal-drive actuator for a planned robot arm.",
+      "I'm seeking a Summer 2027 internship in robotics, controls, or autonomous actuation. I'm especially interested in roles that connect modeling and analysis to physical systems, and I'm deepening that foundation through SLAC work, UCSB coursework, and independent hardware projects.",
     ],
   },
 
@@ -83,8 +83,8 @@ const PORTFOLIO = {
       tags: ["Design", "GD&T", "Kinematic Simulation", "Collision Detection", "Controls"],
       bullets: [
         "Built an open-source Python digital-twin framework (Drake, CoACD, MeshCat, OpenCascade) with millisecond-scale collision checks for motion assemblies up to 32 DOF; path planning remains in development.",
-        "Redesigned a high-traffic polycapillary optics assembly — kinematic mounts, alignment lasers, irises, and added stages — using the simulation framework to cut interference risk and improve focusing reliability.",
-        "Performed statics and dynamics hand calculations to qualify stages and mounts against loading cases protecting $100k+ detectors from crash and drop failures.",
+        "Translated collision findings and instrument-scientist feedback into an optical-assembly redesign with kinematic mounts, alignment lasers, irises, cable management, and two added motion axes.",
+        "Used statics and dynamics hand calculations to assess stages and mounts under handling and loading cases around detectors worth $100k+.",
         "Produced design and PDM-controlled documentation in Siemens Solid Edge, applying GD&T for manufacture and inspection.",
         "Cataloged 15 stages commonly used across LCLS and applied the framework to three assemblies, with interoperability designed around Solid Edge, Teamcenter PDM, and the controls team's EPICS database.",
       ],
@@ -112,7 +112,7 @@ const PORTFOLIO = {
       tags: ["Assembly Design", "Mechatronics", "Project Management", "CNC", "Welding"],
       bullets: [
         "Previously led a 15-person team through ergonomics sketches, detail design, manufacturing, and installation of the GR26 driver safety systems; passed technical inspection at FSAE EV competition fully rules-compliant.",
-        "CNC machined 4130 chromoly steel and 7075-T6 aluminum GR26 suspension components on Haas TM mills and lathes, holding bearing interfaces within 0.0005 in.",
+        "CNC-machined 4130 chromoly steel and 7075-T6 aluminum GR26 suspension components on Haas TM mills and lathes, holding bearing interfaces within 0.0005 in.",
         "Own chassis and ergonomics packaging, including welded tube structures, tube notching, and assembly design.",
         "Placed 30th at 2026 Michigan FSAE Electric, 2nd among UC teams, best UC in endurance, and 4th among California teams.",
         "Helped evolve the quick-release steering wheel from 5 lbs in 2024 to 1.7 lbs in its final 2026 form through iterative design and FEA-driven weight optimization.",
@@ -135,7 +135,7 @@ const PORTFOLIO = {
       featured: true,
       summary:
         "Open-source kinematic-simulation framework with millisecond-scale collision checks, 15 reusable stage models, and three assemblies currently simulated; motion planning remains in development.",
-      tags: ["Python", "Drake", "CoACD", "MeshCat", "OpenCascade", "Path Planning"],
+      tags: ["Python", "Drake", "CoACD", "MeshCat", "OpenCascade", "Path Planning (In Development)"],
       cover: "assets/images/digital-twin/TWIN LAB FRONT.png",
       images: [
         "assets/images/digital-twin/TWIN LAB ISO 1.png",
@@ -337,7 +337,7 @@ const PORTFOLIO = {
       cover: "assets/images/gr26-safety/GR26 SAFETY SYSTEMS.png",
       images: [
         "assets/images/gr26-safety/GR26 SEAT.png",
-        "assets/images/gr26-safety/GR26 STEERING WHEEL ISO.png",
+        "assets/images/steering-wheel/ER26SteeringWheelQR RENDER EXPLODED ISO.jpg",
         "assets/images/gr26-safety/DRIVER COCKPIT.jpg",
         "assets/images/gr26-safety/GR26 ERGO JIG WITH DRIVER.png",
         "assets/images/gr26-safety/FIREWALL GAP COVER.jpg",
@@ -531,7 +531,7 @@ const PORTFOLIO = {
       { name: "Hand Calculations", level: 2 },
     ],
     "Robotics & Controls": [
-      { name: "Drake (Kinematics & Path Planning)", level: 2 },
+      { name: "Drake Kinematics (Path Planning in Development)", level: 2 },
       { name: "TMC2209 Stepper Control", level: 2 },
       { name: "AS5600 Magnetic Encoders (I²C / Mux)", level: 2 },
       { name: "Kinematic Simulation & Collision Detection", level: 2 },
