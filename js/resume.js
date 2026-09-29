@@ -13,6 +13,7 @@
     D.meta.email,
     D.meta.linkedin,
     D.meta.github,
+    D.meta.website,
   ].map((v) => `<span>${text(v.replace(/^https?:\/\//i, ''))}</span>`).join('');
 
   /* Education */
@@ -23,10 +24,16 @@
         <span class="r-when">${text(e.dates)}</span>
       </div>
       <div class="r-row">
-        <p class="r-sub">${text(e.degree)} — ${text(e.gpa)}</p>
+        <p class="r-sub">${text(e.degree)} · ${text(e.gpa)} · Dean's Honors every quarter</p>
         <span class="r-when">${text(e.location)}</span>
       </div>
-      <ul>${e.details.map(li).join('')}</ul>
+      <ul>${e.details
+        .filter((detail) => !detail.startsWith('Planned this academic year:'))
+        .filter((detail) => !detail.startsWith("Dean's Honors, College of Engineering"))
+        .map((detail) => detail.startsWith('Relevant coursework:')
+          ? 'Coursework: Dynamics, Mechanics of Materials, Circuits. Current: Dynamical Systems and Machine Learning.'
+          : detail)
+        .map(li).join('')}</ul>
     </div>`).join('');
 
   /* Resume keeps the strongest distinct roles; full history stays on the portfolio. */
@@ -42,15 +49,15 @@
 
   const resumeExperienceBullets = {
     "SLAC National Accelerator Laboratory — LCLS": [
-      "Developed reusable simulation and mechanical-analysis workflows for high-DOF LCLS beamline assemblies.",
-      "Translated interference and loading findings into safer motion and alignment designs for detector-heavy experiments.",
+      "Built CAD import, kinematics, collision-check, and load-case workflows for high-DOF LCLS assemblies.",
+      "Applied XCS findings to the optics redesign and documented Solid Edge, Teamcenter, and EPICS interfaces.",
     ],
     Exploratorium: [
-      "Reverse-engineered and fabricated repairs for 100+ public exhibits; led three major overhauls, with the Arp Forms redesign avoiding $3,000+ in replacement costs.",
+      "Serviced 100+ exhibits and led three overhauls; the Arp Forms redesign avoided $3,000+ in replacement costs.",
     ],
     "Gaucho Racing (FSAE EV) — UC Santa Barbara": [
-      "Fabrication Team Lead; in the 2025–26 academic year, led a 15-person Chassis & Ergonomics team through GR26 safety-system design, manufacturing, and installation.",
-      "CNC-machined GR26 suspension assemblies on Haas mills and lathes with Mastercam, iterating GD&T feedback with the suspension design team.",
+      "Led 15 people through GR26 safety-system design and installation; passed FSAE technical inspection.",
+      "CNC-machined 33 parts from 4130 steel and 7075-T6 aluminum; held fits to 0.0005 in and standardized five spindles.",
     ],
   };
 
@@ -76,13 +83,16 @@
   ]);
   const resumeProjectSummaries = {
     "robot-arm": [
-      "Designed a compact 15:1 cycloidal reducer that fits within a NEMA 17's 42 mm square face for a planned 6-DOF desktop manipulator.",
+      "Designed a 15:1 cycloidal reducer for NEMA 17; planned arm targets (unvalidated): 6 DOF, 381 mm reach, 0.5 kg payload.",
       "Built PlatformIO C++ firmware for TMC2209 stepper control, including step/dir generation and real-time telemetry.",
-      "Integrated a 12-bit AS5600 magnetic encoder to detect missed steps and characterize reducer motion; multi-joint output sensing remains planned.",
+      "Integrated a 12-bit AS5600 encoder for missed-step detection; multi-joint output sensing remains planned.",
     ],
-    "digital-twin": ["Built a Drake-based digital twin with OpenCascade CAD import, CoACD collision meshes, and MeshCat visualization; live checks cover 28 DOF across 15 reusable stages, with adoption across three hutch assemblies in progress."],
-    "polycapillary": ["Redesigned alignment with hot-swap mounts, lasers, irises, and detector stages to save hours of beamtime annually and reduce collision exposure for $100k+ detectors."],
-    "steering-wheel-development": ["Integrated buttons, potentiometers, a display, and quick-release hardware; reduced mass from 4 lb to 1.7 lb across design revisions while improving driver fit."],
+    "digital-twin": [
+      "Built a 32-DOF Drake twin (305 bodies) with OpenCascade, CoACD, MeshCat; millisecond checks span 15 LCLS stages.",
+      "Applied it to three assemblies; retroactive XCS checks exposed at least five pinch points restricting use.",
+    ],
+    "polycapillary": ["Developed a redesign for a 32-DOF optics assembly with three kinematic bases and six hot-swappable optics; projected savings of 1–2 hours per shift-day and roughly $30k in annual value are not yet verified."],
+    "steering-wheel-development": ["Integrated wheel buttons, potentiometers, display, and quick-release; FEA-guided iteration cut mass from 5 lb to 1.7 lb."],
   };
   const projects = D.projects.filter((p) => resumeProjectIds.has(p.id)).map((p) => `
     <div class="r-entry">
@@ -95,9 +105,9 @@
 
   /* Skills — comma lists, ATS-friendly */
   const resumeSkills = {
-    "CAD & Manufacturing": ["SolidWorks", "Solid Edge", "Inventor / Fusion", "Mastercam", "GD&T", "CNC / manual machining", "Composites", "Welding", "Sheet metal"],
-    Programming: ["Python", "C/C++", "PlatformIO", "MATLAB", "Arduino / microcontrollers", "Git / GitHub"],
-    "Robotics & Controls": ["Drake kinematics / path planning", "Collision detection", "TMC2209 stepper control", "AS5600 encoders / I2C multiplexing"],
+    "CAD & Manufacturing": ["SolidWorks", "Solid Edge", "Teamcenter PDM", "Inventor/Fusion", "Mastercam", "GD&T", "CNC/manual machining"],
+    Software: ["Python", "C/C++", "PlatformIO", "MATLAB", "Arduino", "Git/GitHub", "EPICS", "OpenCascade", "CoACD", "MeshCat"],
+    "Robotics & Controls": ["Drake kinematics", "Collision detection", "TMC2209 stepper control", "AS5600 encoders/I2C multiplexing"],
   };
   const skills = Object.entries(resumeSkills).map(([group, list]) => `
     <div><b>${escapeHtml(group)}:</b> ${list.map(escapeHtml).join(', ')}</div>`).join('');
@@ -105,7 +115,7 @@
   document.getElementById('resume').innerHTML = `
     <header class="r-head">
       <h1 class="r-name">${text(D.meta.name)}</h1>
-      <p class="r-role">${text(D.meta.role)} · ${text(D.meta.focus)}</p>
+      <p class="r-role">${text(D.meta.role)} · Robotics · Motion Systems</p>
       <div class="r-contact">${contactBits}</div>
     </header>
 

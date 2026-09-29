@@ -21,6 +21,8 @@ css/resume.css      Resume / print theme
 assets/images/      Photos and renders
 ```
 
+Open [assets/favicon-preview.html](assets/favicon-preview.html) to inspect the dark and light favicons at full size and at tab-icon scale.
+
 Edit [data/portfolio.js](data/portfolio.js) and both the site and the resume update.
 You should almost never need to touch the HTML.
 

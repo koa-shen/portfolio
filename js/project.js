@@ -44,6 +44,10 @@
           <section>
             <h3>${text(s.heading)}</h3>
             <p>${text(s.body)}</p>
+            ${s.image ? `<figure class="detail__section-image">
+              ${imageOrPlaceholder(s.image, plain(s.imageAlt || project.title))}
+              ${s.imageCaption ? `<figcaption>${text(s.imageCaption)}</figcaption>` : ''}
+            </figure>` : ''}
           </section>`).join('')}
 
         ${project.video ? `
@@ -72,4 +76,48 @@
         ${links ? `<h4>Links</h4><ul style="padding-left:1.1rem;margin:0;font-size:.9rem">${links}</ul>` : ''}
       </aside>
     </div>`;
+
+  const imageViewer = document.createElement('dialog');
+  imageViewer.className = 'image-viewer';
+  imageViewer.setAttribute('aria-label', 'Image preview');
+  imageViewer.innerHTML = `
+    <button class="image-viewer__close" type="button" aria-label="Close image preview">&times;</button>
+    <img alt="">`;
+  document.body.append(imageViewer);
+
+  const previewImage = imageViewer.querySelector('img');
+  const openImage = (image) => {
+    previewImage.src = image.currentSrc || image.src;
+    previewImage.alt = image.alt;
+    imageViewer.showModal();
+  };
+
+  mount.querySelectorAll('.detail__cover img, .gallery img, .detail__section-image img').forEach((image) => {
+    image.tabIndex = 0;
+    image.setAttribute('role', 'button');
+    image.setAttribute('aria-label', `View larger: ${image.alt}`);
+  });
+
+  mount.addEventListener('click', (event) => {
+    const image = event.target.closest('.detail__cover img, .gallery img, .detail__section-image img');
+    if (image) openImage(image);
+  });
+
+  mount.addEventListener('keydown', (event) => {
+    if (event.target.matches('.detail__cover img, .gallery img, .detail__section-image img') && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      openImage(event.target);
+    }
+  });
+
+  imageViewer.querySelector('.image-viewer__close').addEventListener('click', () => imageViewer.close());
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && imageViewer.open) {
+      event.preventDefault();
+      imageViewer.close();
+    }
+  });
+  imageViewer.addEventListener('click', (event) => {
+    if (event.target === imageViewer) imageViewer.close();
+  });
 })();

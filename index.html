@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Koa Shen — Mechanical Engineering Portfolio</title>
-<meta name="description" content="Koa Shen — Mechanical Engineering B.S. at UC Santa Barbara. Robotics, motion systems, and design for manufacturing.">
+<title>Koa Shen Portfolio</title>
+<meta name="description" content="Koa Shen — Mechanical engineering student at UC Santa Barbara focused on robotics, controls, and motion systems.">
 <meta name="theme-color" content="#0b0f14">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Koa Shen — Mechanical Engineering Portfolio">
-<meta property="og:description" content="Robotics, motion systems, and design for manufacturing.">
+<meta property="og:description" content="Robotics, controls, motion systems, and design for manufacturing.">
 <meta property="og:image" content="assets/images/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" id="siteFavicon" href="assets/favicon.svg?v=6" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="js/theme.js"></script>
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -58,6 +59,7 @@
       <div class="hero__media" id="heroMedia"></div>
     </div>
     <div class="wrap hero__stats" id="heroStats"></div>
+    <div class="wrap hero__photos" id="heroPhotos" role="group" aria-label="Personal photos"></div>
   </section>
 
   <!-- ============ ABOUT ============ -->
@@ -73,7 +75,7 @@
   <section id="projects" class="section section--alt">
     <div class="wrap">
       <h2 class="section__title"><span class="section__num">02</span>Selected Projects</h2>
-      <p class="section__lede">Each project has a full write-up: problem, constraints, analysis, manufacturing, and results.</p>
+      <p class="section__lede">Explore project goals, design decisions, manufacturing, and validation.</p>
       <div class="projects" id="projects-grid"></div>
     </div>
   </section>
@@ -98,7 +100,7 @@
   <section id="contact" class="section">
     <div class="wrap contact">
       <h2 class="section__title"><span class="section__num">05</span>Get in touch</h2>
-      <p class="contact__lede">I’m open to engineering internships across design, manufacturing, and systems work. Robotics and controls are my primary interests, but I’d be glad to hear about other good fits too. Feel free to reach out—I’d love to connect.</p>
+      <p class="contact__lede">I’m seeking a Summer 2027 internship in robotics, controls, or motion systems, especially work that connects modeling and analysis to physical hardware. I’m also interested in mechatronics and mechanical design for robotics. Feel free to reach out.</p>
       <div class="contact__links" id="contactLinks"></div>
     </div>
   </section>
@@ -109,6 +111,14 @@
   <div class="wrap footer__inner">
     <span>© <span id="year"></span> Koa Shen</span>
     <span class="footer__built">Built from scratch — HTML, CSS, JS</span>
+    <label class="theme-picker">
+      <span>Theme</span>
+      <select id="themePreference" aria-label="Color theme">
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>
   </div>
 </footer>
 

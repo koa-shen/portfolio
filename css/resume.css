@@ -51,7 +51,7 @@ body {
 
 /* ---------- header ---------- */
 .r-head { border-bottom: 2px solid var(--brand); padding-bottom: .4rem; margin-bottom: .75rem; }
-.r-name { font-size: 23pt; font-weight: 800; letter-spacing: -.02em; margin: 0; color: var(--brand); }
+.r-name { font-size: 20pt; font-weight: 800; letter-spacing: -.02em; margin: 0; color: var(--brand); }
 .r-role { font-size: 10.5pt; color: var(--ink-dim); font-weight: 500; margin: .1rem 0 .3rem; }
 .r-contact { display: flex; flex-wrap: wrap; gap: .3rem .75rem; font-size: 9.2pt; color: var(--ink-dim); }
 .r-contact span::after { content: ''; }

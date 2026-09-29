@@ -21,41 +21,44 @@ Use this as a launch checklist. There are no active `FILLER:` strings in [data/p
 Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bullet upgrade.
 
 **Digital twin framework (your flagship)**
-- [x] Largest model: 30 DOF in the polycapillary assembly
-- [ ] How many stages inventoried into the library?
-- [x] Model load time: about 30 seconds
-- [ ] Interferences caught before they reached hardware
+- [x] Largest model: 30 DOF in the polycapillary assembly, with 305 active bodies
+- [x] How many stages inventoried into the library? — 15 commonly used LCLS stages
+- [x] Model load time: about 30 seconds; collision checks take a few milliseconds
+- [x] Interferences caught — at least five use-restricting pinch points found retroactively
 - [x] Adoption: actively being applied to three large, high-DOF LCLS assemblies
-- [ ] Real constraints (enclosure envelope, latency, existing controls integration)
-- [ ] Public repo link, if the code can be open-sourced
-- [ ] "What I'd do differently" paragraph
+- [x] Real constraints — vacuum/helium envelopes, compact FEH beamline, Solid Edge/Teamcenter and EPICS interoperability
+- [x] Public repo link — `https://github.com/slaclab/twin-lab/`
+- [x] "What I'd do differently" paragraph
 
 **Polycapillary redesign**
-- [ ] Alignment time before vs. after
-- [ ] DOF added, assembly mass, kinematic mount repeatability
-- [ ] Experiments served per year + the dollar figure you're cleared to publish
+- [x] Alignment time before vs. after — not yet tested; projected savings of 1–2 hours per shift-day
+- [x] DOF and repeatability — 2 DOF added; 3 kinematic bases and 6 hot-swappable optics at <100 µrad repeatability; mass is not relevant
+- [x] Experiments served per year + projected value — 2 experiments per year on average; approximately $30k annual savings once implemented
 
 **Robot arm**
-- [ ] Cycloidal reduction ratio per joint, measured backlash
-- [ ] Print materials chosen and why; layer orientation decisions (updated PETG/TPU/DFM)
-- [ ] Arm reach, payload target, holding torque, total BOM cost
+- [ ] Cycloidal reducer — 15:1 per joint confirmed; measured backlash coming soon
+- [x] Print materials and orientation — PETG and ABS structural parts; layers oriented for radial housing loads and geometric accuracy; TPU strain relief planned
+- [ ] Upload a photo of the encoder-and-limit-switch backlash test setup
+- [x] Arm targets — 381 mm reach, 0.5 kg useful payload, and no more than 5 s between opposite sides of the workspace; all provisional
+- [ ] Measured output holding torque and total BOM cost — prototype motor has a nominal 42 N·cm rating; the roughly 1.87 N·m payload-only shoulder torque is an estimate based on provisional reach and payload targets
 - [x] Controls architecture: MCU, TMC2209 driver, I2C + TCA9548A mux, AS5600 absolute joint encoders, telemetry CSV (`ms,step_pos,angle_deg`)
 - [x] Repo link: `https://github.com/koa-shen/desktop-6dof-arm`
 
 **GR26 wheel assemblies**
-- [ ] Which components (uprights? hubs? spacers?), material, quantity made
-- [ ] Tolerances held, cycle time, fixturing approach
-- [ ] Any scrap-rate or lead-time win from your DFM feedback
+- [x] Components and quantities — 8 clevises, 16 rod ends, 5 identical spindles, and 4 unique/mirrored uprights
+- [x] Materials — 4130 chromoly steel clevises and rod ends; 7075-T6 aluminum spindles and uprights
+- [x] Tolerances, cycle time, and fixturing — 0.0004 in bore window; 0.0005 in bearing interfaces; 5 min clevis/rod-end cycles; step clamps and two-face spindle softjaws
+- [x] Scrap rate and DFM impact — 1/3 of upright stock scrapped; common tripod-coupling spindle design likely prevented at least two more scrapped parts
 
 **GR26 safety systems**
-- [ ] Steering wheel mass before/after optimization; seat mass
-- [ ] Driver percentile range accommodated
-- [ ] Competition, year, and placement
-- [ ] Weeks from sketch to installed
+- [x] Steering wheel and seat mass — wheel: 5 lb (2024), 4 lb (2025), 3 lb then 1.7 lb (2026); seat: about 4 lb
+- [x] Driver percentile range — 5th-percentile female through 95th-percentile male
+- [x] Competition and placement — 30th at 2026 Michigan FSAE Electric; 2nd UC overall, best UC in endurance, 4th in California
+- [x] Development time — early July through mid-May, roughly 10 months sketch-to-installed
 
 **Exploratorium**
-- [ ] Exhibits serviced / redesigned (a count)
-- [ ] Anything you left behind: documentation, a process, a jig
+- [x] Exhibits serviced / redesigned — serviced 100+ exhibits and completed 3 full overhauls: Arp Forms, Spinning Patterns, and Monochromatic Room
+- [x] Handoff — Confluence links to current PDM designs, remanufacturing instructions, and CAM files for custom spares
 
 ## Tier 3 — polish
 
@@ -76,3 +79,4 @@ Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bulle
       the project page.
 - [x] **Closed-loop controls evidence** — validated encoder feedback, automatic position-error
       compensation, and missed-step detection on the robot-arm bench setup.
+- [x] **Controls coursework or self-study** — currently taking Dynamical Systems and Machine Learning; Mechatronics, Robotics Lab, and Inverse Kinematics planned this academic year.

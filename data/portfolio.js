@@ -18,20 +18,26 @@ const PORTFOLIO = {
   /* ===================== IDENTITY / CONTACT ===================== */
   meta: {
     name: "Koa Shen",
-    role: "Mechanical Engineering B.S. @ UC Santa Barbara",
+    role: "B.S. Candidate in Mechanical Engineering · UC Santa Barbara",
     focus: "Robotics · Controls · Motion Systems · Design for Manufacturing",
     // Short punchy line under your name on the hero. Rewrite in your voice.
     tagline:
-      "I design, simulate, and machine motion systems — from 20-DOF X-ray beamline stages at SLAC to cycloidal-drive robot arms on my bench at home.",
+      "I connect simulation, mechanical design, and fabrication to build motion systems, from 32-DOF X-ray beamline assemblies at SLAC to a cycloidal-drive robot arm.",
     location: "San Francisco Bay Area / Santa Barbara, CA",
     email: "koashensf@gmail.com",
     phone: "(415) 810-8344",
     linkedin: "https://linkedin.com/in/koa-shen/",
     github: "https://github.com/koa-shen",
+    website: "koashen.com",
     // Drop the exported PDF at this path (see assets/README note)
     resumePdf: "assets/Koa_Shen_Resume.pdf",
     // Hero portrait or a hero render of your best project
     heroImage: "assets/images/hero.jpg",
+    personalPhotos: [
+      "assets/images/personal photos/DSC04070.JPG",
+      "assets/images/personal photos/DSC04745.JPG",
+      "assets/images/personal photos/IMG_5488.jpeg",
+    ],
   },
 
   /* ===================== HERO STAT STRIP ===================== */
@@ -40,7 +46,7 @@ const PORTFOLIO = {
     { value: "3.97", label: "Major GPA" },
     { value: "30 DOF", label: "Polycapillary assembly" },
     { value: "15", label: "Engineers Led" },
-    { value: "40+", label: "Parts CNC Machined" },
+    { value: "40+", label: "CNC-Machined Parts" },
   ],
 
   /* ===================== ABOUT ===================== */
@@ -49,9 +55,9 @@ const PORTFOLIO = {
     // 2-3 short paragraphs. Draft below is built from what you told me —
     // edit the tone until it sounds like you.
     paragraphs: [
-      "I'm a third-year Mechanical Engineering student at UC Santa Barbara focused on robotics and motion control. My work sits at the seam between design and implementation: I like problems where the CAD, the hand calcs, the toolpath, and the control loop all have to agree with each other.",
-      "At SLAC National Accelerator Laboratory I built a Python-based digital twin framework for multi-axis X-ray beamline stages, then used it to drive a redesign of a high-traffic optical assembly. On Gaucho Racing I lead the chassis and ergonomics side of our FSAE EV car and machine suspension hardware on Haas mills and lathes. In between, I'm building a 6-DOF printed robotic manipulator from scratch, cycloidal drives and all.",
-      "I'm building toward a Summer 2027 internship in controls, robotics, or autonomous actuation. That means continuing design and simulation work at SLAC, taking on new research problems at UCSB, and strengthening my foundation in ROS, C++, machine design, FEA, and control theory.",
+      "I'm a mechanical engineering student at UC Santa Barbara focused on robotics and motion control. I work across CAD, analysis, fabrication, and controls, with a particular interest in turning models into reliable hardware.",
+      "At SLAC, I develop simulation and mechanical-design workflows for X-ray beamline motion stages. With Gaucho Racing, I lead chassis and ergonomics work and machine suspension hardware. In my own projects, I build and test mechatronic systems, including a cycloidal-drive actuator for a planned robot arm.",
+      "I'm seeking a Summer 2027 internship in robotics, controls, or autonomous actuation. I'm especially interested in roles that connect modeling and analysis to physical systems, and I'm deepening that foundation through SLAC work, UCSB coursework, and independent hardware projects.",
     ],
   },
 
@@ -64,7 +70,8 @@ const PORTFOLIO = {
       location: "Santa Barbara, CA",
       gpa: "3.97 Major GPA · 3.94 Cumulative GPA",
       details: [
-        "Relevant coursework: Statics, Dynamics, Intro to Mechanics of Materials, Advanced Mechanics of Materials, Circuits, Intro MATLAB, Intermediate MATLAB, Calculus-based Physics series, Calculus series.",
+        "Relevant coursework: Statics, Dynamics, Dynamical Systems and Machine Learning (in progress), Mechanics of Materials, Circuits, MATLAB, and Calculus-based Physics.",
+        "Planned this academic year: Mechatronics, Robotics Lab, and Inverse Kinematics.",
         "Dean's Honors, College of Engineering — every quarter to date.",
       ],
     },
@@ -75,7 +82,7 @@ const PORTFOLIO = {
   experience: [
     {
       org: "SLAC National Accelerator Laboratory — LCLS",
-      role: "Engineering Intern",
+      role: "Mechanical Engineering Intern",
       dates: "Summer 2026 – Present (extended to part-time remote)",
       location: "Menlo Park, CA",
       type: "paid",
@@ -85,7 +92,7 @@ const PORTFOLIO = {
         "Redesigned a high-traffic polycapillary optics assembly — kinematic mounts, alignment lasers, irises, and added stages — using the simulation framework to cut interference risk and improve focusing reliability.",
         "Performed statics and dynamics hand calculations to qualify stages and mounts against loading cases protecting $100k+ detectors from crash and drop failures.",
         "Produced design and PDM-controlled documentation in Siemens Solid Edge, applying GD&T for manufacture and inspection.",
-        "Built a 15-stage reusable catalog and is actively applying the framework to three large, high-DOF LCLS assemblies; EPICS controls compatibility is in progress so hutch engineers can model and simulate their own assemblies without rewriting kinematics.",
+  "Built a 15-stage reusable catalog and is actively applying the framework to three large, high-DOF LCLS assemblies; collision checks run in milliseconds, model loading takes about 30 seconds, and EPICS controls compatibility is in progress so hutch engineers can model and simulate their own assemblies without rewriting kinematics.",
       ],
     },
     {
@@ -111,10 +118,10 @@ const PORTFOLIO = {
       tags: ["Assembly Design", "Mechatronics", "Project Management", "CNC", "Welding"],
       bullets: [
         "Previously led a 15-person team through ergonomics sketches, detail design, manufacturing, and installation of the GR26 driver safety systems; passed technical inspection at FSAE EV competition fully rules-compliant.",
-        "CNC machined GR26 suspension wheel assemblies on Haas mills and lathes, programming toolpaths in Mastercam and iterating on GD&T feedback with the suspension design team.",
+        "CNC-machined 4130 chromoly steel and 7075-T6 aluminum GR26 suspension components on Haas TM mills and lathes, holding bearing interfaces within 0.0005 in.",
         "Own chassis and ergonomics packaging, including welded tube structures, tube notching, and assembly design.",
-        "Placed 30th at FSAE EV 2026 (Brooklyn, MI), up from 54th the year before — the team's first time passing technical inspection and competing in every dynamic event.",
-        "Optimized the quick-release steering wheel from 3 lbs to 1.7 lbs — under half its prior weight — while improving driver comfort and force application.",
+        "Placed 30th at 2026 Michigan FSAE Electric, 2nd among UC teams, best among UC teams in endurance, and 4th among California teams.",
+        "Helped evolve the quick-release steering wheel from 5 lbs in 2024 to 1.7 lbs in its final 2026 form through iterative design and FEA-driven weight optimization.",
       ],
     },
   ],
@@ -137,21 +144,21 @@ const PORTFOLIO = {
       tags: ["In Progress", "Python", "Drake", "CoACD", "MeshCat", "OpenCascade", "Path Planning"],
       cover: "assets/images/digital-twin/TWIN LAB FRONT.png",
       images: [
+        "assets/images/digital-twin/TWIN LAB FRONT BEAM PATH.png",
+        "assets/images/digital-twin/TWIN LAB FRONT CLOSE UP.png",
+        "assets/images/digital-twin/TWIN LAB ISO WITH CONTROL PANEL.png",
         "assets/images/digital-twin/TWIN LAB ISO 1.png",
-        "assets/images/digital-twin/TWIN LAB ISO 2.png",
-        "assets/images/digital-twin/TWIN LAB COLLISION WARNING.png",
         "assets/images/digital-twin/TWIN LAB CONTROL PANEL.png",
-        "assets/images/digital-twin/DETECTOR STAGE ASSEMBLY.png",
       ],
       // Detail page sections. Keep the engineering narrative: problem -> constraints -> approach -> result.
       sections: [
         {
           heading: "Problem",
-          body: "The polycapillary test assembly at LCLS packs many independently actuated stages into a small, sealed enclosure. Any commanded move risks driving hardware into a neighbor, and a crash can destroy detectors worth six figures or burn irreplaceable beam time. Static CAD inspection could not practically evaluate every travel range or design revision, so interference was largely checked by intuition.",
+          body: "The XCS polycapillary assembly at LCLS packs 32 DOF into a small, sealed enclosure. Any commanded move risks driving hardware into a neighbor, and a crash can destroy detectors worth six figures or burn irreplaceable beam time. Collision checking is currently retroactive, so the simulation is being used to expose restrictions in the existing assembly before future planning and controls integration can prevent unsafe moves.",
         },
         {
           heading: "Constraints",
-          body: "A ~20ms planning latency target, an enclosure envelope of roughly 3x2x2 ft (with a protruding section for a long detector stage) that leaves little safety margin for 28 DOF of hardware, and mandatory interoperability with SLAC's EPICS controls system — which runs on a private, access-restricted network for the controls team. Tooling also had to stay open-source: commercial options like Siemens Process Simulate cost roughly $25k/year per seat, which doesn't scale to a lab of engineers who need to iterate rapidly.",
+          body: "Enclosure envelopes are driven by vacuum or helium pumping requirements as well as competing space claims along the beamline. Space is especially scarce in the Far Experimental Hall, where XCS sits in a compact facility excavated into a hill. The workflow also needs to interoperate with Siemens Solid Edge, Teamcenter PDM, and the controls team's EPICS database. Tooling had to stay open-source: commercial options like Siemens Process Simulate cost roughly $25k/year per seat, which doesn't scale to a lab of engineers who need to iterate rapidly.",
         },
         {
           heading: "Approach",
@@ -159,19 +166,19 @@ const PORTFOLIO = {
         },
         {
           heading: "Beyond collision detection",
-          body: "Live collision detection is operational. The same framework also provides the kinematic basis for future homing sequences, path planning, and explicit safe and no-go zones; those capabilities remain in development. They matter most on high-DOF assemblies with incomplete encoder coverage, where an operator needs more confidence than a static CAD check can provide.",
+          body: "Interactive collision checking is operational within the simulation, but it is currently retroactive rather than connected to live controls. The same framework provides the kinematic basis for future homing sequences, path planning, and explicit safe and no-go zones; those capabilities remain in development. They matter most on high-DOF assemblies with incomplete encoder coverage, where an operator needs more confidence than a static CAD check can provide.",
         },
         {
           heading: "Results",
-          body: "The XCS polycapillary assembly covers 30 total DOF across a mix of linear, rotary, and tip-tilt stages, with 15 reusable stages in the current catalog. Collision checking is live, using CoACD convex-hull decomposition with a secondary mesh triangle-triangle distance query for verification, both leaning on Drake's fast collision-query algorithms. Loading a model takes about 30 seconds. Applying the framework to the XCS polycapillary test assembly surfaced at least 10 actionable design changes needed for true interference resistance: a helium-purged acrylic enclosure redesign, repositioned stage stacks, new breadboard-mounting brackets, and encoder retrofits on stages that currently have no closed-loop feedback. The framework is now being actively adopted on three large, high-DOF LCLS assemblies; full path planning and EPICS integration remain in progress.",
+          body: "The XCS polycapillary assembly covers 30 total DOF and 305 active bodies across a mix of linear, rotary, and tip-tilt stages, with 15 reusable stages in the current catalog. Collision checking is live, using CoACD convex-hull decomposition with a secondary mesh triangle-triangle distance query for verification; checks complete in a few milliseconds, while loading a model takes about 30 seconds. Retroactive checking of the XCS assembly has identified at least five genuine pinch points and at least 10 actionable design changes needed for true interference resistance, including a helium-purged acrylic enclosure redesign, repositioned stage stacks, new breadboard-mounting brackets, and encoder retrofits. The framework is now being actively adopted on three large, high-DOF LCLS assemblies; full path planning and EPICS integration remain in progress.",
         },
         {
           heading: "Operational impact",
-          body: "Replacing intuition-based clearance checks with repeatable motion simulation lets engineers find potential interference before hardware is moved during an experiment. That reduces collision exposure for high-value detectors and optics and supports safer design iteration; the framework identifies risks but cannot guarantee that collisions or schedule disruptions will be eliminated.",
+          body: "Repeatable motion simulation has made at least five real restrictions in the existing XCS polycapillary assembly visible to engineers. Collision checking is still retroactive rather than connected to live controls, but these findings can guide hardware revisions now and provide concrete cases for future path planning and EPICS integration.",
         },
         {
           heading: "What I'd do differently",
-          body: "I'd reconsider the GUI. MeshCat came bundled with Drake and was the path of least resistance, but it's a limited visualization layer — it has no real button support, only sliders, which gets awkward when you want the sim to expose more than a parameter sweep. I'd also revisit the CoACD mesh decomposition step: it enables fast real-time collision queries, but generating a new decomposition after a CAD revision takes about two hours. That's still far faster than commercial alternatives, but slow enough that a rapid-iteration designer might give up on simulating a new revision rather than wait — and speeding that up would make the tool much more compelling to adopt.",
+          body: "First, I would start with a smaller assembly so the core framework matured faster and path planning could begin earlier. Starting with a large, realistic assembly did accelerate development of the stage catalog, but it was a clear schedule tradeoff. Second, I would verify the CAD against the physical assembly before simulation. We discovered deep into STEP-file simulation that the CAD no longer matched the hardware, forcing CAD repairs and simulation work to run in parallel during a 10-week summer program. Third, I would involve XCS controls personnel, instrument scientists, and operators earlier. Their input could have accelerated EPICS live/replay and path planning while shaping the simulation around the needs of experiment runs.",
         },
       ],
       links: [
@@ -190,20 +197,19 @@ const PORTFOLIO = {
       tags: ["In Progress", "Solid Edge", "PDM", "Kinematic Mounts", "Statics & Dynamics", "GD&T", "Optomechanics"],
       cover: "assets/images/polycapillary/POLYCAP REAL ISO.jpg",
       images: [
-        "assets/images/polycapillary/POLYCAP LASER RENDER ISO FRONT.png",
+        "assets/images/polycapillary/POLYCAP REAL ISO.jpg",
         "assets/images/polycapillary/POLYCAP LASER INTERNALS RENDER.png",
         "assets/images/polycapillary/POLYCAP STACK IRIS RENDER FRONT.png",
         "assets/images/polycapillary/POLYCAP STANDARD RENDER INTERNALS.png",
-        "assets/images/polycapillary/POLYCAP STATIC MOUNT.png",
       ],
       sections: [
         {
           heading: "Problem",
-          body: "The existing polycapillary assembly is used constantly across experiments but was poorly designed: alignment was slow and unreliable, packaging invited interference with neighboring hardware, and setup consumed X-ray beam time that costs tens of thousands of dollars per experiment.",
+          body: "The polycapillary assembly serves about two experiments per year, each typically running for a week. During those runs, alignment is slow and unreliable, packaging invites interference with neighboring hardware, and setup consumes X-ray beam time that costs tens of thousands of dollars per experiment.",
         },
         {
           heading: "Design changes",
-          body: "Collision-simulation findings and direct feedback from instrument scientists drove new brackets, a more stable enclosure base mount, kinematic mounts for repeatable hot-swapping, alignment lasers and irises for semi-fine alignment, cable management and detector strain relief, and additional stages for detector maneuverability. Packaging was reworked to remove identified interference risks while making the assembly more usable in real experimental workflows.",
+          body: "Collision-simulation findings and direct feedback from instrument scientists drove new brackets, a more stable enclosure base mount, three kinematic bases with six optical components on hot-swappable top plates, alignment lasers and irises for semi-fine alignment, cable management and detector strain relief, and two additional DOF for detector maneuverability. Packaging was reworked to remove identified interference risks while making the assembly more usable in real experimental workflows.",
         },
         {
           heading: "Analysis",
@@ -211,7 +217,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Impact",
-          body: "The redesign moves precision alignment out of the live-beam workflow and simplifies setup and recovery, saving hours of beamtime per year across an assembly used in an estimated 1–2 experiments annually. At approximately $150k per day (about $6.25k per hour), those hours represent an estimated thousands to tens of thousands of dollars in annual beamtime value, not audited cash savings; the annual time and value estimates should be confirmed with the instrument team. LCLS experiments are scheduled far in advance and run on fixed schedules, so improved setup reliability also lowers the risk of delays or scrapped runs that consume staff, instrument, and preparation resources beyond beamtime itself.",
+          body: "The redesign is projected to save roughly 1–2 hours of alignment work per shift-day during week-long experiments, which use the assembly about twice per year on average. Because no polycapillary experiment runs are scheduled in the immediate future, the improvement has not yet been timed in operation. Once all fixes are implemented, the expected annual value is on the order of $30k; this is a planning estimate rather than audited cash savings. Improved setup reliability should also lower the risk of delays or scrapped runs that consume staff, instrument, and preparation resources beyond beamtime itself.",
         },
         {
           heading: "Alignment workflow",
@@ -219,7 +225,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Numbers",
-          body: "Added 2 DOF to the assembly, bringing it to 30 DOF total. Kinematic mount repeatability follows the Newport M-BK-1A spec sheet. The assembly serves an estimated 1–2 experiments per year. Precise mass and enclosure dimensions are pending final CAD.",
+          body: "Added 2 DOF, bringing the assembly to 32 DOF total, along with three kinematic bases supporting six optical components on hot-swappable top plates. The kinematic interfaces provide less than 100 microradians of repeatability. The assembly serves two experiments per year on average; total assembly mass is not a meaningful design metric for this application.",
         },
       ],
       links: [],
@@ -234,7 +240,7 @@ const PORTFOLIO = {
       compactImages: true,
       summary:
         "Bench-validated closed-loop control of a compact 15:1 cycloidal reducer and NEMA 17 stepper package, with motor-shaft encoder feedback, automatic error compensation, and missed-step detection in custom firmware.",
-      tags: ["In Progress", "C++", "PlatformIO", "TMC2209", "AS5600 Encoder", "15:1 Cycloidal Reducer", "PETG / DFM"],
+  tags: ["In Progress", "C++", "PlatformIO", "TMC2209", "AS5600 Encoder", "15:1 Cycloidal Reducer", "PETG / ABS"],
       cover: "assets/images/robot-arm/FULL REDUCER ASSEMBLY RENDER ISO.jpg",
       video: {
         title: "Single-Joint Motor and Reducer Bench Test",
@@ -244,7 +250,6 @@ const PORTFOLIO = {
       images: [
         "assets/images/robot-arm/FULL REDUCER ASSEMBLY RENDER EXPLODED ISO.jpg",
         "assets/images/robot-arm/FULL REDUCER ASSEMBLY RENDER EXPLODED SIDE.jpg",
-        "assets/images/robot-arm/FULL REDUCER ASSEMBLY SECTION RENDER SIDE.jpg",
         "assets/images/robot-arm/BOM LAYOUT REAL.jpg",
         "assets/images/robot-arm/CORE SUBASSEMBLY REAL.jpg",
         "assets/images/robot-arm/REDUCER AND HOUSING SEPARATE REAL.jpg",
@@ -256,11 +261,11 @@ const PORTFOLIO = {
       sections: [
         {
           heading: "Long-term goal",
-          body: "Build a capable 6-DOF desktop manipulator using custom 3D-printed cycloidal reducers and off-the-shelf electronics, serving as a physical hardware testbed for the Drake-based planning framework developed at SLAC.",
+          body: "Build a 6-DOF desktop manipulator using custom 3D-printed cycloidal reducers and off-the-shelf electronics, serving as a physical hardware testbed for the Drake-based planning framework developed at SLAC. Provisional whole-arm targets are 0.5 kg of useful payload, about 381 mm (15 in) of reach from the base axis to the tool center point, and a move between opposite sides of the usable workspace in no more than five seconds. These are design goals, not validated capabilities. Other numerical values are provisional estimates unless explicitly identified as confirmed or measured.",
         },
         {
           heading: "Actuation & Firmware",
-          body: "Driven by NEMA 17 stepper motors (1.5A, 42 N·cm) paired with TMC2209 silent drivers. Built custom C++ firmware using PlatformIO for microcontrollers, implementing phase-based bringup, step/dir pulse generation, and real-time CSV telemetry (ms, step_pos, angle_deg).",
+          body: "The single-joint prototype uses a 1.5 A NEMA 17 stepper with a nominal 42 N·cm holding-torque rating, paired with a TMC2209 silent driver. I built custom C++ firmware in PlatformIO for phase-based bring-up, step/dir pulse generation, and real-time CSV telemetry (ms, step_pos, angle_deg). The exact motor remains to be confirmed before the whole-arm design is finalized.",
         },
         {
           heading: "Position Sensing",
@@ -268,15 +273,15 @@ const PORTFOLIO = {
         },
         {
           heading: "DFM & Materials",
-          body: "Printed on a Bambu P1S using PETG for structural and encoder mounting parts for thermal and mechanical stability near warm motors, TPU for cable strain relief, and custom M3 fastener hardware layouts.",
+          body: "Structural components are printed in PETG and ABS on a Bambu P1S, with layer orientation chosen to maximize radial load capacity in the reducer housing's primary loading case. Print orientation is also selected for geometric accuracy because tight tolerances determine the compromise between backlash and mechanical resistance. TPU strain relief and more complete cable routing are planned once the motion chain exists; the current bench wiring remains loose while the joint architecture is still being developed.",
         },
         {
           heading: "Reduction & Packaging",
-          body: "Each cycloidal reducer runs a 15:1 reduction, sized to be compatible with any NEMA 17 stepper: it fits within the motor's 42x42mm face profile and is shorter axially than the stepper itself, so it packages cleanly into linkages without growing the joint envelope. Measured backlash, holding torque, arm reach, payload target, and total BOM cost are still being characterized as the build progresses.",
+          body: "Each cycloidal reducer provides 15:1 reduction and is sized for a NEMA 17 stepper. It fits within the motor's 42 mm square face and is shorter axially than the stepper, allowing it to package into linkages without increasing the joint envelope. At the provisional 0.5 kg payload and 381 mm reach targets, payload alone would apply about 1.87 N·m of static shoulder torque, before accounting for the gripper, links, efficiency, or dynamic loads. Measured output holding torque, backlash, and total BOM cost remain pending.",
         },
         {
           heading: "Closed-Loop Validation & Future Architecture",
-          body: "Closed-loop tests have been completed and encoder feedback has been validated on the single-joint bench setup, including automatic compensation for position error and missed-step detection. The project remains in 15:1 reducer characterization; torque, thermal behavior, payload, and reach remain to be measured. Kinematic simulation and trajectory optimization are planned in Python and Drake, with a future SPI/CAN architecture for higher joint-telemetry bandwidth.",
+          body: "Closed-loop tests have been completed and encoder feedback has been validated on the single-joint bench setup, including automatic compensation for position error and missed-step detection. The backlash test uses encoder feedback with a limit switch: the shaft is preloaded against the switch, then backed off while the encoder measures the interval of shaft motion before the switch signal changes. The measured backlash value, torque, thermal behavior, payload, and reach remain pending. Kinematic simulation and trajectory optimization are planned in Python and Drake, with a future SPI/CAN architecture for higher joint-telemetry bandwidth.",
         },
       ],
       links: [
@@ -291,35 +296,37 @@ const PORTFOLIO = {
       dates: "Winter 2025 – Spring 2026",
       featured: true,
       summary:
-        "CNC machined suspension wheel assemblies programmed in Mastercam and cut on Haas mills and lathes, iterated with the suspension design team through GD&T feedback.",
-      tags: ["Mastercam", "Haas", "CNC Mill", "CNC Lathe", "GD&T", "DFM"],
+        "CNC-machined 33 precision suspension components on Haas TM mills and lathes, holding critical bearing interfaces within 0.0005 in and improving spindle manufacturability through design review.",
+      tags: ["Mastercam", "Haas", "4130 Steel", "7075-T6 Aluminum", "CNC Mill", "CNC Lathe", "GD&T", "DFM"],
       cover: "assets/images/gr26-wheels/SPINDLE CNC MILLING COMPLETE.jpg",
       images: [
         "assets/images/gr26-wheels/UPRIGHT MACHINING IN PROGRESS.jpg",
         "assets/images/gr26-wheels/SPINDLE IN CNC LATHE.jpg",
-        "assets/images/gr26-wheels/SOFTJAWS MACHINING.jpg",
         "assets/images/gr26-wheels/FINISHED CLEVISES.jpg",
       ],
       sections: [
         {
           heading: "Scope",
-          body: "Machined the wheel-end assemblies for the GR26 car's suspension, covering both milling and turning operations.",
+          body: "Machined 8 precision-bored clevises and 16 precision-bored rod ends from 4130 chromoly steel, plus 5 identical spindles and 4 unique but similar or mirrored uprights from 7075-T6 aluminum for the GR26 suspension. The clevises and rod ends receive edge-crimped bearings before being welded to the control arms; the spindle and upright bearing interfaces were the most demanding features. Every job ran on a Haas TM mill or Haas TM lathe.",
         },
         {
           heading: "Design for manufacturing",
-          body: "Worked directly with the suspension design team, feeding GD&T and manufacturability feedback back into the design so the parts could actually be held, fixtured, and inspected.",
+          body: "Worked directly with the suspension design team, feeding GD&T and manufacturability constraints into design reviews. Although only the rear wheels are driven, I proposed using the tripod-coupling housing on all five spindles so the same proven CAM programs could produce four installed parts and one spare. One spindle was still scrapped, but standardizing the design likely prevented at least two additional scrap parts and shortened programming and setup time.",
         },
         {
           heading: "Components & tolerances",
-          body: "Machined uprights, spindles, spacers, and brackets in 7075-T6 aluminum — 5 of each (except uprights, which are wheel-specific) to cover all four wheels plus a spare. Held +/-0.0005in on the wheel hub bearing interfaces (a slight mallet press fit) and +/-0.0002in on the spherical bearing interface for the rod ends (a slip fit, then edge-crimped). Cycle time wasn't optimized for speed — the priority was accuracy, surface finish, and machine/operator safety.",
+          body: "Held a 0.0004 in total tolerance window on the clevis and rod-end bores, with cycle times of about five minutes per part. Held 0.0005 in on the spindle outside-diameter bearing interfaces and upright bore bearing interfaces. Critical fits were measured and confirmed with go/no-go tests.",
+          image: "assets/images/gr26-wheels/SOFTJAWS MACHINING.jpg",
+          imageAlt: "Repeatable machining setup for the GR clevis bores",
+          imageCaption: "Repeatable setup used to machine the GR clevis bores.",
         },
         {
           heading: "Fixturing",
-          body: "Used custom softjaws machined from 6061 for most milling operations. Uprights, being one-of-one parts, were held with breadboard step-clamp setups since repeatability wasn't a factor; spacers and brackets used standard vice and parallel-bar setups.",
+          body: "Used breadboard step-clamp setups for most operations. The five identical spindles used a pair of custom softjaws with two locating faces to establish repeatable datums across their different operations.",
         },
         {
           heading: "DFM impact",
-          body: "Scrap rate was mostly a function of Mastercam programming error rather than the design, so DFM feedback didn't move that number. Lead time was the real win: feature-orientation adjustments and tolerance checks caught during design review saved entire machine setups — a savings that multiplies across every replica part made.",
+          body: "The uprights were the highest-risk parts: they tended to flex during machining and push the bearing bore out of tolerance, consuming one-third of the starting stock as scrap. That loss was accepted given the geometry and precision required. The larger lead-time win came from standardizing all five spindles around the tripod-coupling housing, which reused proven CAM and reduced the opportunity for additional setup and programming failures.",
         },
       ],
       links: [],
@@ -332,12 +339,12 @@ const PORTFOLIO = {
       dates: "2025 – 2026",
       featured: false,
       summary:
-        "Led a 15-person team from ergonomics sketches through installation of the GR26 driver environment: floor closeout, firewall, heat insulation, composite seat, and Confor foam headrest. Passed FSAE EV technical inspection fully rules-compliant.",
+        "Led a 15-person team from ergonomics sketches through installation of the GR26 driver environment: floor closeout, firewall, heat insulation, composite seat, and Confor foam headrest. Delivered a rules-compliant package that passed FSAE EV technical inspection.",
       tags: ["Composites", "Ergonomics", "Sheet Metal", "Project Management", "FSAE Rules"],
       cover: "assets/images/gr26-safety/GR26 SAFETY SYSTEMS.png",
       images: [
         "assets/images/gr26-safety/GR26 SEAT.png",
-        "assets/images/gr26-safety/GR26 STEERING WHEEL ISO.png",
+        "assets/images/steering-wheel/ER26SteeringWheelQR RENDER EXPLODED ISO.jpg",
         "assets/images/gr26-safety/DRIVER COCKPIT.jpg",
         "assets/images/gr26-safety/GR26 ERGO JIG WITH DRIVER.png",
         "assets/images/gr26-safety/FIREWALL GAP COVER.jpg",
@@ -361,11 +368,11 @@ const PORTFOLIO = {
         },
         {
           heading: "Fit strategy",
-          body: "FSAE rules require accommodating 5th-percentile-female to 95th-percentile-male drivers, but our actual driver pool clustered around the 35th-percentile male. So the cockpit was built to stay usable across the full rules-mandated range while being truly optimized for our real drivers: a seat molded directly to them, a steering wheel molded to their grip, headrest placement set from their feedback, and pedal placement calibrated to their leg length, with optional mounting positions for drivers at the percentile extremes.",
+          body: "FSAE rules require accommodating drivers from the 5th-percentile female to the 95th-percentile male. Our driver pool clustered around the 35th-percentile male, so the cockpit had to meet the full rules-mandated range while fitting our drivers closely: a seat molded to them, a steering wheel shaped to their grip, headrest placement informed by their feedback, and pedal placement calibrated to their leg length. Optional mounting positions accommodate drivers near the percentile extremes.",
         },
         {
           heading: "Results",
-          body: "At FSAE EV 2026 (Brooklyn, Michigan, June 2026) the team placed 30th, up from 54th the year before — the first time the team passed technical inspection, and the first time it competed in a dynamic event, let alone all of them. Full development ran from early August 2025 to early May 2026, roughly nine months sketch-to-installed.",
+          body: "At 2026 Michigan FSAE Electric, the team placed 30th overall, 2nd among UC teams, best among UC teams in endurance, and 4th among California teams. It was the team's first time passing technical inspection and competing in every dynamic event. Full development ran from initial sketches in early July 2025 through the finished car in mid-May 2026, roughly 10 months sketch-to-installed.",
         },
       ],
       links: [],
@@ -420,14 +427,13 @@ const PORTFOLIO = {
       summary:
         "Led and then supervised successive steering-wheel iterations that reduced mass, improved driver comfort and force application, and coordinated manufacturing and vehicle integration across subteams.",
       tags: ["Ergonomics", "Composites", "CAD", "Manufacturing Sourcing", "Vehicle Integration", "FSAE"],
-      cover: "assets/images/steering-wheel/GR26 STEERING WHEEL ISO.png",
+      cover: "assets/images/steering-wheel/ER26SteeringWheelQR RENDER EXPLODED ISO.jpg",
       images: [
         "assets/images/steering-wheel/GR24 STEERING WHEEL.png",
         "assets/images/steering-wheel/GR25 STEERING WHEEL 1 FRONT.png",
         "assets/images/steering-wheel/GR25 STEERING WHEEL 1 BACK.png",
         "assets/images/steering-wheel/GR25 STEERING WHEEL 2 FRONT.png",
         "assets/images/steering-wheel/GR25 STEERING WHEEL 2 INTERNALS.png",
-        "assets/images/steering-wheel/GR25 STEERING WHEEL DEVELOPMENT.png",
         "assets/images/steering-wheel/ER26SteeringWheelQR RENDER EXPLODED ISO.jpg",
       ],
       sections: [
@@ -449,7 +455,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Result",
-          body: "Across the design cycles, the steering-wheel assembly moved from 4 lb to 3 lb and then to 1.7 lb for GR26, while improving driver comfort and force application at the wheels. The final result was a lighter quick-release wheel that was better integrated with the car and the people driving it.",
+          body: "Across the design cycles, the steering-wheel assembly moved from 5 lb in 2024 to 4 lb in 2025 and 3 lb in the initial 2026 design. Weight-optimization FEA then brought the final 2026 version to 1.7 lb while improving driver comfort and force application at the wheels.",
         },
       ],
       links: [],
@@ -493,7 +499,7 @@ const PORTFOLIO = {
         },
         {
           heading: "Handoff",
-          body: "Every redesigned component was documented in CAD and Confluence so future technicians can access the design intent, reassemble mechanisms, and remanufacture wear items without repeating the original investigation.",
+          body: "I documented which PDM designs were current in Confluence, linked directly to the files, and left remanufacturing instructions and CAM files. The handoff was designed so the next technician can produce custom spares without repeating the original reverse engineering or process development.",
         },
         {
           heading: "Scale & savings",
@@ -513,6 +519,7 @@ const PORTFOLIO = {
       { name: "Mastercam", level: 3 },
       { name: "Bambu Studio", level: 3 },
       { name: "VS Code", level: 3 },
+      { name: "Teamcenter", level: 2 },
       { name: "MATLAB", level: 2 },
       { name: "Python", level: 2 },
       { name: "C/C++ (Embedded / PlatformIO)", level: 2 },
@@ -532,7 +539,7 @@ const PORTFOLIO = {
       { name: "Hand Calculations", level: 2 },
     ],
     "Robotics & Controls": [
-      { name: "Drake (Kinematics & Path Planning)", level: 2 },
+      { name: "Drake Kinematics (Path Planning in Development)", level: 2 },
       { name: "TMC2209 Stepper Control", level: 2 },
       { name: "AS5600 Magnetic Encoders (I²C / Mux)", level: 2 },
       { name: "Closed-Loop Position Feedback", level: 2 },
