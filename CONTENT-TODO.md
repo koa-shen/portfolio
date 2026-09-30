@@ -21,11 +21,11 @@ Use this as a launch checklist. There are no active `FILLER:` strings in [data/p
 Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bullet upgrade.
 
 **Digital twin framework (your flagship)**
-- [x] Largest model — 32 DOF and 305 active bodies
+- [x] Largest model: 30 DOF in the polycapillary assembly, with 305 active bodies
 - [x] How many stages inventoried into the library? — 15 commonly used LCLS stages
-- [x] Planning / collision-check solve time — planning TBD; collision checks take a few ms
+- [x] Model load time: about 30 seconds; collision checks take a few milliseconds
 - [x] Interferences caught — at least five use-restricting pinch points found retroactively
-- [x] Adoption: three assemblies currently simulated
+- [x] Adoption: actively being applied to three large, high-DOF LCLS assemblies
 - [x] Real constraints — vacuum/helium envelopes, compact FEH beamline, Solid Edge/Teamcenter and EPICS interoperability
 - [x] Public repo link — `https://github.com/slaclab/twin-lab/`
 - [x] "What I'd do differently" paragraph
@@ -77,4 +77,6 @@ Recruiters at Waymo/Zoox/Tesla skim for magnitude. Every one of these is a bulle
 - [x] **Git/GitHub presence** — linked `https://github.com/koa-shen/desktop-6dof-arm`
 - [x] **Robot-arm motion video** — single-joint motor/reducer bench test embedded on
       the project page.
+- [x] **Closed-loop controls evidence** — validated encoder feedback, automatic position-error
+      compensation, and missed-step detection on the robot-arm bench setup.
 - [x] **Controls coursework or self-study** — currently taking Dynamical Systems and Machine Learning; Mechatronics, Robotics Lab, and Inverse Kinematics planned this academic year.
