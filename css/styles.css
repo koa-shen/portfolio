@@ -240,6 +240,7 @@ h1, h2, h3, h4 { line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.02em; }
    ========================================================= */
 .section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
 .section--alt { background: var(--bg-alt); border-block: 1px solid var(--line); }
+.section--statement { background: var(--surface-2); border-block: 1px solid var(--line); }
 
 .section__title {
   display: flex; align-items: baseline; gap: .8rem;
@@ -256,6 +257,10 @@ h1, h2, h3, h4 { line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.02em; }
    ========================================================= */
 .about { max-width: 68ch; }
 .about p { color: var(--text-dim); margin: 0 0 var(--paragraph-space); }
+.statement { max-width: 76ch; }
+.statement__body { color: var(--text-dim); font-size: clamp(1.05rem, 1.8vw, 1.25rem); line-height: 1.65; margin: 0; max-width: 68ch; }
+.statement__body p { margin: 0 0 var(--paragraph-space); }
+.statement__body p:last-child { margin-bottom: 0; }
 
 .edu { margin-top: 2.8rem; display: grid; gap: 1.2rem; }
 .edu__card {

@@ -61,6 +61,15 @@ const PORTFOLIO = {
     ],
   },
 
+  mission: {
+    heading: "What I'm looking for",
+    paragraphs: [
+      "I am a mechanical engineering student at UC Santa Barbara focused on robotics, controls, motion systems, and design for manufacturing. I like engineering work that moves all the way from a model or idea to a physical system that can be built, tested, and improved.",
+      "My experience spans digital-twin simulation and mechanical design for X-ray beamline motion stages at SLAC, CNC-machined vehicle hardware and team leadership with UCSB Gaucho Racing, public exhibit mechanism redesigns at the Exploratorium, and a personal closed-loop cycloidal-drive actuator project. Across those settings, I have worked with CAD, kinematic analysis, collision detection, fabrication, embedded controls, sensors, and hands-on validation.",
+      "I am seeking a Summer 2027 internship in robotics, controls, mechatronics, or mechanical design for physical products. I am especially interested in teams where I can contribute to mechanisms, electromechanical systems, automation, or manufacturing while learning from engineers who build reliable products at scale.",
+    ],
+  },
+
   /* ===================== EDUCATION ===================== */
   education: [
     {

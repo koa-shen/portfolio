@@ -41,6 +41,10 @@
   document.getElementById('about-body').innerHTML =
     D.about.paragraphs.map((p) => `<p>${text(p)}</p>`).join('');
 
+  /* ---------- recruiter-facing mission statement ---------- */
+  document.getElementById('mission-body').innerHTML =
+    D.mission.paragraphs.map((p) => `<p>${text(p)}</p>`).join('');
+
   /* ---------- education ---------- */
   document.getElementById('education').innerHTML = D.education.map((e) => `
     <div class="edu__card reveal">

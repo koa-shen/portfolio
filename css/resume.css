@@ -92,14 +92,14 @@ body {
 
 /* ---------- print ---------- */
 @media print {
-  body { background: #fff; font-size: 10pt; line-height: 1.28; }
+  body { background: #fff; font-size: 10pt; line-height: 1.34; }
   .toolbar { display: none; }
-  .page { width: auto; min-height: 0; margin: 0; padding: 0.12in 0.45in; box-shadow: none; }
+  .page { width: 8.5in; height: 10.75in; min-height: 10.75in; margin: 0; padding: 0.3in 0.55in; box-shadow: none; break-inside: avoid; break-after: avoid; }
   .r-head { padding-bottom: .25rem; margin-bottom: .4rem; }
-  .r-sec { margin-bottom: .35rem; }
-  .r-entry { margin-bottom: .3rem; }
-  .r-entry ul { margin-top: .08rem; }
-  .r-entry li { margin-bottom: 0; }
+  .r-sec { margin-bottom: .55rem; }
+  .r-entry { margin-bottom: .42rem; }
+  .r-entry ul { margin-top: .12rem; }
+  .r-entry li { margin-bottom: .04rem; }
   /* Placeholders should never land in a submitted PDF — they stay visible
      so you notice them, but printing marks them loudly. */
   .filler { background: #ffe28a !important; }
@@ -118,4 +118,4 @@ body {
   .r-contact { gap: .3rem .65rem; }
 }
 
-@page { size: Letter; margin: 0.4in; }
+@page { size: Letter; margin: 0; }
