@@ -23,3 +23,6 @@ Desktop.ini
 # Video working files (host on YouTube/Vimeo and embed instead)
 *.mov
 *.mp4.orig
+
+# Local application materials — do not publish with the website
+/assets/cover-letter.html
