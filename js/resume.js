@@ -3,6 +3,16 @@
    ========================================================= */
 (function () {
   const D = PORTFOLIO;
+  const resumeTarget = new URLSearchParams(window.location.search).get('target');
+  const isSemiValley = resumeTarget === 'semivalley';
+  const isTau = resumeTarget === 'tau';
+  const resumeDownload = document.getElementById('resumeDownload');
+
+  if (isSemiValley || isTau) {
+    const filename = isTau ? 'Koa_Shen_Tau_Robotics_Resume.pdf' : 'Koa_Shen_SemiValley_Resume.pdf';
+    resumeDownload.href = `assets/${filename}`;
+    resumeDownload.download = filename;
+  }
 
   const li = (s) => `<li${isFiller(s) ? ' class="filler"' : ''}>${
     isFiller(s) ? escapeHtml(fillerText(s)) : escapeHtml(s)
@@ -24,7 +34,7 @@
         <span class="r-when">${text(e.dates)}</span>
       </div>
       <div class="r-row">
-        <p class="r-sub">${text(e.degree)} · ${text(e.gpa)} · Dean's Honors every quarter</p>
+        <p class="r-sub">${text(e.degree)} · ${isSemiValley || isTau ? '3.97 major / 3.94 overall GPA' : text(e.gpa)} · Dean's Honors every quarter</p>
         <span class="r-when">${text(e.location)}</span>
       </div>
       <ul>${e.details
@@ -42,12 +52,19 @@
     "Exploratorium",
     "Gaucho Racing (FSAE EV) — UC Santa Barbara",
   ]);
-  const ordered = [
-    ...D.experience.filter((x) => x.type === 'paid' && resumeOrganizations.has(x.org)),
-    ...D.experience.filter((x) => x.type !== 'paid' && resumeOrganizations.has(x.org)),
+  const tauExperienceOrder = [
+    'Exploratorium',
+    'Gaucho Racing (FSAE EV) — UC Santa Barbara',
+    'SLAC National Accelerator Laboratory — LCLS',
   ];
+  const ordered = isTau
+    ? tauExperienceOrder.map((org) => D.experience.find((x) => x.org === org))
+    : [
+        ...D.experience.filter((x) => x.type === 'paid' && resumeOrganizations.has(x.org)),
+        ...D.experience.filter((x) => x.type !== 'paid' && resumeOrganizations.has(x.org)),
+      ];
 
-  const resumeExperienceBullets = {
+  const generalExperienceBullets = {
     "SLAC National Accelerator Laboratory — LCLS": [
       "Built CAD import, kinematics, collision-check, and load-case workflows for high-DOF LCLS assemblies.",
       "Applied XCS findings to the optics redesign and documented Solid Edge, Teamcenter, and EPICS interfaces.",
@@ -60,6 +77,36 @@
       "CNC-machined 33 parts from 4130 steel and 7075-T6 aluminum; held fits to 0.0005 in and standardized five spindles.",
     ],
   };
+  const semiValleyExperienceBullets = {
+    "SLAC National Accelerator Laboratory — LCLS": [
+      "Built CAD-import, kinematics, collision-check, and load-case workflows for high-DOF precision motion assemblies.",
+      "Redesigned a high-DOF X-ray optics assembly with new mounts and stages; produced GD&T-controlled Solid Edge designs and Teamcenter documentation.",
+    ],
+    Exploratorium: [
+      "Maintained 100+ interactive exhibits; reverse-engineered and fabricated mechanisms, leading three overhauls and avoiding $3,000+ in replacement costs.",
+    ],
+    "Gaucho Racing (FSAE EV) — UC Santa Barbara": [
+      "Led 15 people through safety-system design, fabrication, and installation; passed FSAE technical inspection.",
+      "CNC-machined 33 steel and aluminum components, holding bearing interfaces within 0.0005 in.",
+    ],
+  };
+  const tauExperienceBullets = {
+    Exploratorium: [
+      'Serviced 100+ interactive exhibits; diagnosed failures and fabricated replacement parts using machine-shop, welding, and woodshop tools.',
+      'Led three exhibit overhauls, including a mechanism redesign that avoided $3,000+ in replacement costs; documented CAD for future repair.',
+    ],
+    'Gaucho Racing (FSAE EV) — UC Santa Barbara': [
+      'Led 15 teammates through design, fabrication, and installation of driver-safety hardware; passed FSAE technical inspection.',
+      'Machined 33 steel and aluminum suspension components, holding critical bearing interfaces within 0.0005 in.',
+    ],
+    'SLAC National Accelerator Laboratory — LCLS': [
+      'Built a Python/Drake digital twin and reusable stage catalog for high-DOF motion assemblies; collision checks run in milliseconds.',
+      'Produced Solid Edge designs with GD&T and Teamcenter documentation; checked stage and mount loads with statics and dynamics calculations.',
+    ],
+  };
+  const resumeExperienceBullets = isTau
+    ? tauExperienceBullets
+    : isSemiValley ? semiValleyExperienceBullets : generalExperienceBullets;
 
   const experience = ordered.map((x) => `
     <div class="r-entry">
@@ -75,13 +122,16 @@
     </div>`).join('');
 
   /* Complement the experience section with projects that show distinct depth. */
-  const resumeProjectIds = new Set([
+  const resumeProjectIds = new Set(isTau ? [
+    'robot-arm',
+    'steering-wheel-development',
+  ] : [
     "robot-arm",
     "digital-twin",
     "polycapillary",
     "steering-wheel-development",
   ]);
-  const resumeProjectSummaries = {
+  const generalProjectSummaries = {
     "robot-arm": [
       "Designed a 15:1 cycloidal reducer for NEMA 17; planned arm targets (unvalidated): 6 DOF, 381 mm reach, 0.5 kg payload.",
       "Built PlatformIO C++ firmware for TMC2209 stepper control, including step/dir generation and real-time telemetry.",
@@ -94,6 +144,35 @@
     "polycapillary": ["Developed a redesign for a 32-DOF optics assembly with three kinematic bases and six hot-swappable optics; projected savings of 1–2 hours per shift-day and roughly $30k in annual value are not yet verified."],
     "steering-wheel-development": ["Integrated wheel buttons, potentiometers, display, and quick-release; FEA-guided iteration cut mass from 5 lb to 1.7 lb."],
   };
+  const semiValleyProjectSummaries = {
+    "robot-arm": [
+      "Built and bench-validated closed-loop stepper control for a 15:1 cycloidal reducer using custom C++ firmware and AS5600 encoder feedback.",
+      "Implemented missed-step detection and automatic position-error compensation; multi-joint integration remains in development.",
+    ],
+    "digital-twin": [
+      "Built a Python/Drake digital twin for a 32-DOF assembly, integrating CAD import, kinematics, collision checking, and MeshCat visualization.",
+      "Applied the framework to three LCLS assemblies; collision checks run in milliseconds across 305 bodies.",
+    ],
+    "polycapillary": [
+      "Redesigned a 32-DOF optics assembly with three kinematic bases, six hot-swappable optics, and added stages to improve alignment and packaging.",
+      "Used simulation findings and statics/dynamics calculations to guide design changes and evaluate handling loads.",
+    ],
+    "steering-wheel-development": [
+      "Integrated controls, display, and quick-release into a competition steering wheel; FEA-guided iteration reduced mass from 5 lb to 1.7 lb.",
+    ],
+  };
+  const tauProjectSummaries = {
+    'robot-arm': [
+      'Assembled and bench-tested a NEMA 17 stepper, TMC2209 driver, 15:1 reducer, and AS5600 encoder; validated feedback and missed-step detection.',
+      '3D-printed reducer components in PETG/ABS and built C++ firmware for step control and automatic position-error correction.',
+    ],
+    'steering-wheel-development': [
+      'Integrated buttons, potentiometers, display, and quick-release into an FSAE steering wheel; iterative, FEA-guided redesign reduced mass from 5 lb to 1.7 lb.',
+    ],
+  };
+  const resumeProjectSummaries = isTau
+    ? tauProjectSummaries
+    : isSemiValley ? semiValleyProjectSummaries : generalProjectSummaries;
   const projects = D.projects.filter((p) => resumeProjectIds.has(p.id)).map((p) => `
     <div class="r-entry">
       <div class="r-row">
@@ -104,18 +183,33 @@
     </div>`).join('');
 
   /* Skills — comma lists, ATS-friendly */
-  const resumeSkills = {
+  const generalSkills = {
     "CAD & Manufacturing": ["SolidWorks", "Solid Edge", "Teamcenter PDM", "Inventor/Fusion", "Mastercam", "GD&T", "CNC/manual machining"],
     Software: ["Python", "C/C++", "PlatformIO", "MATLAB", "Arduino", "Git/GitHub", "EPICS", "OpenCascade", "CoACD", "MeshCat"],
     "Robotics & Controls": ["Drake kinematics", "Collision detection", "TMC2209 stepper control", "AS5600 encoders/I2C multiplexing"],
   };
+  const semiValleySkills = {
+    "Mechanical Design & Manufacturing": ["SolidWorks", "Solid Edge", "Teamcenter PDM", "GD&T", "CNC/manual machining", "Mastercam"],
+    "Analysis & Simulation": ["Statics and dynamics", "Drake kinematics", "Collision detection", "FEA-guided design", "Python", "MATLAB"],
+    "Controls & Prototyping": ["C/C++", "PlatformIO", "Stepper control", "AS5600 encoder feedback", "Arduino", "Git/GitHub"],
+  };
+  const tauSkills = {
+    'Maintenance & Fabrication': ['Mechanical repair', 'Failure diagnosis', 'Manual/CNC machining', 'Welding', '3D printing (PETG/ABS)'],
+    'Robotics & Electronics': ['Mechanical assembly', 'Stepper drivers', 'Encoder/driver wiring', 'Arduino', 'C/C++', 'PlatformIO'],
+    'CAD & Documentation': ['Solid Edge', 'SolidWorks', 'GD&T', 'Teamcenter PDM', 'Reverse engineering'],
+  };
+  const resumeSkills = isTau ? tauSkills : isSemiValley ? semiValleySkills : generalSkills;
   const skills = Object.entries(resumeSkills).map(([group, list]) => `
     <div><b>${escapeHtml(group)}:</b> ${list.map(escapeHtml).join(', ')}</div>`).join('');
 
   document.getElementById('resume').innerHTML = `
     <header class="r-head">
       <h1 class="r-name">${text(D.meta.name)}</h1>
-      <p class="r-role">${text(D.meta.role)} · Robotics · Motion Systems</p>
+      <p class="r-role">${isTau
+        ? 'Robotics Technician Candidate · Assembly · Repair · Electromechanical Testing'
+        : isSemiValley
+          ? 'Mechanical Engineering Candidate · Hardware Design · Analysis · Manufacturing'
+          : `${text(D.meta.role)} · Robotics · Motion Systems`}</p>
       <div class="r-contact">${contactBits}</div>
     </header>
 
