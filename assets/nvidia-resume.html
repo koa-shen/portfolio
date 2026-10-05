@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koa Shen - NVIDIA Hardware Internship Resume</title>
+<meta name="description" content="Koa Shen's resume for Summer 2027 NVIDIA mechanical and electromechanical hardware internships.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/resume.css">
+<style>
+.r-name, .r-sec > h2 { letter-spacing: 0; }
+.r-contact a { color: inherit; text-decoration: none; }
+.r-summary { margin: 0 0 .55rem; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <a href="../index.html">Portfolio</a>
+  <a href="nvidia-cover-letter.html">NVIDIA Cover Letter</a>
+  <a href="Koa_Shen_NVIDIA_Resume.pdf" download>Download PDF</a>
+  <button onclick="window.print()">Save as PDF</button>
+</div>
+<article class="page">
+  <header class="r-head">
+    <h1 class="r-name">Koa Shen</h1>
+    <p class="r-role">Mechanical Engineering | Hardware Design, Mechatronics &amp; Validation | Summer 2027</p>
+    <div class="r-contact">
+      <span>(415) 810-8344</span>
+      <span><a href="mailto:koashensf@gmail.com">koashensf@gmail.com</a></span>
+      <span><a href="https://koashen.com">koashen.com</a></span>
+      <span><a href="https://linkedin.com/in/koa-shen/">linkedin.com/in/koa-shen</a></span>
+      <span><a href="https://github.com/koa-shen">github.com/koa-shen</a></span>
+    </div>
+  </header>
+  <section class="r-sec">
+    <h2>Education</h2>
+    <div class="r-entry">
+      <div class="r-row"><p class="r-title">University of California, Santa Barbara</p><span class="r-when">Expected June 2028</span></div>
+      <p class="r-sub">B.S. Mechanical Engineering | Major GPA: 3.97 | Cumulative GPA: 3.94</p>
+      <ul>
+        <li>Dean's Honors every quarter. Coursework: Dynamics, Mechanics of Materials, Circuits, MATLAB.</li>
+        <li>Current coursework: Dynamical Systems and Machine Learning.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="r-sec">
+    <h2>Engineering Experience</h2>
+    <div class="r-entry">
+      <div class="r-row"><p class="r-title">Mechanical Engineering Intern</p><span class="r-when">Summer 2026 - Present</span></div>
+      <p class="r-sub">SLAC National Accelerator Laboratory, LCLS | Menlo Park, CA; extended part-time remote</p>
+      <ul>
+        <li>Built a Python/Drake digital twin for a 30-DOF, 305-body beamline assembly; millisecond collision checks exposed at least five physical pinch points and informed hardware redesigns.</li>
+        <li>Developed 15 reusable motion-stage models; framework is being adopted across three LCLS assemblies using OpenCascade CAD import, CoACD collision geometry, and MeshCat visualization.</li>
+        <li>Redesigned optics packaging with kinematic mounts, alignment lasers, and detector strain relief; checked stage and mount load cases to address crash and drop risks for $100k+ detectors.</li>
+        <li>Produced Siemens Solid Edge designs and PDM-controlled documentation with GD&amp;T for manufacture and inspection; path planning and EPICS controls integration remain in development.</li>
+      </ul>
+    </div>
+    <div class="r-entry">
+      <div class="r-row"><p class="r-title">Fabrication Team Lead</p><span class="r-when">Fall 2024 - Present</span></div>
+      <p class="r-sub">Gaucho Racing, Formula SAE Electric | UC Santa Barbara</p>
+      <ul>
+        <li>Led a 15-person team through driver safety-system design, manufacturing, and installation; GR26 passed FSAE technical inspection fully rules-compliant.</li>
+        <li>CNC-machined 33 suspension parts from 4130 steel and 7075-T6 aluminum on Haas mills and lathes, holding critical bearing fits within 0.0005 in.</li>
+        <li>Own chassis and ergonomics packaging, coordinating welded tube structures, assembly design, and interfaces with vehicle subteams.</li>
+      </ul>
+    </div>
+    <div class="r-entry">
+      <div class="r-row"><p class="r-title">Maintenance Technician</p><span class="r-when">Summer 2025</span></div>
+      <p class="r-sub">Exploratorium | San Francisco, CA</p>
+      <ul>
+        <li>Serviced 100+ public exhibits and completed three major overhauls through reverse engineering, machining, and welding; an enclosure redesign avoided $3,000+ in replacement-part costs.</li>
+        <li>Redesigned encoder mounts and load-spreading hardware for reliability and serviceability; left CAD, CAM files, and remanufacturing instructions in Confluence for future technicians.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="r-sec">
+    <h2>Selected Hardware Projects</h2>
+    <div class="r-entry">
+      <div class="r-row"><p class="r-title">Closed-Loop Cycloidal Actuator</p><span class="r-when">Summer 2026 - Present</span></div>
+      <ul>
+        <li>Designed and fabricated a 15:1 cycloidal reducer within a NEMA 17 motor's 42 mm square footprint, selecting PETG/ABS print orientations for load capacity and dimensional accuracy.</li>
+        <li>Built PlatformIO C++ firmware for a TMC2209 driver and 12-bit AS5600 motor-shaft encoder; bench-validated closed-loop position correction and missed-step detection on a single joint.</li>
+      </ul>
+    </div>
+    <div class="r-entry">
+      <div class="r-row"><p class="r-title">Formula SAE Steering-Wheel Development</p><span class="r-when">2024 - 2026</span></div>
+      <ul>
+        <li>Helped reduce assembly mass from 5 lb to 1.7 lb through iterative design and FEA-guided optimization; integrated buttons, potentiometers, a display, and a quick-release mechanism.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="r-sec">
+    <h2>Technical Skills</h2>
+    <div class="r-skills">
+      <div><b>Design &amp; Analysis:</b> SolidWorks, Solid Edge, Teamcenter PDM, GD&amp;T, FEA, statics/dynamics, kinematics</div>
+      <div><b>Fabrication:</b> Mastercam, CNC/manual machining, welding, 3D printing, assembly, design for manufacturing</div>
+      <div><b>Software &amp; Controls:</b> Python, C/C++, MATLAB, Git, Drake, PlatformIO, Arduino, encoders, stepper control</div>
+    </div>
+  </section>
+</article>
+</body>
+</html>
