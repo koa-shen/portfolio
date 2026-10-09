@@ -8,10 +8,13 @@
   const isTau = resumeTarget === 'tau';
   const isNimo = resumeTarget === 'nimo';
   const isApplied = resumeTarget === 'applied';
+  const isSpaceX = resumeTarget === 'spacex';
   const resumeDownload = document.getElementById('resumeDownload');
 
-  if (isSemiValley || isTau || isNimo || isApplied) {
-    const filename = isTau
+  if (isSemiValley || isTau || isNimo || isApplied || isSpaceX) {
+    const filename = isSpaceX
+      ? 'Koa_Shen_SpaceX_Resume.pdf'
+      : isTau
       ? 'Koa_Shen_Tau_Robotics_Resume.pdf'
       : isNimo ? 'Koa_Shen_Nimo_Technology_Resume.pdf'
         : isApplied ? 'Koa_Shen_Applied_Materials_Resume.pdf' : 'Koa_Shen_SemiValley_Resume.pdf';
@@ -39,7 +42,7 @@
         <span class="r-when">${text(e.dates)}</span>
       </div>
       <div class="r-row">
-        <p class="r-sub">${text(e.degree)} · ${isSemiValley || isTau || isNimo || isApplied ? '3.97 major / 3.94 overall GPA' : text(e.gpa)} · Dean's Honors every quarter</p>
+        <p class="r-sub">${text(e.degree)} · ${isSemiValley || isTau || isNimo || isApplied || isSpaceX ? '3.97 major / 3.94 overall GPA' : text(e.gpa)} · Dean's Honors every quarter</p>
         <span class="r-when">${text(e.location)}</span>
       </div>
       <ul>${e.details
@@ -72,8 +75,13 @@
     'Gaucho Racing (FSAE EV) — UC Santa Barbara',
     'Exploratorium',
   ];
-  const ordered = isTau || isNimo || isApplied
-    ? (isTau ? tauExperienceOrder : isNimo ? nimoExperienceOrder : appliedExperienceOrder)
+  const spaceXExperienceOrder = [
+    'Gaucho Racing (FSAE EV) — UC Santa Barbara',
+    'SLAC National Accelerator Laboratory — LCLS',
+    'Exploratorium',
+  ];
+  const ordered = isTau || isNimo || isApplied || isSpaceX
+    ? (isTau ? tauExperienceOrder : isNimo ? nimoExperienceOrder : isApplied ? appliedExperienceOrder : spaceXExperienceOrder)
         .map((org) => D.experience.find((x) => x.org === org))
     : [
         ...D.experience.filter((x) => x.type === 'paid' && resumeOrganizations.has(x.org)),
@@ -148,11 +156,29 @@
       'Redesigned a cracking acrylic enclosure interface with a load-spreading bezel, avoiding $3,000+ in replacement costs.',
     ],
   };
+  const spaceXExperienceBullets = {
+    'Gaucho Racing (FSAE EV) — UC Santa Barbara': [
+      'Led 15 teammates through driver-safety hardware design, fabrication, and installation; GR26 passed FSAE technical inspection fully rules-compliant.',
+      'CNC-machined 33 suspension components from 4130 chromoly steel and 7075-T6 aluminum on Haas mills and lathes; held bearing fits within 0.0005 in.',
+      'Own chassis and ergonomics packaging, coordinating welded-tube structures, assembly interfaces, and manufacturing with vehicle subteams.',
+      'Placed 2nd among UC teams at the 2026 Michigan FSAE Electric competition and 4th among California teams.',
+    ],
+    'SLAC National Accelerator Laboratory — LCLS': [
+      'Built an open-source Python/Drake digital twin for a 30-DOF, 305-body beamline assembly, with CAD import, collision geometry, and millisecond checks that exposed at least five pinch points.',
+      'Created 15 reusable motion-stage models for three LCLS assemblies; applied simulation findings and instrument-scientist feedback to redesign optics packaging.',
+      'Produced Solid Edge designs and PDM-controlled documentation with GD&T; checked mount loads to address crash and drop risks around $100k+ detectors.',
+    ],
+    Exploratorium: [
+      'Serviced 100+ public exhibits and led three major overhauls, reverse-engineering mechanisms and fabricating replacement hardware.',
+      'Redesigned a load-spreading bezel to stop acrylic enclosure cracking, avoiding $3,000+ in replacement costs; documented CAD, CAM, and remanufacturing notes in Confluence.',
+    ],
+  };
   const resumeExperienceBullets = isTau
     ? tauExperienceBullets
     : isNimo ? nimoExperienceBullets
       : isApplied ? appliedExperienceBullets
-        : isSemiValley ? semiValleyExperienceBullets : generalExperienceBullets;
+        : isSpaceX ? spaceXExperienceBullets
+          : isSemiValley ? semiValleyExperienceBullets : generalExperienceBullets;
 
   const experience = ordered.map((x) => `
     <div class="r-entry">
@@ -168,7 +194,10 @@
     </div>`).join('');
 
   /* Complement the experience section with projects that show distinct depth. */
-  const resumeProjectIds = new Set(isApplied ? [
+  const resumeProjectIds = new Set(isSpaceX ? [
+    'robot-arm',
+    'steering-wheel-development',
+  ] : isApplied ? [
     'digital-twin',
     'polycapillary',
     'gr26-wheel-assemblies',
@@ -249,11 +278,21 @@
       'CNC-machined 33 precision suspension parts on Haas mills and lathes; held critical bearing fits within 0.0005 in.',
     ],
   };
+  const spaceXProjectSummaries = {
+    'robot-arm': [
+      'Designed and fabricated a 15:1 cycloidal reducer sized within a NEMA 17 motor footprint; selected printed-material orientations for load capacity and dimensional accuracy.',
+      'Built C++ firmware for TMC2209 stepper control and AS5600 encoder feedback; bench-validated position correction and missed-step detection.',
+    ],
+    'steering-wheel-development': [
+      'Integrated buttons, potentiometers, display, and quick release into an FSAE steering wheel; used FEA-guided iterations to reduce assembly mass from 5 lb to 1.7 lb while maintaining driver access and egress.',
+    ],
+  };
   const resumeProjectSummaries = isTau
     ? tauProjectSummaries
     : isNimo ? nimoProjectSummaries
       : isApplied ? appliedProjectSummaries
-        : isSemiValley ? semiValleyProjectSummaries : generalProjectSummaries;
+        : isSpaceX ? spaceXProjectSummaries
+          : isSemiValley ? semiValleyProjectSummaries : generalProjectSummaries;
   const projects = D.projects.filter((p) => resumeProjectIds.has(p.id)).map((p) => `
     <div class="r-entry">
       <div class="r-row">
@@ -289,14 +328,21 @@
     'Analysis & Simulation': ['Statics and dynamics', 'FEA', 'Python', 'MATLAB', 'Drake kinematics', 'Collision detection'],
     'Manufacturing & Hardware': ['CNC/manual machining', 'Mastercam', '4130 steel', '7075-T6 aluminum', 'Welding', 'Design for manufacturing'],
   };
-  const resumeSkills = isApplied ? appliedSkills : isNimo ? nimoSkills : isTau ? tauSkills : isSemiValley ? semiValleySkills : generalSkills;
+  const spaceXSkills = {
+    'Mechanical Design & Analysis': ['SolidWorks', 'Solid Edge', 'GD&T', 'FEA', 'Statics/dynamics', 'Tolerance-aware design'],
+    'Manufacturing & Prototyping': ['CNC/manual machining', 'Mastercam', 'Welding', '3D printing', '4130 steel', '7075-T6 aluminum'],
+    'Controls & Simulation': ['C/C++', 'Python', 'MATLAB', 'Drake kinematics', 'Collision detection', 'Stepper/encoder systems'],
+  };
+  const resumeSkills = isSpaceX ? spaceXSkills : isApplied ? appliedSkills : isNimo ? nimoSkills : isTau ? tauSkills : isSemiValley ? semiValleySkills : generalSkills;
   const skills = Object.entries(resumeSkills).map(([group, list]) => `
     <div><b>${escapeHtml(group)}:</b> ${list.map(escapeHtml).join(', ')}</div>`).join('');
 
   document.getElementById('resume').innerHTML = `
     <header class="r-head">
       <h1 class="r-name">${text(D.meta.name)}</h1>
-      <p class="r-role">${isApplied
+      <p class="r-role">${isSpaceX
+        ? 'Mechanical Engineering Intern Candidate · Vehicle Hardware · Manufacturing · Test'
+        : isApplied
         ? 'Mechanical Engineering Intern Candidate · Equipment Design · Analysis · Manufacturing'
         : isNimo
         ? 'Mechanical Engineering Intern Candidate · Robotic Mechanisms · Actuation · Prototyping'
