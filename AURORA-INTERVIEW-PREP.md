@@ -4,11 +4,74 @@ Role: 2027 Summer Mechanical Design Engineer Intern, sensor cleaning systems
 
 Use these as memory cues, not a script. For each story, keep the setup brief, make your personal contribution clear, and separate completed results from targets or projections.
 
+## Recruiter Opening
+
+Practice a natural 40–50 second answer to “Tell me about yourself and what interested you in this role.” Use this as a guide, not a memorized script:
+
+> I’m a third-year mechanical engineering student at UCSB, looking for a Summer 2027 internship in robotics or autonomous systems. I’ve worked on mechanical design, simulation, and testing across optomechanical alignment systems at SLAC, vehicle subsystems with Gaucho Racing, and a compact 3D-printed robotic actuator. Adarsh Kumar from Aurora’s mechanical design team recommended I look at this role. I was especially interested because sensor cleaning brings together mechanical design, prototyping, testing, and vehicle integration. I’d be excited to contribute my hands-on hardware experience and learn from the team as it develops reliable systems for autonomous vehicles.
+
+## Why Aurora and This Role?
+
+Use this if asked what specifically interests you about Aurora or the internship:
+
+> Aurora stands out to me because it’s working to bring autonomous trucking into real-world operations across different truck platforms. I’m especially interested in the engineering challenges that come with that: designing systems that are durable, serviceable, and reliable in demanding conditions. This role appeals to me because sensor cleaning is a concrete part of that challenge, combining mechanical design, testing, and vehicle integration. I’d be excited to contribute to that work and learn from the team.
+
+## What I Hope to Get from the Internship
+
+If asked what you hope to gain and contribute:
+
+> I’m hoping to build experience taking mechatronic hardware through the development cycle, from understanding requirements and designing prototypes through testing and iteration. I’d like to contribute to a meaningful sensor-cleaning project and, with the team’s guidance, take ownership of a well-scoped piece of the work. I’m also excited to learn how mechanical design fits into a vehicle-scale autonomous system and contribute to safer, more reliable trucking.
+
+## Strength: Rapid Prototyping
+
+If asked what strength you would bring to the role, emphasize end-to-end iteration and use the actuator as evidence:
+
+> One strength I’d bring is quickly turning a design into a testable prototype. I’ve worked across concept development, CAD, simulation, fabrication, assembly, and troubleshooting, so I can move between system-level decisions and details like machining parts, soldering connections, or integrating an encoder. In my actuator project, I designed and 3D-printed a compact 15:1 cycloidal reducer, integrated the stepper, driver, and encoder, and developed the firmware. On the single-joint bench setup, I validated encoder feedback, position-error compensation, and missed-step detection. That breadth helps me iterate efficiently and understand how mechanical, electrical, and software decisions affect the whole system.
+
+## Growth Area: Applied Fluid Dynamics
+
+If asked about an area you are developing, be candid while showing active interest and the strengths you already bring:
+
+> One area I’m actively developing is applied fluid dynamics. My formal coursework is just beginning, so most of my exposure so far has come from self-directed reading and videos. I’m especially interested in how fluid principles apply to systems such as pneumatic actuators and sensor-cleaning hardware, and I’m eager to build that foundation through further study and hands-on testing. I can already contribute strengths in mechanical design, prototyping, and iteration, and I’m excited to pair those with a deeper understanding of fluid systems.
+
+## Recruiter Logistics
+
+If asked about work authorization, availability, or location:
+
+> I’m authorized to work and do not require sponsorship. I’m available to start June 14, 2027, and can work through September 19; I return to school on September 20. I value in-person collaboration and would prefer the San Francisco office if that’s an option for this role. I’m also flexible about commuting to another Bay Area location if the team is based there.
+
+If asked whether you are interviewing elsewhere:
+
+> I’m not currently interviewing with other companies. I’m continuing my internship with SLAC.
+
+## Teamwork Example
+
+Practice for “Tell me about a time you worked with a team to deliver something.” Aim for about 45–60 seconds:
+
+> During the 2025–2026 season, I led a 15-person Gaucho Racing team responsible for the components drivers use to operate the car safely. I had to keep our engineering work on schedule while making the team accessible to new members. I created a structured onboarding process so they could contribute early, while assigning ownership of critical components to experienced members I knew could deliver. I tracked responsibilities, checked in regularly, and supported newer teammates while staying hands-on with the work. Over time, two engineers who had owned components became team leads, and three members who joined the previous year became responsible engineers. Our components passed technical inspection.
+
+If you mention the team’s 25-place improvement over the previous year, confirm that the comparison is for the same competition and ranking category.
+
+## When Something Went Wrong
+
+Practice for “Tell me about a time a project didn’t go as planned.” Keep the focus on how you responded and verified the fix:
+
+> During chassis manufacturing, we had to stop welding because the tube-frame fixture was sagging and wasn’t locating the frame consistently relative to the table. I led a quick retrofit, designing 10 3D-printed parts to support the frame, align it to the table, and hold critical suspension points in position. I worked with the original fixture designer to install the changes. I checked the result visually and measured key suspension points relative to each other and to the table. Dimensions that had been inches outside tolerance came back within the team’s acceptable range, so welding could resume. A full redesign with machined parts might have made the fixture more rigid, but likely would have put our competition schedule at risk; the retrofit met the immediate requirements and helped us finish the car in time.
+
+## Adapting My Approach
+
+Practice for “Tell me about a time new information made you change your approach.” Keep the focus on recognizing that the original method did not scale and what you learned:
+
+> At SLAC, I was assigned to redesign a complex motorized alignment system with 30 degrees of freedom and interference problems. I initially tried to resolve them by adjusting CAD assembly relationships and moving components one at a time. After a day or two, I realized I couldn’t reliably reason through all the interactions among multiple moving stages or keep track of every interference that way. I changed course and built a Python simulation workflow that imports native Solid Edge assemblies, animates actuator motion, detects collisions, and replays archived controls data. I’ve since used it to check design iterations, and the team is continuing development toward path planning and homing sequences. In hindsight, I should have questioned my initial approach sooner and checked the CAD against the physical hardware before building the simulation around it. I learned to reassess my assumptions when a problem’s scale changes and to validate the inputs before relying on the results.
+
+Describe archived-controls replay separately from live controls integration, which remains in development.
+
 ## Questions to Ask
 
 ### Recruiter / Interview Logistics
 - What attire is typical for interviews at Aurora?
 - If you’re able to share, will the interview include a design exercise, technical questions, a portfolio review, or some combination?
+- Which office locations are available for this internship, and where is this team based?
 
 ### Interviewer / Role and Team
 - What contamination cases are most challenging for the current sensor-cleaning system?
@@ -16,6 +79,8 @@ Use these as memory cues, not a script. For each story, keep the setup brief, ma
 - How does the team prototype and validate mechanical designs? What tools or facilities are available for building test setups and evaluating hardware?
 - What does an intern typically own, and how does a concept move from bench testing to vehicle validation?
 - How are interns onboarded into the team’s workflows, and what does mentorship from full-time engineers typically look like?
+- What has your day-to-day experience at Aurora been like, and what stands out to you about the working environment?
+- What would success look like for the intern by the end of the summer?
 - How has your experience at Aurora shaped you as an engineer, both technically and in how you approach problems?
 
 Prioritize questions about technical validation and intern ownership if time is limited. The personal experience question works well near the end.
