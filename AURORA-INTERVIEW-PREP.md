@@ -4,37 +4,41 @@ Role: 2027 Summer Mechanical Design Engineer Intern, sensor cleaning systems
 
 Use these as memory cues, not a script. For each story, keep the setup brief, make your personal contribution clear, and separate completed results from targets or projections.
 
-## Recruiter Opening
+Suggested two-hour practice session: 20 minutes for the introductory interview, 35 minutes for the portfolio stories, a 10-minute break, 45 minutes for technical review, and 10 minutes to rehearse questions and check details.
+
+## 1. Introductory Interview
+
+### Recruiter Opening
 
 Practice a natural 40–50 second answer to “Tell me about yourself and what interested you in this role.” Use this as a guide, not a memorized script:
 
 > I’m a third-year mechanical engineering student at UCSB, looking for a Summer 2027 internship in robotics or autonomous systems. I’ve worked on mechanical design, simulation, and testing across optomechanical alignment systems at SLAC, vehicle subsystems with Gaucho Racing, and a compact 3D-printed robotic actuator. Adarsh Kumar from Aurora’s mechanical design team recommended I look at this role. I was especially interested because sensor cleaning brings together mechanical design, prototyping, testing, and vehicle integration. I’d be excited to contribute my hands-on hardware experience and learn from the team as it develops reliable systems for autonomous vehicles.
 
-## Why Aurora and This Role?
+### Why Aurora and This Role?
 
 Use this if asked what specifically interests you about Aurora or the internship:
 
 > Aurora stands out to me because it’s working to bring autonomous trucking into real-world operations across different truck platforms. I’m especially interested in the engineering challenges that come with that: designing systems that are durable, serviceable, and reliable in demanding conditions. This role appeals to me because sensor cleaning is a concrete part of that challenge, combining mechanical design, testing, and vehicle integration. I’d be excited to contribute to that work and learn from the team.
 
-## What I Hope to Get from the Internship
+### What I Hope to Get from the Internship
 
 If asked what you hope to gain and contribute:
 
 > I’m hoping to build experience taking mechatronic hardware through the development cycle, from understanding requirements and designing prototypes through testing and iteration. I’d like to contribute to a meaningful sensor-cleaning project and, with the team’s guidance, take ownership of a well-scoped piece of the work. I’m also excited to learn how mechanical design fits into a vehicle-scale autonomous system and contribute to safer, more reliable trucking.
 
-## Strength: Rapid Prototyping
+### Strength: Rapid Prototyping
 
 If asked what strength you would bring to the role, emphasize end-to-end iteration and use the actuator as evidence:
 
 > One strength I’d bring is quickly turning a design into a testable prototype. I’ve worked across concept development, CAD, simulation, fabrication, assembly, and troubleshooting, so I can move between system-level decisions and details like machining parts, soldering connections, or integrating an encoder. In my actuator project, I designed and 3D-printed a compact 15:1 cycloidal reducer, integrated the stepper, driver, and encoder, and developed the firmware. On the single-joint bench setup, I validated encoder feedback, position-error compensation, and missed-step detection. That breadth helps me iterate efficiently and understand how mechanical, electrical, and software decisions affect the whole system.
 
-## Growth Area: Applied Fluid Dynamics
+### Growth Area: Applied Fluid Dynamics
 
 If asked about an area you are developing, be candid while showing active interest and the strengths you already bring:
 
 > One area I’m actively developing is applied fluid dynamics. My formal coursework is just beginning, so most of my exposure so far has come from self-directed reading and videos. I’m especially interested in how fluid principles apply to systems such as pneumatic actuators and sensor-cleaning hardware, and I’m eager to build that foundation through further study and hands-on testing. I can already contribute strengths in mechanical design, prototyping, and iteration, and I’m excited to pair those with a deeper understanding of fluid systems.
 
-## Recruiter Logistics
+### Recruiter Logistics
 
 If asked about work authorization, availability, or location:
 
@@ -44,21 +48,19 @@ If asked whether you are interviewing elsewhere:
 
 > I’m not currently interviewing with other companies. I’m continuing my internship with SLAC.
 
-## Teamwork Example
+### Teamwork Example
 
 Practice for “Tell me about a time you worked with a team to deliver something.” Aim for about 45–60 seconds:
 
-> During the 2025–2026 season, I led a 15-person Gaucho Racing team responsible for the components drivers use to operate the car safely. I had to keep our engineering work on schedule while making the team accessible to new members. I created a structured onboarding process so they could contribute early, while assigning ownership of critical components to experienced members I knew could deliver. I tracked responsibilities, checked in regularly, and supported newer teammates while staying hands-on with the work. Over time, two engineers who had owned components became team leads, and three members who joined the previous year became responsible engineers. Our components passed technical inspection.
+> During the 2025–2026 season, I led a 15-person Gaucho Racing team responsible for the components drivers use to operate the car safely. I had to keep our engineering work on schedule while making the team accessible to new members. I created a structured onboarding process so they could contribute early, while assigning ownership of critical components to experienced members I knew could deliver. I tracked responsibilities, checked in regularly, and supported newer teammates while staying hands-on with the work. Over time, two engineers who had owned components became team leads, and three members who joined the previous year became responsible engineers. Our components passed technical inspection, and our overall competition standing improved from 56th to 30th.
 
-If you mention the team’s 25-place improvement over the previous year, confirm that the comparison is for the same competition and ranking category.
-
-## When Something Went Wrong
+### When Something Went Wrong
 
 Practice for “Tell me about a time a project didn’t go as planned.” Keep the focus on how you responded and verified the fix:
 
 > During chassis manufacturing, we had to stop welding because the tube-frame fixture was sagging and wasn’t locating the frame consistently relative to the table. I led a quick retrofit, designing 10 3D-printed parts to support the frame, align it to the table, and hold critical suspension points in position. I worked with the original fixture designer to install the changes. I checked the result visually and measured key suspension points relative to each other and to the table. Dimensions that had been inches outside tolerance came back within the team’s acceptable range, so welding could resume. A full redesign with machined parts might have made the fixture more rigid, but likely would have put our competition schedule at risk; the retrofit met the immediate requirements and helped us finish the car in time.
 
-## Adapting My Approach
+### Adapting My Approach
 
 Practice for “Tell me about a time new information made you change your approach.” Keep the focus on recognizing that the original method did not scale and what you learned:
 
@@ -66,43 +68,34 @@ Practice for “Tell me about a time new information made you change your approa
 
 Describe archived-controls replay separately from live controls integration, which remains in development.
 
-## Questions to Ask
+### Questions for the Recruiter
 
-### Recruiter / Interview Logistics
 - What attire is typical for interviews at Aurora?
 - If you’re able to share, will the interview include a design exercise, technical questions, a portfolio review, or some combination?
 - Which office locations are available for this internship, and where is this team based?
+- What are the next steps and expected timeline after this conversation?
 
-### Interviewer / Role and Team
-- What contamination cases are most challenging for the current sensor-cleaning system?
-- How does the team measure sensor performance before and after cleaning?
-- How does the team prototype and validate mechanical designs? What tools or facilities are available for building test setups and evaluating hardware?
-- What does an intern typically own, and how does a concept move from bench testing to vehicle validation?
-- How are interns onboarded into the team’s workflows, and what does mentorship from full-time engineers typically look like?
-- What has your day-to-day experience at Aurora been like, and what stands out to you about the working environment?
-- What would success look like for the intern by the end of the summer?
-- How has your experience at Aurora shaped you as an engineer, both technically and in how you approach problems?
+## 2. Portfolio Review
 
-Prioritize questions about technical validation and intern ownership if time is limited. The personal experience question works well near the end.
+Use a few strong examples rather than trying to present every project. A useful walkthrough is: **problem and constraints → your ownership → design choices and tradeoffs → prototype or analysis → validation and result → what you learned**. Distinguish your contribution from the team’s, and label projections or unfinished validation clearly.
 
-## Topics to Review
+### Choose Portfolio Anchors
 
-- Aurora’s mission, safety culture, Aurora Driver, and the hardware/sensor context of the role.
-- Sensor-cleaning problem framing: sensor type and field of view, contaminant, operating conditions, cleaning success criteria, and effect on perception or sensing quality.
-- Lidar fundamentals and performance measures.
-- Camera fundamentals and image/perception performance measures.
-- Requirements and interfaces: available power, fluid or air supply, packaging, vehicle/OEM interfaces, serviceability, mass, cost, reliability, and environmental exposure.
-- Applied fluid mechanics: pressure, flow rate, pressure drop, pump sizing, nozzle selection, spray coverage, and the tradeoffs between liquid spray and air flow.
-- Thermal basics: heat transfer, defogging/de-icing, freeze protection, power demand, and material/fluid temperature limits.
-- Mechanical design for automotive environments: seals, materials, corrosion/chemical compatibility, vibration, shock, thermal cycling, tolerance stack-up, manufacturability, and maintenance.
-- Test planning: representative contamination, controllable variables, repeatability, baseline/control conditions, sensor-performance metrics, failure criteria, and staged bench-to-vehicle validation.
-- Surrogate test infrastructure: how to reproduce rain, spray, dirt, bugs, snow, or ice safely and consistently; how to correlate a bench test with real-world conditions.
-- CFD and CAE fundamentals: what question the model answers, assumptions and boundary conditions, mesh/convergence awareness, and how simulation should be checked against physical tests. Be candid about your actual ANSYS/CFD experience.
-- CAD and design communication: explain your Solid Edge/SolidWorks experience, packaging decisions, drawings/GD&T, design reviews, and how you would ramp up in CATIA V6 if needed.
-- Your project evidence: optical alignment, collision/interference risk, vehicle packaging, CNC tolerances and fixturing, prototype iteration, closed-loop validation, and design handoff.
-- Behavioral examples: safety-first decisions, leading without complete authority, resolving cross-functional constraints, responding to a failure or mistake, prioritizing under time pressure, and learning from test results.
+- **SLAC polycapillary redesign:** optomechanical packaging, alignment, collision findings, and designing around delicate optics and detectors.
+- **Personal actuator:** compact mechatronic prototype, fabrication, electronics, firmware, and validated single-joint feedback.
+- **Gaucho Racing chassis fixture or wheel assemblies:** vehicle hardware, manufacturability, fixturing, dimensional validation, and schedule tradeoffs.
+- **SLAC digital twin:** a strong alternate for explaining simulation, safety, and adapting your method to a complex multi-axis system.
 
-## STAR Story Prompts
+Have the relevant portfolio pages, resume, a few clear photos or CAD views, and project repositories easy to open. Start with the overview; share technical detail when invited.
+
+### Portfolio and Project Links
+
+- [Portfolio website](https://koashen.com/)
+- [Resume page](resume.html)
+- [SLAC digital-twin repository](https://github.com/slaclab/twin-lab/)
+- [Personal actuator repository](https://github.com/koa-shen/desktop-6dof-arm)
+
+### Project Story Bank
 
 Keep each answer to a compact arc: **Situation** (context) → **Task** (your responsibility) → **Action** (your decisions and work) → **Result** (evidence, learning, or next step). These are abbreviated prompts; put them in your own voice.
 
@@ -155,9 +148,54 @@ Keep each answer to a compact arc: **Situation** (context) → **Task** (your re
 - **A:** Serviced 100+ exhibits and completed three major overhauls; reverse-engineered missing viewer CAD, redesigned a load-spreading bezel and encoder mounts, machined replacement parts, and documented current PDM files, CAM, and remanufacturing instructions.
 - **R:** Improved repairability and left reusable handoff documentation. The Arp Forms renewal avoided more than $3,000 in replacement-part costs; custom lathe tooling saved about $500 in outsourced tools and labor.
 
-## Accuracy Reminders
+## 3. Technical Interview
 
-- Label polycapillary time and cost savings as projections until measured in operation.
-- Describe digital-twin path planning and EPICS/live-controls integration as in progress.
-- For the robot arm, report the validated single-joint encoder/control behavior; do not claim measured output torque, backlash, payload, or reach yet.
-- On every story, distinguish what you personally owned from what the broader team delivered.
+The posting describes designing and validating electromechanical sensor-cleaning systems, creating surrogate weather/contamination test setups, and integrating hardware with the Aurora Driver Kit and vehicle interfaces. Treat details about Aurora’s exact sensor suite, metrics, architecture, and thresholds as questions for the team, not assumptions.
+
+### Technical Topics to Review
+
+- **Lidar and cameras:** what each sensor measures; field of view; common causes of degraded data; why a window can look clear while sensing quality remains poor. Review lidar returns/point clouds and camera image quality, but confirm the actual modality used by the cleaning system.
+- **Sensor health and fusion:** distinguish hardware status from data-quality signals and downstream object-detection performance. Lidar return counts/density and camera image-quality measures can indicate degradation, but are context-dependent proxies for contamination. Consider how the vehicle should treat uncertain or degraded sensing rather than interpreting missing data as a clear path.
+- **Applied fluid mechanics:** pressure drop, flow rate, pump/nozzle selection, spray pattern and coverage, nozzle size, stand-off distance, impact location and angle, and how fluid properties and temperature affect cleaning. Understand that nozzle geometry and pressure interact; measure delivered flow rather than assuming pressure alone describes the spray.
+- **Cleaning-system tradeoffs:** compare liquid spray, rinse, compressed air, and heating only as candidate approaches. Consider removal effectiveness, residue, freezing, optical disturbance during cleaning, power/fluid use, packaging, seals, ingress, corrosion, maintainability, and durability.
+- **Requirements and measures:** ask which sensing function must be recovered and how it is measured. Candidate hard constraints include near-field pedestrian detection, maximum sensing distance, and the full sensor-unavailable interval from cleaning start until sensing performance recovers. The team must define actual thresholds. Potential optimization goals include fluid use, removal capacity within the cycle, module life, and production cost.
+- **Cleaning coordination:** think about whether multiple sensors can clean at once, whether their useful coverage overlaps, and what sensing capability remains during a cycle. Vehicle speed, road context, sensor health, and reservoir level may be useful gating signals, but first establish which signals the system actually exposes. Health telemetry is not a direct dirt measurement.
+- **Repeatable test design:** define the target sensor, contamination challenge and loading, window condition, nozzle distance, and post-cleaning test conditions. Control variables such as submersion depth, dwell time, withdrawal speed, orientation, drainage/drying time, nozzle angle, and fluid volume. Dipping is not inherently repeatable; measure or control the deposited contamination.
+- **Surrogate contamination validation:** use road-exposed windows or representative samples to tune a controlled lab method, then validate the method on separate samples. Test contaminants individually before selected combinations so failures are diagnosable. Keep the sensor/target/environment test setup consistent and record repeat trials.
+- **Experiment planning:** know the difference between a factor you vary and a condition you hold constant. Randomize test order when practical to limit time-related drift; use blocks when changing hardware between every run would be cumbersome. Look for interactions, such as nozzle diameter and pressure jointly changing flow rate.
+- **Other mechanical fundamentals:** sealing and moisture ingress, material/fluid compatibility, vibration, shock, thermal cycling, tolerances, manufacturing, and service access. For CFD/CAE, explain what question a model could answer, its assumptions and boundary conditions, and how you would compare its predictions with physical tests.
+- **Tools and experience:** describe your Solid Edge/SolidWorks, Python, MATLAB, and prototyping experience accurately. Be candid about the depth of your CFD/ANSYS or CATIA V6 experience and explain how you would ramp up.
+
+### A Framework for a Design Question
+
+If asked how you would design or test a cleaning solution, proceed in this order:
+
+1. Clarify sensor type, critical use case, contaminants, operating environment, interfaces, and acceptance metrics.
+2. Identify hard safety/performance constraints separately from goals such as fluid use, cost, and durability.
+3. Compare candidate cleaning mechanisms and explain the tradeoffs; do not commit before the requirements are clear.
+4. Propose a controlled bench test, including contamination loading, measured cleaning inputs, repeatability, and sensor-level plus downstream performance measures.
+5. Explain how you would correlate the bench method with real-world exposure and progress from bench to vehicle testing.
+6. Address residue, ingress, durability, serviceability, sensor availability during cleaning, and safe system integration.
+
+### Questions for the Aurora Team
+
+- Which sensor modalities and operating use cases does this cleaning system support?
+- What contamination cases are hardest for the current system, and how does the team define recovered sensor performance?
+- What onboard health signals and vehicle-state information are available to request or schedule cleaning?
+- What facilities are available for prototyping and surrogate weather testing, and how does validation progress from bench to track or fleet?
+- What would success look like for the intern by the end of the summer, and what does mentorship or day-to-day collaboration look like?
+
+### Preparation Resources
+
+- [Aurora Mechanical Design Engineer Intern posting](https://aurora.tech/careers/cd219148-de6e-470b-ad34-6f66d2a12039): reread the responsibilities and required/desirable qualifications.
+- [Aurora safety overview](https://aurora.tech/safety): review the company’s methodical safety framing, especially pedestrian avoidance and responses to road hazards. This is context, not a substitute for technical system details.
+- [OpenStax University Physics, Chapter 14: Fluid Mechanics](https://openstax.org/books/university-physics-volume-1/pages/14-introduction): selectively review sections on pressure, fluid dynamics, Bernoulli’s equation, and viscosity; do not try to cover the whole chapter in one sitting.
+- Your portfolio and project repositories are linked in **Portfolio Review** above.
+
+### Final Accuracy Check
+
+- Keep the 30-DOF assembly consistent across your stories. Controls archive replay is implemented; live controls integration and path planning remain in development.
+- Label projected polycapillary savings as estimates, not measured outcomes.
+- For the actuator, describe validated single-joint encoder/control behavior; output torque, backlash, thermal behavior, and whole-arm payload/reach remain unmeasured.
+- Be clear about your personal contribution versus team outcomes. Do not imply prior shipped automotive ADAS/AV hardware experience; explain how your adjacent experience transfers.
+- Update availability, work-search status, and location flexibility if any of those change before the interview.
