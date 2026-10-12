@@ -30,7 +30,7 @@ If asked what you hope to gain and contribute:
 
 If asked what strength you would bring to the role, emphasize end-to-end iteration and use the actuator as evidence:
 
-> One strength I’d bring is quickly turning a design into a testable prototype. I’ve worked across concept development, CAD, simulation, fabrication, assembly, and troubleshooting, so I can move between system-level decisions and details like machining parts, soldering connections, or integrating an encoder. In my actuator project, I designed and 3D-printed a compact 15:1 cycloidal reducer, integrated the stepper, driver, and encoder, and developed the firmware. On the single-joint bench setup, I validated encoder feedback, position-error compensation, and missed-step detection. That breadth helps me iterate efficiently and understand how mechanical, electrical, and software decisions affect the whole system.
+> One strength I’d bring is quickly turning a design into a testable prototype. I’ve worked across concept development, CAD, simulation, fabrication, assembly, and troubleshooting, so I can move between system-level decisions and details like machining parts, soldering connections, or integrating a sensor. In my actuator project, I designed and 3D-printed a compact 15:1 cycloidal reducer, integrated the stepper, driver, and encoder, and developed the firmware. On the single-joint bench setup, I validated encoder feedback, position-error compensation, and missed-step detection. That breadth helps me iterate efficiently and understand how mechanical, electrical, and software decisions affect the whole system.
 
 ### Growth Area: Applied Fluid Dynamics
 
