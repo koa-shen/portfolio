@@ -32,11 +32,11 @@ If asked what strength you would bring to the role, emphasize end-to-end iterati
 
 > One strength I’d bring is quickly turning a design into a testable prototype. I’ve worked across concept development, CAD, simulation, fabrication, assembly, and troubleshooting, so I can move between system-level decisions and details like machining parts, soldering connections, or integrating a sensor. In my actuator project, I designed and 3D-printed a compact 15:1 cycloidal reducer, integrated the stepper, driver, and encoder, and developed the firmware. On the single-joint bench setup, I validated encoder feedback, position-error compensation, and missed-step detection. That breadth helps me iterate efficiently and understand how mechanical, electrical, and software decisions affect the whole system.
 
-### Growth Area: Applied Fluid Dynamics
+### Greatest Weakness: Over-Refining Designs
 
-If asked about an area you are developing, be candid while showing active interest and the strengths you already bring:
+If asked about a weakness, describe the tendency, its impact, and the habit you use to manage it:
 
-> One area I’m actively developing is applied fluid dynamics. My formal coursework is just beginning, so most of my exposure so far has come from self-directed reading and videos. I’m especially interested in how fluid principles apply to systems such as pneumatic actuators and sensor-cleaning hardware, and I’m eager to build that foundation through further study and hands-on testing. I can already contribute strengths in mechanical design, prototyping, and iteration, and I’m excited to pair those with a deeper understanding of fluid systems.
+> One weakness I’ve been working on is spending too long refining a design after it already meets its core requirements. I care about making components robust, but I’ve learned that added complexity can have diminishing returns and slow progress. I now check whether each refinement addresses a real requirement or meaningfully reduces risk, and whether that benefit is worth the extra time. That helps me recognize when a design is ready to prototype and test instead of continuing to polish it in CAD.
 
 ### Recruiter Logistics
 
