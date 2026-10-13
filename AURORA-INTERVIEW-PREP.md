@@ -12,19 +12,19 @@ Suggested two-hour practice session: 20 minutes for the introductory interview, 
 
 Practice a natural 40–50 second answer to “Tell me about yourself and what interested you in this role.” Use this as a guide, not a memorized script:
 
-> I’m a third-year mechanical engineering student at UCSB, looking for a Summer 2027 internship in robotics or autonomous systems. I’ve worked on mechanical design, simulation, and testing across optomechanical alignment systems at SLAC, vehicle subsystems with Gaucho Racing, and a compact 3D-printed robotic actuator. Adarsh Kumar from Aurora’s mechanical design team recommended I look at this role. I was especially interested because sensor cleaning brings together mechanical design, prototyping, testing, and vehicle integration. I’d be excited to contribute my hands-on hardware experience and learn from the team as it develops reliable systems for autonomous vehicles.
+> I’m a third-year mechanical engineering student at UCSB seeking a Summer 2027 internship in robotics or autonomous systems. My experience spans mechanical design, simulation, prototyping, and testing, including optomechanical alignment systems at SLAC, vehicle subsystems with Gaucho Racing, and compact reducers for robotic actuators. Adarsh Kumar brought this role to my attention, and sensor cleaning interested me because it combines hardware design and validation with integration into an autonomous vehicle. I’d be excited to bring my hands-on experience and learn from Aurora’s team as it develops reliable autonomous trucking systems.
 
 ### Why Aurora and This Role?
 
 Use this if asked what specifically interests you about Aurora or the internship:
 
-> Aurora stands out to me because it’s working to bring autonomous trucking into real-world operations across different truck platforms. I’m especially interested in the engineering challenges that come with that: designing systems that are durable, serviceable, and reliable in demanding conditions. This role appeals to me because sensor cleaning is a concrete part of that challenge, combining mechanical design, testing, and vehicle integration. I’d be excited to contribute to that work and learn from the team.
+> Aurora stands out to me because it’s working to bring autonomous trucking into real-world operations across different truck platforms. That creates distinctive engineering challenges: hardware has to be reliable, durable, and serviceable in the demanding conditions commercial trucks face. This role especially interests me because sensor cleaning is one part of making the overall system dependable. I’d be excited to contribute my hands-on design and prototyping experience and learn from the team.
 
 ### What I Hope to Get from the Internship
 
 If asked what you hope to gain and contribute:
 
-> I’m hoping to build experience taking mechatronic hardware through the development cycle, from understanding requirements and designing prototypes through testing and iteration. I’d like to contribute to a meaningful sensor-cleaning project and, with the team’s guidance, take ownership of a well-scoped piece of the work. I’m also excited to learn how mechanical design fits into a vehicle-scale autonomous system and contribute to safer, more reliable trucking.
+> I’m hoping to deepen my experience taking mechatronic systems through development, from defining requirements and generating concepts through prototyping, validation, and production. I’d like to contribute to a meaningful sensor-cleaning project and, with the team’s guidance, take ownership of a well-scoped part of the work. I also hope to be a dependable, collaborative teammate and build strong working relationships across Aurora.
 
 ### Strength: Rapid Prototyping
 
@@ -42,7 +42,7 @@ If asked about a weakness, describe the tendency, its impact, and the habit you 
 
 If asked about work authorization, availability, or location:
 
-> I’m authorized to work and do not require sponsorship. I’m available to start June 14, 2027, and can work through September 19; I return to school on September 20. I value in-person collaboration and would prefer the San Francisco office if that’s an option for this role. I’m also flexible about commuting to another Bay Area location if the team is based there.
+> I’m authorized to work and do not require sponsorship. I’m available to work from June 14 through September 19, and I need to return to school on September 20. Those dates are firm, but I can commit my full summer break to the internship within that window. I value in-person collaboration and would prefer the San Francisco office; I could commute to Mountain View as well, but I’d want to understand the expected in-office schedule for a longer commute, since five days a week may be challenging.
 
 If asked whether you are interviewing elsewhere:
 
@@ -52,7 +52,7 @@ If asked whether you are interviewing elsewhere:
 
 Practice for “Tell me about a time you worked with a team to deliver something.” Aim for about 45–60 seconds:
 
-> During the 2025–2026 season, I led a 15-person Gaucho Racing team responsible for the components drivers use to operate the car safely. I had to keep our engineering work on schedule while making the team accessible to new members. I created a structured onboarding process so they could contribute early, while assigning ownership of critical components to experienced members I knew could deliver. I tracked responsibilities, checked in regularly, and supported newer teammates while staying hands-on with the work. Over time, two engineers who had owned components became team leads, and three members who joined the previous year became responsible engineers. Our components passed technical inspection, and our overall competition standing improved from 56th to 30th.
+> During the 2025–2026 season, I led a 15-person Gaucho Racing team responsible for the driver-interface system—the components drivers use to operate the car. We needed to deliver rule-compliant hardware on schedule while bringing new members into meaningful engineering work. I created an expedited onboarding process and assigned newer members to real component projects, while giving experienced members ownership of critical deliverables. I tracked responsibilities, checked in regularly, mentored newer teammates, and stayed hands-on with the technical work. Three members who joined the previous year have since become responsible engineers, and two former responsible engineers are now team leads. All our components passed technical inspection, and our overall competition standing improved from 56th to 30th.
 
 ### When Something Went Wrong
 
@@ -71,9 +71,13 @@ Describe archived-controls replay separately from live controls integration, whi
 ### Questions for the Recruiter
 
 - What attire is typical for interviews at Aurora?
-- If you’re able to share, will the interview include a design exercise, technical questions, a portfolio review, or some combination?
-- Which office locations are available for this internship, and where is this team based?
+- Could you walk me through the interview process for this internship? In particular, what stages should I expect, and should I prepare for technical interviews, design exercises, or a portfolio review?
+- I saw that Aurora expects employees to be in the office at least three days a week, and the posting lists Mountain View, San Francisco, and Pittsburgh. Could you clarify which office this internship is based in and what in-person schedule the team expects? My preference is San Francisco, though I could commute to Mountain View.
 - What are the next steps and expected timeline after this conversation?
+
+At the end of the call:
+
+> Thanks again for taking the time to speak with me today. I enjoyed learning more about the role and Aurora, and I look forward to hearing from you about next steps.
 
 ## 2. Portfolio Review
 
@@ -94,6 +98,24 @@ Have the relevant portfolio pages, resume, a few clear photos or CAD views, and 
 - [Resume page](resume.html)
 - [SLAC digital-twin repository](https://github.com/slaclab/twin-lab/)
 - [Personal actuator repository](https://github.com/koa-shen/desktop-6dof-arm)
+
+### Spoken Actuator Responses
+
+**Project I’m proud of**
+
+> One project I’m especially proud of is an independent robotic actuator I’m developing. I designed and built a compact 15:1 cycloidal reducer, then integrated it with a stepper motor, driver, and encoder. I wrote the firmware and built bench tests to verify encoder feedback, missed-step detection, and automatic correction of position error. The single-joint prototype is working, and my next steps are improving efficiency and developing the full manipulator. I’m documenting the design so it can eventually become a repeatable, open-source platform.
+
+**Hardest technical challenge**
+
+> One of the hardest parts of my actuator project was developing the electronics and control software. I had limited coursework in power electronics, and early trial-and-error testing damaged a motor-driver board. I stepped back to strengthen my fundamentals, studied the relevant material, and consulted a UCSB controls faculty member about structuring the firmware and making my hardware tests repeatable. Then I resumed prototyping more methodically. I now have an operational single-joint actuator with validated encoder feedback, position-error compensation, and missed-step detection. My next challenge is extending that foundation to coordinated motion across multiple joints.
+
+**What changed in my process**
+
+> After getting that guidance, I slowed down and made the build more systematic. I documented the wiring in schematics and checked the connections against the Arduino and TMC2209 documentation before assembling them. I also moved the motor-power wiring off the breadboard and kept it separate from the logic circuitry, which made the setup easier to inspect and troubleshoot. That gave me a more repeatable foundation for testing and iterating.
+
+**What I learned**
+
+> My biggest takeaway is that a prototype failure is only useful if it changes how I work. When the motor-driver board was damaged, I stopped and reconsidered how I was approaching the electronics instead of simply replacing it and continuing the same way. I learned to investigate failures early, turn what I learn into repeatable checks, and build safeguards into a design before it moves toward production.
 
 ### Project Story Bank
 
@@ -183,7 +205,9 @@ If asked how you would design or test a cleaning solution, proceed in this order
 - What contamination cases are hardest for the current system, and how does the team define recovered sensor performance?
 - What onboard health signals and vehicle-state information are available to request or schedule cleaning?
 - What facilities are available for prototyping and surrogate weather testing, and how does validation progress from bench to track or fleet?
-- What would success look like for the intern by the end of the summer, and what does mentorship or day-to-day collaboration look like?
+- Could you share how interns are onboarded and what ongoing mentorship or guidance typically looks like? Is there a formal mentor program?
+- What has your day-to-day experience at Aurora been like, and what stands out to you about the working environment?
+- What would success look like for the intern by the end of the summer?
 
 ### Preparation Resources
 
