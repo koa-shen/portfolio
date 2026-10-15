@@ -47,7 +47,7 @@ function imageOrPlaceholder(src, alt = '', loading = 'lazy') {
     return `<div class="ph">${escapeHtml(fillerText(src || 'FILLER: add image'))}</div>`;
   }
   const safe = escapeHtml(src);
-  return `<img src="${safe}" alt="${escapeHtml(alt)}" loading="${loading}"
+  return `<img src="${safe}" alt="${escapeHtml(alt)}" loading="${loading}" decoding="async"
     onerror="this.outerHTML='<div class=&quot;ph&quot;>missing file: ${safe}</div>'">`;
 }
 

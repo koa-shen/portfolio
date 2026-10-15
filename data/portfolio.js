@@ -34,9 +34,9 @@ const PORTFOLIO = {
     // Hero portrait or a hero render of your best project
     heroImage: "assets/images/hero.jpg",
     personalPhotos: [
-      "assets/images/personal photos/DSC04070.JPG",
-      "assets/images/personal photos/DSC04745.JPG",
-      "assets/images/personal photos/IMG_5488.jpeg",
+      "assets/images/personal photos/personal-photo-1.jpg",
+      "assets/images/personal photos/personal-photo-2.jpg",
+      "assets/images/personal photos/personal-photo-3.jpg",
     ],
   },
 
