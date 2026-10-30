@@ -10,6 +10,9 @@
   const isApplied = resumeTarget === 'applied';
   const isSpaceX = resumeTarget === 'spacex';
   const resumeDownload = document.getElementById('resumeDownload');
+  if (!isSemiValley && !isTau && !isNimo && !isApplied && !isSpaceX) {
+    document.body.classList.add('resume-main');
+  }
 
   if (isSemiValley || isTau || isNimo || isApplied || isSpaceX) {
     const filename = isSpaceX
@@ -32,7 +35,7 @@
     D.meta.linkedin,
     D.meta.github,
     D.meta.website,
-  ].map((v) => `<span>${text(v.replace(/^https?:\/\//i, ''))}</span>`).join('');
+  ].map((v) => `<span>${text(v.replace(/^https?:\/\//i, ''))}</span>`).join('<span aria-hidden="true">|</span>');
 
   /* Education */
   const education = D.education.map((e) => `
@@ -42,7 +45,7 @@
         <span class="r-when">${text(e.dates)}</span>
       </div>
       <div class="r-row">
-        <p class="r-sub">${text(e.degree)} · ${isSemiValley || isTau || isNimo || isApplied || isSpaceX ? '3.97 major / 3.94 overall GPA' : text(e.gpa)} · Dean's Honors every quarter</p>
+        <p class="r-sub">${text(e.degree)} | ${isSemiValley || isTau || isNimo || isApplied || isSpaceX ? '3.97 major / 3.94 overall GPA' : text(e.gpa.replace(/[·–—]/g, '|'))} | Dean's Honors every quarter</p>
         <span class="r-when">${text(e.location)}</span>
       </div>
       <ul>${e.details
@@ -84,21 +87,25 @@
     ? (isTau ? tauExperienceOrder : isNimo ? nimoExperienceOrder : isApplied ? appliedExperienceOrder : spaceXExperienceOrder)
         .map((org) => D.experience.find((x) => x.org === org))
     : [
-        ...D.experience.filter((x) => x.type === 'paid' && resumeOrganizations.has(x.org)),
-        ...D.experience.filter((x) => x.type !== 'paid' && resumeOrganizations.has(x.org)),
-      ];
+        "SLAC National Accelerator Laboratory — LCLS",
+        "Gaucho Racing (FSAE EV) — UC Santa Barbara",
+        "Exploratorium",
+      ].map((org) => D.experience.find((x) => x.org === org));
 
   const generalExperienceBullets = {
     "SLAC National Accelerator Laboratory — LCLS": [
-      "Built CAD import, kinematics, collision-check, and load-case workflows for high-DOF LCLS assemblies.",
-      "Applied XCS findings to the optics redesign and documented Solid Edge, Teamcenter, and EPICS interfaces.",
+      "Built an open-source Python/Drake digital twin for a 30-DOF, 305-body beamline assembly; millisecond collision checks exposed at least five pinch points.",
+      "Developed 15 reusable motion-stage models now being adopted across three LCLS assemblies; applied simulation findings to optics packaging and alignment redesigns.",
+      "Designed mounts and detector strain relief, evaluated stage and mount load cases for $100k+ detectors, and released Solid Edge drawings with GD&T through Teamcenter PDM.",
     ],
     Exploratorium: [
-      "Serviced 100+ exhibits and led three overhauls; the Arp Forms redesign avoided $3,000+ in replacement costs.",
+      "Serviced 100+ interactive exhibits and led three major overhauls through failure diagnosis, reverse engineering, manual machining, and welding.",
+      "Redesigned a load-spreading bezel to address acrylic cracking and avoid $3,000+ in replacement costs; documented CAD and remanufacturing instructions for future technicians.",
     ],
     "Gaucho Racing (FSAE EV) — UC Santa Barbara": [
-      "Led 15 people through GR26 safety-system design and installation; passed FSAE technical inspection.",
-      "CNC-machined 33 parts from 4130 steel and 7075-T6 aluminum; held fits to 0.0005 in and standardized five spindles.",
+      "Led 15 teammates through GR26 driver-safety-system design, fabrication, and installation; the package passed Formula SAE technical inspection.",
+      "CNC-machined 33 suspension components from 4130 steel and 7075-T6 aluminum; held clevis and rod-end bores within a 0.0004-in tolerance window and bearing interfaces within 0.0005 in.",
+      "Worked with designers on GD&T and manufacturability; standardized five spindle interfaces to reuse proven CAM programs and reduce setup and programming work.",
     ],
   };
   const semiValleyExperienceBullets = {
@@ -184,10 +191,10 @@
     <div class="r-entry">
       <div class="r-row">
         <p class="r-title">${text(x.role)}</p>
-        <span class="r-when">${text(x.dates)}</span>
+        <span class="r-when">${text(x.dates.replace(/[–—]/g, '-'))}</span>
       </div>
       <div class="r-row">
-        <p class="r-sub">${text(x.org)}</p>
+        <p class="r-sub">${text(x.org.replace(/[–—]/g, '-'))}</p>
         <span class="r-when">${text(x.location)}</span>
       </div>
       <ul>${resumeExperienceBullets[x.org].map(li).join('')}</ul>
@@ -210,22 +217,21 @@
     'steering-wheel-development',
   ] : [
     "robot-arm",
-    "digital-twin",
-    "polycapillary",
+    "chassis-welding-jig",
     "steering-wheel-development",
   ]);
   const generalProjectSummaries = {
     "robot-arm": [
-      "Designed a 15:1 cycloidal reducer for NEMA 17; planned arm targets (unvalidated): 6 DOF, 381 mm reach, 0.5 kg payload.",
-      "Built PlatformIO C++ firmware for TMC2209 stepper control, including step/dir generation and real-time telemetry.",
-      "Integrated a 12-bit AS5600 encoder for missed-step detection; multi-joint output sensing remains planned.",
+      "Designed a 15:1 cycloidal reducer within a NEMA 17 motor's 42 mm square footprint; fabricated components and assembled the stepper, driver, and encoder package.",
+      "Built PlatformIO C++ firmware with AS5600 encoder feedback; bench-validated single-joint position correction and missed-step detection.",
     ],
-    "digital-twin": [
-      "Built a 32-DOF Drake twin (305 bodies) with OpenCascade, CoACD, MeshCat; millisecond checks span 15 LCLS stages.",
-      "Applied it to three assemblies; retroactive XCS checks exposed at least five pinch points restricting use.",
+    "chassis-welding-jig": [
+      "Designed a modular GR25 welding fixture that located 81 chassis tubes within 0.050 in of CAD node positions and reduced assembly time 50% versus the prior fixture.",
+      "Developed a GR26 hybrid fixture with 3D-printed locating brackets and reused 80/20 and plywood, reducing fixture assembly time a further 30%.",
     ],
-    "polycapillary": ["Developed a redesign for a 32-DOF optics assembly with three kinematic bases and six hot-swappable optics; projected savings of 1–2 hours per shift-day and roughly $30k in annual value are not yet verified."],
-    "steering-wheel-development": ["Integrated wheel buttons, potentiometers, display, and quick-release; FEA-guided iteration cut mass from 5 lb to 1.7 lb."],
+    "steering-wheel-development": [
+      "Helped develop an FSAE steering wheel integrating buttons, potentiometers, a display, and quick release; iterative, FEA-guided design reduced assembly mass from 5 lb to 1.7 lb.",
+    ],
   };
   const semiValleyProjectSummaries = {
     "robot-arm": [
@@ -297,16 +303,16 @@
     <div class="r-entry">
       <div class="r-row">
         <p class="r-title">${text(p.title)}</p>
-        <span class="r-when">${text(p.dates)}</span>
+        <span class="r-when">${text(p.dates.replace(/[–—]/g, '-'))}</span>
       </div>
       <ul>${resumeProjectSummaries[p.id].map((summary) => `<li>${escapeHtml(summary)}</li>`).join('')}</ul>
     </div>`).join('');
 
   /* Skills — comma lists, ATS-friendly */
   const generalSkills = {
-    "CAD & Manufacturing": ["SolidWorks", "Solid Edge", "Teamcenter PDM", "Inventor/Fusion", "Mastercam", "GD&T", "CNC/manual machining"],
-    Software: ["Python", "C/C++", "PlatformIO", "MATLAB", "Arduino", "Git/GitHub", "EPICS", "OpenCascade", "CoACD", "MeshCat"],
-    "Robotics & Controls": ["Drake kinematics", "Collision detection", "TMC2209 stepper control", "AS5600 encoders/I2C multiplexing"],
+    "Mechanical Design & Analysis": ["SolidWorks", "Solid Edge", "Teamcenter PDM", "GD&T", "DFM", "FEA", "Statics and dynamics", "Kinematics"],
+    "Manufacturing & Materials": ["CNC milling and turning", "Mastercam", "Manual machining", "Welding", "4130 steel", "7075-T6 aluminum", "3D printing"],
+    "Software & Controls": ["Python", "C/C++", "MATLAB", "Drake", "PlatformIO", "Stepper motors", "AS5600 encoders", "Git"],
   };
   const semiValleySkills = {
     "Mechanical Design & Manufacturing": ["SolidWorks", "Solid Edge", "Teamcenter PDM", "GD&T", "CNC/manual machining", "Mastercam"],
@@ -350,7 +356,7 @@
           ? 'Robotics Technician Candidate · Assembly · Repair · Electromechanical Testing'
           : isSemiValley
             ? 'Mechanical Engineering Candidate · Hardware Design · Analysis · Manufacturing'
-            : `${text(D.meta.role)} · Robotics · Motion Systems`}</p>
+          : 'Mechanical Engineering | Mechanical Design, Manufacturing & Testing'}</p>
       <div class="r-contact">${contactBits}</div>
     </header>
 
