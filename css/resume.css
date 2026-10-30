@@ -105,22 +105,29 @@ body {
   .filler { background: #ffe28a !important; }
   a { color: inherit; text-decoration: none; }
 
-  .resume-main { font-size: 9pt; line-height: 1.16; }
-  .resume-main .page { height: 11in; min-height: 11in; padding: 0.2in 0.48in; }
-  .resume-main .r-head { padding-bottom: .18rem; margin-bottom: .28rem; }
-  .resume-main .r-name { font-size: 19pt; }
-  .resume-main .r-role { font-size: 9.5pt; margin: .05rem 0 .18rem; }
-  .resume-main .r-contact { font-size: 8.2pt; gap: .12rem .42rem; }
-  .resume-main .r-sec { margin-bottom: .25rem; }
-  .resume-main .r-sec > h2 { font-size: 8.7pt; margin-bottom: .14rem; padding-bottom: .07rem; }
-  .resume-main .r-entry { margin-bottom: .18rem; }
-  .resume-main .r-title { font-size: 9.4pt; }
-  .resume-main .r-sub { font-size: 8.8pt; }
-  .resume-main .r-when { font-size: 8.2pt; }
-  .resume-main .r-entry ul { margin-top: .08rem; padding-left: .95rem; }
-  .resume-main .r-entry li { margin-bottom: 0; }
-  .resume-main .r-skills { gap: 0; }
-  .resume-main .r-skills div { font-size: 8.5pt; }
+  /* Main resume: fixed Letter sheet; sections spread to reach the bottom
+     margin. Retune --fs (with the export check) whenever content changes. */
+  .resume-main .page {
+    --fs: 9.25pt;
+    height: 11in; min-height: 11in; padding: .4in .55in;
+    display: flex; flex-direction: column; justify-content: space-between;
+    overflow: hidden; font-size: var(--fs); line-height: 1.32;
+  }
+  .resume-main .r-head { margin-bottom: 0; padding-bottom: .35em; }
+  .resume-main .r-name { font-size: 21pt; letter-spacing: -.01em; line-height: 1.1; }
+  .resume-main .r-role { margin: .12em 0 .22em; font-size: 1.08em; font-weight: 600; }
+  .resume-main .r-contact { gap: 0 .4em; font-size: .95em; }
+  .resume-main .r-sec { margin: .55em 0 0; }
+  .resume-main .r-sec > h2 { margin: 0 0 .3em; padding-bottom: .12em; font-size: 1em; letter-spacing: .12em; }
+  .resume-main .r-entry { margin-bottom: 0; }
+  .resume-main .r-entry + .r-entry { margin-top: .45em; }
+  .resume-main .r-title { font-size: 1.04em; }
+  .resume-main .r-sub { font-size: 1em; }
+  .resume-main .r-when { font-size: .95em; }
+  .resume-main .r-entry ul { margin-top: .15em; padding-left: 1.1em; }
+  .resume-main .r-entry li { margin-bottom: .07em; }
+  .resume-main .r-skills { gap: .08em; }
+  .resume-main .r-skills div { font-size: 1em; }
 }
 
 @media (max-width: 600px) {

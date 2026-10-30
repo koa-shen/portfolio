@@ -30,7 +30,7 @@ const PORTFOLIO = {
     github: "https://github.com/koa-shen",
     website: "koashen.com",
     // Drop the exported PDF at this path (see assets/README note)
-    resumePdf: "assets/Koa_Shen_Resume.pdf",
+    resumePdf: "assets/Koa_Shen_Mechanical_Engineering_Resume.pdf",
     // Hero portrait or a hero render of your best project
     heroImage: "assets/images/hero.jpg",
     personalPhotos: [

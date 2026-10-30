@@ -10,7 +10,8 @@
   const isApplied = resumeTarget === 'applied';
   const isSpaceX = resumeTarget === 'spacex';
   const resumeDownload = document.getElementById('resumeDownload');
-  if (!isSemiValley && !isTau && !isNimo && !isApplied && !isSpaceX) {
+  const isMain = !isSemiValley && !isTau && !isNimo && !isApplied && !isSpaceX;
+  if (isMain) {
     document.body.classList.add('resume-main');
   }
 
@@ -35,9 +36,10 @@
     D.meta.linkedin,
     D.meta.github,
     D.meta.website,
-  ].map((v) => `<span>${text(v.replace(/^https?:\/\//i, ''))}</span>`).join('<span aria-hidden="true">|</span>');
+  ].map((v) => `<span>${text(v.replace(/^https?:\/\//i, '').replace(/\/$/, ''))}</span>`).join('<span aria-hidden="true">|</span>');
 
   /* Education */
+  const gpaLine = (gpa) => gpa.split('·').map((s) => s.trim().replace(/^([\d.]+) (.+)$/, '$2: $1')).join(' | ');
   const education = D.education.map((e) => `
     <div class="r-entry">
       <div class="r-row">
@@ -45,14 +47,16 @@
         <span class="r-when">${text(e.dates)}</span>
       </div>
       <div class="r-row">
-        <p class="r-sub">${text(e.degree)} | ${isSemiValley || isTau || isNimo || isApplied || isSpaceX ? '3.97 major / 3.94 overall GPA' : text(e.gpa.replace(/[·–—]/g, '|'))} | Dean's Honors every quarter</p>
+        <p class="r-sub">${isMain
+          ? `${text(e.degree)} | ${text(gpaLine(e.gpa))}`
+          : `${text(e.degree)} | ${isSemiValley || isTau || isNimo || isApplied || isSpaceX ? '3.97 major / 3.94 overall GPA' : text(e.gpa.replace(/[·–—]/g, '|'))} | Dean's Honors every quarter`}</p>
         <span class="r-when">${text(e.location)}</span>
       </div>
       <ul>${e.details
         .filter((detail) => !detail.startsWith('Planned this academic year:'))
         .filter((detail) => !detail.startsWith("Dean's Honors, College of Engineering"))
         .map((detail) => detail.startsWith('Relevant coursework:')
-          ? 'Coursework: Dynamics, Mechanics of Materials, Circuits. Current: Dynamical Systems and Machine Learning.'
+          ? `${isMain ? "Dean's Honors every quarter. " : ''}Coursework: Dynamics, Mechanics of Materials, Circuits${isMain ? ', MATLAB' : ''}. Current: Dynamical Systems and Machine Learning.`
           : detail)
         .map(li).join('')}</ul>
     </div>`).join('');
@@ -83,20 +87,50 @@
     'SLAC National Accelerator Laboratory — LCLS',
     'Exploratorium',
   ];
+  /* Resume-only until the Hawkes Lab role is added to the portfolio data. */
+  const hawkesLab = {
+    org: 'Hawkes Lab, UC Santa Barbara',
+    role: 'Undergraduate Researcher',
+    dates: 'Fall 2025 - Present',
+    location: 'Santa Barbara, CA',
+  };
   const ordered = isTau || isNimo || isApplied || isSpaceX
     ? (isTau ? tauExperienceOrder : isNimo ? nimoExperienceOrder : isApplied ? appliedExperienceOrder : spaceXExperienceOrder)
         .map((org) => D.experience.find((x) => x.org === org))
-    : [
-        "SLAC National Accelerator Laboratory — LCLS",
-        "Gaucho Racing (FSAE EV) — UC Santa Barbara",
-        "Exploratorium",
-      ].map((org) => D.experience.find((x) => x.org === org));
+    : isSemiValley
+      ? [
+          "SLAC National Accelerator Laboratory — LCLS",
+          "Gaucho Racing (FSAE EV) — UC Santa Barbara",
+          "Exploratorium",
+        ].map((org) => D.experience.find((x) => x.org === org))
+      : [
+          D.experience.find((x) => x.org === "SLAC National Accelerator Laboratory — LCLS"),
+          D.experience.find((x) => x.org === "Gaucho Racing (FSAE EV) — UC Santa Barbara"),
+          hawkesLab,
+          D.experience.find((x) => x.org === "Exploratorium"),
+        ];
+
+  /* Cleaner org/date labels for the main resume PDF. */
+  const mainExperienceDisplay = {
+    "SLAC National Accelerator Laboratory — LCLS": {
+      org: 'SLAC National Accelerator Laboratory, LCLS',
+      dates: 'Summer 2026 - Present',
+      location: 'Menlo Park, CA (part-time remote)',
+    },
+    "Gaucho Racing (FSAE EV) — UC Santa Barbara": {
+      org: 'Gaucho Racing, Formula SAE Electric | UC Santa Barbara',
+    },
+  };
 
   const generalExperienceBullets = {
     "SLAC National Accelerator Laboratory — LCLS": [
       "Built an open-source Python/Drake digital twin for a 30-DOF, 305-body beamline assembly; millisecond collision checks exposed at least five pinch points.",
       "Developed 15 reusable motion-stage models now being adopted across three LCLS assemblies; applied simulation findings to optics packaging and alignment redesigns.",
       "Designed mounts and detector strain relief, evaluated stage and mount load cases for $100k+ detectors, and released Solid Edge drawings with GD&T through Teamcenter PDM.",
+    ],
+    [hawkesLab.org]: [
+      "Designed and 3D-printed custom molds with complex curvature for composite parts; fabricated parts by wet layup and prepreg across different weaves and fabrics.",
+      "Experimented with vacuum-bagging setups and iterated on mold design to improve part stiffness.",
     ],
     Exploratorium: [
       "Serviced 100+ interactive exhibits and led three major overhauls through failure diagnosis, reverse engineering, manual machining, and welding.",
@@ -187,18 +221,21 @@
         : isSpaceX ? spaceXExperienceBullets
           : isSemiValley ? semiValleyExperienceBullets : generalExperienceBullets;
 
-  const experience = ordered.map((x) => `
+  const experience = ordered.map((x) => {
+    const shown = isMain ? { ...x, ...(mainExperienceDisplay[x.org] || {}) } : x;
+    return `
     <div class="r-entry">
       <div class="r-row">
-        <p class="r-title">${text(x.role)}</p>
-        <span class="r-when">${text(x.dates.replace(/[–—]/g, '-'))}</span>
+        <p class="r-title">${text(shown.role)}</p>
+        <span class="r-when">${text(shown.dates.replace(/[–—]/g, '-'))}</span>
       </div>
       <div class="r-row">
-        <p class="r-sub">${text(x.org.replace(/[–—]/g, '-'))}</p>
-        <span class="r-when">${text(x.location)}</span>
+        <p class="r-sub">${text(shown.org.replace(/[–—]/g, '-'))}</p>
+        <span class="r-when">${text(shown.location)}</span>
       </div>
       <ul>${resumeExperienceBullets[x.org].map(li).join('')}</ul>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 
   /* Complement the experience section with projects that show distinct depth. */
   const resumeProjectIds = new Set(isSpaceX ? [
@@ -215,10 +252,14 @@
   ] : isTau ? [
     'robot-arm',
     'steering-wheel-development',
+  ] : isSemiValley ? [
+    "robot-arm",
+    "digital-twin",
+    "polycapillary",
+    "steering-wheel-development",
   ] : [
     "robot-arm",
     "chassis-welding-jig",
-    "steering-wheel-development",
   ]);
   const generalProjectSummaries = {
     "robot-arm": [
@@ -310,9 +351,9 @@
 
   /* Skills — comma lists, ATS-friendly */
   const generalSkills = {
-    "Mechanical Design & Analysis": ["SolidWorks", "Solid Edge", "Teamcenter PDM", "GD&T", "DFM", "FEA", "Statics and dynamics", "Kinematics"],
-    "Manufacturing & Materials": ["CNC milling and turning", "Mastercam", "Manual machining", "Welding", "4130 steel", "7075-T6 aluminum", "3D printing"],
-    "Software & Controls": ["Python", "C/C++", "MATLAB", "Drake", "PlatformIO", "Stepper motors", "AS5600 encoders", "Git"],
+    "Mechanical Design & Analysis": ["SolidWorks", "Solid Edge", "Teamcenter PDM", "GD&T", "DFM", "FEA", "Statics/dynamics"],
+    "Manufacturing & Materials": ["CNC milling and turning", "Mastercam", "Manual machining", "Welding", "Composite layup", "4130 steel", "7075-T6 aluminum", "3D printing"],
+    "Software & Controls": ["Python", "C/C++", "MATLAB", "Drake kinematics", "PlatformIO", "Stepper motors", "AS5600 encoders", "Git"],
   };
   const semiValleySkills = {
     "Mechanical Design & Manufacturing": ["SolidWorks", "Solid Edge", "Teamcenter PDM", "GD&T", "CNC/manual machining", "Mastercam"],
@@ -356,7 +397,7 @@
           ? 'Robotics Technician Candidate · Assembly · Repair · Electromechanical Testing'
           : isSemiValley
             ? 'Mechanical Engineering Candidate · Hardware Design · Analysis · Manufacturing'
-          : 'Mechanical Engineering | Mechanical Design, Manufacturing & Testing'}</p>
+          : 'Mechanical Engineer'}</p>
       <div class="r-contact">${contactBits}</div>
     </header>
 
